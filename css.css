@@ -63,21 +63,44 @@ body{
   .sidenav a {font-size: 18px;}
 }
 
-.star_i{
-  width:10%;
-  margin-left: 40%;
-	position: absolute;
 
 
+.star_i {
+    padding-top: 200%;
+    width: 200%;
 }
 
-.star_s{
-	width:5%;
-	margin: auto;
-  position: absolute;
-  top:10; left: 0; bottom: 0;right: 0;
-	display: none;
+.star_s {
+    width: 50%;
 }
+
+#star_s1{
+    margin-top: -240px;
+    display: none;  
+}
+
+#star_s2{
+    margin-left: 240px;
+    display: none;
+}
+
+#star_s3{
+    margin-left: -140px;
+    display: none;
+}
+
+#star_s4{
+    margin-top: 100px;
+    display: none;
+}
+
+#star_s5{
+    margin-top: -82px;
+    margin-left: 227px;
+    display: none;
+}
+
+
 
 a{
 	outline: 0;
@@ -198,7 +221,8 @@ button:hover{
 #donate {
 	margin: auto;
     padding: none;
-	width: 100%;
+    position: absolute;
+	width: 260px;
 	bottom: 0px;
 	right: 0px;
 	float: right;

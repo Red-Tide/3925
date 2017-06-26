@@ -6,6 +6,19 @@
 	<link rel="stylesheet" type="text/css" href="css.css">
 	<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.js"></script>
 	<script src="//assets.codepen.io/assets/libs/modernizr-0e41cf622f0788eca25945c37bdc5b15.js"></script>
+	<script type="text/javascript" src="jquery.wheelmenu.js"></script>
+	<script>
+	
+	  $(document).ready(function(){
+			$(".wheel-button").wheelmenu({
+        trigger: "click",
+        animation: "fade",
+
+      });
+		});
+
+	
+	</script>
 </head>
 <body onload="start()">
 
@@ -33,21 +46,22 @@
     <div class="container">
         <div class="row">
             <div class="col-md-1 col-md-offset-5 col-xs-2 col-xs-offset-4">
-                <img src = "image/big_star.png" class="star_i" onclick="starMenu()" />
+			    <a href="#wheel2" class="wheel-button">
+                <img src = "image/big_star.png" class="star_i " onclick="starMenu()" />
+				</a>
+				
+				<ul id="wheel2" data-angle="[180,360]" class="wheel">
+					<li class="item"><img src = "image/big_star.png" class="star_s" onclick="starWork()"/></li>
+					<li class="item"><img src = "image/big_star.png" class="star_s" onclick="starWork()"/></li>
+					<li class="item"><img src = "image/big_star.png" class="star_s" onclick="starWork()"/></li>
+					<li class="item"><img src = "image/big_star.png" class="star_s" onclick="starWork()"/></li>
+					<li class="item"><img src = "image/big_star.png" class="star_s" onclick="starWork()"/></li>
+				</ul>
             </div>
         </div>
     </div>
     
-    <div class="row">
-        <div class="col-md-1 col-md-offset-5 col-xs-2 col-xs-offset-4">
-            <img src = "image/big_star.png" class="star_s" id="star_s1" onclick="starWork()"/>
-            <img src = "image/big_star.png" class="star_s" id="star_s2" onclick="starWork()"/>
-            <img src = "image/big_star.png" class="star_s" id="star_s3" onclick="starWork()"/>
-            <img src = "image/big_star.png" class="star_s" id="star_s4" onclick="starWork()"/>
-            <img src = "image/big_star.png" class="star_s" id="star_s5" onclick="starWork()"/>
-        </div>
-    </div>
-
+	
 	
     <div id="hospitalRow" class="row">
         <div class="col-xs-6 col-md-3">
@@ -55,17 +69,17 @@
         </div>
 
     </div>
-        
+    
     <a href="https://secure3.convio.net/sphf/site/Donation2;jsessionid=00000000.app340b?df_id=1480&mfc_pref=T&1480.donation=form1&NONCE_TOKEN=A4F10372DEF9F743AC3BC962CD7F5E4F&_ga=2.146544183.241198011.1497985408-1422913765.1496341390">
         <img id="donate" src="image/donate.png" />
     </a>
        
     
 		
-     
+    
 	<div class="modal-bg">
-	<div id="modal" class="col-xs-6 col-md-2">
-		<span>Sign In<a href="#close" id="close">×</a></span>
+	<div id="modal" class="col-xs-6 col-md-4">
+		<span class="top">Sign In<a href="#close" id="close">×</a></span>
 		<form>
 			<input id="username" name="email" type="textbox" placeholder="Name" required>
 			<input id="password" name="name" type="textbox" placeholder="Email" required>
@@ -103,14 +117,14 @@
 				$('#star_s1').css('display', 'none');
 			}
             
-          if($('#star_s2').css('display') == "none"){
+            if($('#star_s2').css('display') == "none"){
 				$('#star_s2').css('display', 'block');
 			}
 			else {
 				$('#star_s2').css('display', 'none');
 			}
             
-        if($('#star_s3').css('display') == "none"){
+            if($('#star_s3').css('display') == "none"){
 				$('#star_s3').css('display', 'block');
 			}
 			else {

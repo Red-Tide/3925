@@ -23,11 +23,15 @@
 <body onload="start()">
 
 	<div id="mySidenav" class="sidenav">
-	  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-	  <a href="#" class="btnLogin">Login</a>
-	  <a href="#" class="btnAbout">About Us</a>
-	  <a href="#">Share</a>
-	  <a href="https://secure3.convio.net/sphf/site/Donation2;jsessionid=00000000.app340b?df_id=1480&mfc_pref=T&1480.donation=form1&NONCE_TOKEN=A4F10372DEF9F743AC3BC962CD7F5E4F&_ga=2.146544183.241198011.1497985408-1422913765.1496341390">Donate</a>
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="#" class="btnLogin">Login</a>
+        <a href="#" class="btnAbout">About Us</a>
+        <a href="#" onclick="openShare()">Share<span class="caret"></span></a>
+        <div id="shareMenu">
+            <img src="image/twitter.png" id="twitter" />
+            <img src="image/fb.png" id="fb" />
+        </div>
+            <a href="https://secure3.convio.net/sphf/site/Donation2;jsessionid=00000000.app340b?df_id=1480&mfc_pref=T&1480.donation=form1&NONCE_TOKEN=A4F10372DEF9F743AC3BC962CD7F5E4F&_ga=2.146544183.241198011.1497985408-1422913765.1496341390">Donate</a>
 	</div>
 
 
@@ -78,8 +82,8 @@
 		
     
 	<div class="modal-bg">
-	<div id="modal" class="col-xs-6 col-md-4">
-		<span class="top">Sign In<a href="#close" id="close">×</a></span>
+	<div id="modal" class="col-xs-6 col-md-3">
+		<span>Sign In<a href="#close" id="close">×</a></span>
 		<form>
 			<input id="username" name="email" type="textbox" placeholder="Name" required>
 			<input id="password" name="name" type="textbox" placeholder="Email" required>
@@ -175,6 +179,15 @@
 			document.getElementById("main").style.marginLeft= "0";
 			document.body.style.backgroundColor = "white";
 		}
+      
+        // Share options
+        function openShare() {
+            if ($('#shareMenu').css('display') == "none") {
+				$('#shareMenu').css('display', 'block');
+			} else {
+				$('#shareMenu').css('display', 'none');
+			}
+        }
 	</script>
 </body>
 <!--

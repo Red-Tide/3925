@@ -135,7 +135,7 @@ input:focus{
 }
 
 input{
-	width:80%;
+	width:90%;
 	padding:7px;
 	border:2px solid #ccc ;
 	border-radius:3px;
@@ -144,6 +144,7 @@ button{
 	float: right;
 	padding: 8px 12px;
 	margin-top: 15px;
+    margin-right: 8%;
 	background: #5DC3A7;
 	border: none;
 	color: #fff;
@@ -244,6 +245,20 @@ button:hover{
   display: block;
 }
 
+#shareMenu {
+    display: none;
+}
+
+#twitter {
+    width: 70%;
+    padding-left: 12%;
+    padding-bottom: 5%;
+}
+
+#fb {
+    width: 70%;
+    padding-left: 12%;
+}
 
 
 

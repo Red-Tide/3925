@@ -197,20 +197,23 @@ button:hover{
 	width: 100%;
 }
 
-#hospital {
+.hospital {
 	margin: auto;
     padding: none;
     bottom: 0px;
     left: 0px;
 	z-index: -1;
+    position: absolute; 
+    
 }
 
-#hospitalRow {
-	position: absolute; 
-	bottom: 0px;
+@media screen and (max-width: 450px){
+    .hospital{
+        width:50%;
+    }
 }
 
-#donate {
+.donate {
 	margin: auto;
     padding: none;
     position: absolute;
@@ -218,6 +221,12 @@ button:hover{
 	bottom: 0px;
 	right: 0px;
 	float: right;
+}
+
+@media screen and (max-width: 450px){
+    .donate{
+        width:30%;
+    }
 }
 
 /* Required Stylesheets */

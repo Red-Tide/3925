@@ -11,7 +11,7 @@ body{
 	background:url(image/background.png)no-repeat;
     width:100%;
     height:100%;
-    background-size:100% 100%;
+    background-size: cover;
 	background-attachment: fixed;
     background-position: center;
 	position:absolute;
@@ -23,7 +23,7 @@ body{
     height: 100%;
     width: 0;
     position: fixed;
-    z-index: 1;
+    z-index: 7;
     top: 0;
     left: 0;
     background-color: #111;
@@ -63,17 +63,7 @@ body{
   .sidenav a {font-size: 18px;}
 }
 
-
-
-.star_i {
-    padding-top: 100%;
-    width: 200%;
-}
-
-.star_s {
-    width: 50%;
-}
-
+/*
 #star_s1{
     margin-top: -240px;
     display: none;  
@@ -99,8 +89,7 @@ body{
     margin-left: 227px;
     display: none;
 }
-
-
+*/
 
 a{
 	outline: 0;
@@ -231,27 +220,27 @@ button:hover{
 
 /* Required Stylesheets */
 .wheel-button {
-  position: relative;
+    position: relative;
 }
 
 .wheel {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  width: 500px; /* this will determine the diameter of the circle  */
-  height: 500px; /* this will determine the diameter of the circle  */
-  visibility: hidden;
-  position: relative;
-  display: none;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    width: 500px; /* this will determine the diameter of the circle  */
+    height: 500px; /* this will determine the diameter of the circle  */
+    visibility: hidden;
+    position: relative;
+    display: none;
 }
 
 .wheel li {
-  overflow: hidden;
-  float:left;
+    overflow: hidden;
+    float:left;
 }
 
 .wheel li a {
-  display: block;
+    display: block;
 }
 
 #shareMenu {
@@ -269,6 +258,77 @@ button:hover{
     padding-left: 12%;
 }
 
+/* The wheel stuff */
+.wheel-button, .wheel-button:visited {
+    line-height: 35px;
+    font-weight: bold;
+    font-size: 36px;
+
+    padding: 10px 11px;
+    text-align: center;
+    border-radius: 50px;
+    width: 35px;
+    height: 35px;
+    color: white;
+    display: block;
+    margin: 70px auto 20px;
+
+}
+
+.wheel-button:hover{ 
+    color: white;
+}
+
+.wheel-button.ne {
+    border-color: white;
+    background: #1ABC9C;
+    color: #34FFFF;
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+}
+
+.wheel-button.nw {
+    border-color: white;
+    background-color: #E67E22;
+    color: #FFFC44;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
+
+.wheel-button span, .wheel span{
+    position: relative;
+    -moz-transition: all 1s ease;
+    -webkit-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    transition: all 1s ease;
+    display: block;
+}
+
+.wheel-button.active span{
+    transform: rotate(135deg);
+    -ms-transform: rotate(135deg); /* IE 9 */
+    -webkit-transform: rotate(135deg); /* Safari and Chrome */
+}
+
+.wheel li a, .wheel li a:visited{
+    border-radius: 50px;
+    font-weight: bold;
+    padding: 10px;
+    text-align: center;
+    width: 50px;
+    height: 50px;
+    color: white;
+    -moz-transition: all 0.25s ease;
+    -webkit-transition: all 0.25s ease;
+    -o-transition: all 0.25s ease;
+    transition: all 0.25s ease;
+}
+
+.wheel li a:hover{
+    background: rgba(0,0,0,0.8);
+}
 
 
 

@@ -27,8 +27,8 @@
         buttonY = (offset.top -  $(document).scrollTop() ) + height / 2,
         objectOffset = this.offset();
     this.css("position","fixed");
-    this.css("top", buttonY  - (this.outerHeight() / 2)  + "px");
-    this.css("left", buttonX - (this.outerWidth() / 2) -80  + "px");
+    this.css("top", buttonY  - (this.outerHeight() / 2.4)  + "px");
+    this.css("left", buttonX - (this.outerWidth() / 2.8) - 80  + "px");
     return this;
   }
   
@@ -141,7 +141,7 @@
     }
     
     settings = predefineAngle(settings);
-	  var radius = el.width() / 2,
+	  var radius = el.width() / 4,
       fields = el.find(".item"),
       container = el,
       width = container.innerWidth(),

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Light of hope</title>
+	<title>Lights of Hope</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="css.css">
@@ -9,20 +9,16 @@
 	<script src="//assets.codepen.io/assets/libs/modernizr-0e41cf622f0788eca25945c37bdc5b15.js"></script>
 	<script type="text/javascript" src="jquery.wheelmenu.js"></script>
 	<script>
-
         $(document).ready(function(){
             $(".wheel-button").wheelmenu({
                 trigger: "click",
-                animation: "fade",
-                angle: "[0,360]",
-		        animationSpeed: "slow"
-
+                animation: "fly",
+                animationSpeed: "slow"
             });
         });
-
-	
 	</script>
 </head>
+    
 <body onload="start()">
 
 	<div id="mySidenav" class="sidenav">
@@ -49,28 +45,21 @@
 		</div>
 	</div>
 
-    <!-- Big star -->
+    <!-- Big star animation -->
     <div class="container">
-        <div class="row">
-            <div class="col-md-1 col-md-offset-5 col-xs-2 col-xs-offset-4">
-
-
-                <a href="#wheel2" class="wheel-button">
-                    <img src = "image/big_star.png" class="star_i" onclick="starMenu()" />
-				</a>
-
-				<ul id="wheel2" data-angle="all" class="wheel">
-					<li class="item"><img src = "image/big_star.png" class="star_s" onclick="starWork()"/></li>
-					<li class="item"><img src = "image/big_star.png" class="star_s" onclick="starWork()"/></li>
-					<li class="item"><img src = "image/big_star.png" class="star_s" onclick="starWork()"/></li>
-					<li class="item"><img src = "image/big_star.png" class="star_s" onclick="starWork()"/></li>
-					<li class="item"><img src = "image/big_star.png" class="star_s" onclick="starWork()"/></li>
-				</ul>
-            </div>
-        </div>
+        
+        <a href="#wheel" class="wheel-button">
+            <span><img src="image/big_star_click.png" width="60px" /></span>
+        </a>
+	    
+      <ul id="wheel"  data-angle="all">
+        <li class="item"><a href="#home"><img src="image/big_star.png" width="30px" height="30px" /></a></li>
+        <li class="item"><a href="#home"><img src="image/big_star.png" width="30px" height="30px" /></a></li>
+        <li class="item"><a href="#home"><img src="image/big_star.png" width="30px" height="30px" /></a></li>
+        <li class="item"><a href="#home"><img src="image/big_star.png" width="30px" height="30px" /></a></li>
+        <li class="item"><a href="#home"><img src="image/big_star.png" width="30px" height="30px" /></a></li>
+      </ul>
     </div>
-
-
 
     <img src="image/hospital.png" class="hospital" />
 
@@ -113,7 +102,7 @@
 			return false;
 		});
     //@ sourceURL=pen.js
-
+/*
 		function starMenu() {
 		  if($('#star_s1').css('display') == "none"){
 				$('#star_s1').css('display', 'block');
@@ -162,7 +151,7 @@
 				alert("sending single to control panel");
 			}
 		}
-
+*/
 
 		function start(){
 			$('.modal-bg').fadeOut();

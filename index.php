@@ -1,4 +1,5 @@
 <?php
+error_reporting(0);
 include ('connect.php');
 ?>
 <!DOCTYPE html>
@@ -85,20 +86,25 @@ include ('connect.php');
 		</form>
 	</div>
 	</div>
-<?php
-
-
-	$name = $POST_["name"];
-	$email = $POST_["email"];
-	
-	$query = "insert into tuser VALUES($email , $name)";
-	$result = mysqli_query($query);
-	if($result){
-		echo "<script> alert('insert succesful')";
-	}
-	
+	<?php
 		
-?>
+
+		$name = $_POST["name"];
+		$email = $_POST["email"];
+		
+		
+		$query = "select * from tuser";
+		$result = mysql_query($query);
+		$row = mysql_fetch_array($result);
+			
+		
+		
+		$query = "INSERT INTO tuser (email,name) VALUES( '$email',  '$name')";
+		mysql_query($query);
+
+		
+			
+	?>
 
   <script src='//zaole.net/sliding.js'></script>
 

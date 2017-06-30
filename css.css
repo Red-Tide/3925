@@ -326,6 +326,7 @@ button:hover{
     transition: all 0.25s ease;
 }
 
+/* For black circle behind small star */
 .wheel li a:hover{
     background: rgba(0,0,0,0.8);
 }

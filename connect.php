@@ -9,7 +9,7 @@ if(!$connect)
 	die('Could not connect: ' . mysql_error());
 }
 
-echo 'connect successful';
+//echo 'connect successful';
 
 
 ?>

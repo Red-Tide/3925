@@ -103,12 +103,12 @@ include ('connect.php');
 		mysql_query($query);
 			
 	?>
-
+<!--
   <script src='//zaole.net/sliding.js'></script>
 
 
   <script src="//assets.codepen.io/assets/common/stopExecutionOnTimeout-6c99970ade81e43be51fa877be0f7600.js"></script>
-
+-->
   <script>
 
 		$('.btnLogin').click(function () {

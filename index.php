@@ -2,6 +2,7 @@
 error_reporting(0);
 include ('connect.php');
 ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -93,16 +94,13 @@ include ('connect.php');
 		$email = $_POST["email"];
 		
 		
-		$query = "select * from tuser";
+		$query = "SELECT * FROM tuser"; 
 		$result = mysql_query($query);
 		$row = mysql_fetch_array($result);
 			
 		
-		
-		$query = "INSERT INTO tuser (email,name) VALUES( '$email',  '$name')";
+		$query = "INSERT INTO tuser (email,name) VALUES( '$email', '$name')";
 		mysql_query($query);
-
-		
 			
 	?>
 

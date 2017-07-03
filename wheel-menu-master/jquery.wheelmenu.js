@@ -15,7 +15,7 @@
   var defaults = {
 		trigger: "click",
 		animation: "fade",
-		angle: "[0,360]",
+		angle: [0,360],
 		animationSpeed: "medium"
 	};
 	
@@ -27,8 +27,8 @@
         buttonY = (offset.top -  $(document).scrollTop() ) + height / 2,
         objectOffset = this.offset();
     this.css("position","fixed");
-    this.css("top", buttonY  - (this.outerHeight() / 2.4)  + "px");
-    this.css("left", buttonX - (this.outerWidth() / 2.8) - 80  + "px");
+    this.css("top", buttonY  - (this.outerHeight() / 2)  + "px");
+    this.css("left", buttonX - (this.outerWidth() / 2)   + "px");
     return this;
   }
   
@@ -80,8 +80,8 @@
           y = Math.round(height/2 + radius * Math.sin(angle) - $(this).find("a").outerHeight()/2);
       $(this).css({
           position: 'absolute',
-          left: x +'px',
-          top: y  + 'px',
+          left: x + 'px',
+          top: y + 'px',
           opacity: 0
       }).delay(d).animate({opacity:1}, settings.animationSpeed[1]);
       
@@ -132,7 +132,7 @@
 	  el.show().css({
         position: 'absolute',
         'z-index': '5',
- // add safe zone for mouseover
+        'padding': '30px' // add safe zone for mouseover
     }).centerAround(button); 
     el.addClass("wheel active").css("visibility", "visible").show();
 	  
@@ -141,7 +141,7 @@
     }
     
     settings = predefineAngle(settings);
-	  var radius = el.width() / 4,
+	  var radius = el.width() / 2,
       fields = el.find(".item"),
       container = el,
       width = container.innerWidth(),

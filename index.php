@@ -9,7 +9,7 @@ include ('connect.php');
 	<title>Lights of Hope</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="css.css">
+	<link rel="stylesheet" type="text/css" href="styles/style.css">
 	<script type="text/javascript" src="jquery-1.9.1.js"></script>
 	<script src="//assets.codepen.io/assets/libs/modernizr-0e41cf622f0788eca25945c37bdc5b15.js"></script>
 	<script type="text/javascript" src="jquery.wheelmenu.js"></script>
@@ -32,20 +32,20 @@ include ('connect.php');
         <a href="#" class="btnAbout">About Us</a>
         <a href="#" onclick="openShare()">Share<span class="caret"></span></a>
         <div id="shareMenu">
-          <a href="https://twitter.com/home/?status=LightsOfHope!"><img src="image/twitter.png" id="twitter" /></a>
-          <a href=""> <img src="image/fb.png" id="fb" /></a>
+          <a href="https://twitter.com/home/?status=LightsOfHope!"><img src="images/twitter.png" id="twitter" /></a>
+          <a href=""> <img src="images/fb.png" id="fb" /></a>
         </div>
             <a href="https://secure3.convio.net/sphf/site/Donation2;jsessionid=00000000.app340b?df_id=1480&mfc_pref=T&1480.donation=form1&NONCE_TOKEN=A4F10372DEF9F743AC3BC962CD7F5E4F&_ga=2.146544183.241198011.1497985408-1422913765.1496341390">Donate</a>
 	</div>
 
 
-	<span style="font-size:30px;cursor:pointer" onclick="openNav()"> <img src="image/hamburger.png" width="100px" /> </span>
+	<span style="font-size:30px;cursor:pointer" onclick="openNav()"> <img src="images/hamburger.png" width="100px" /> </span>
 
 
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-xs-12 col-md-6 col-md-offset-3">
-				<img src="image/big_title.png" class="celebrate" />
+				<img src="images/big_title.png" class="celebrate" />
 			</div>
 		</div>
 	</div>
@@ -54,23 +54,23 @@ include ('connect.php');
     <div class="container">
         
         <a href="#wheel" class="wheel-button">
-            <span><img src="image/big_star_click.png" width="60px" /></span>
+            <span><img src="images/big_star_click.png" width="60px" /></span>
         </a>
 	    
       <ul id="wheel" data-angle="all">
-        <li class="item"><a href="#home"><img src="image/big_star.png" width="30px" height="30px" /></a></li>
-        <li class="item"><a href="#home"><img src="image/big_star.png" width="30px" height="30px" /></a></li>
-        <li class="item"><a href="#home"><img src="image/big_star.png" width="30px" height="30px" /></a></li>
-        <li class="item"><a href="#home"><img src="image/big_star.png" width="30px" height="30px" /></a></li>
-        <li class="item"><a href="#home"><img src="image/big_star.png" width="30px" height="30px" /></a></li>
+        <li class="item"><a href="#home"><img src="images/big_star.png" width="30px" height="30px" /></a></li>
+        <li class="item"><a href="#home"><img src="images/big_star.png" width="30px" height="30px" /></a></li>
+        <li class="item"><a href="#home"><img src="images/big_star.png" width="30px" height="30px" /></a></li>
+        <li class="item"><a href="#home"><img src="images/big_star.png" width="30px" height="30px" /></a></li>
+        <li class="item"><a href="#home"><img src="images/big_star.png" width="30px" height="30px" /></a></li>
       </ul>
     </div>
 
-    <img src="image/hospital.png" class="hospital" />
+    <img src="images/hospital.png" class="hospital" />
 
 
     <a href="https://secure3.convio.net/sphf/site/Donation2;jsessionid=00000000.app340b?df_id=1480&mfc_pref=T&1480.donation=form1&NONCE_TOKEN=A4F10372DEF9F743AC3BC962CD7F5E4F&_ga=2.146544183.241198011.1497985408-1422913765.1496341390">
-        <img class="donate" src="image/donate.png" />
+        <img class="donate" src="images/donate.png" />
     </a>
 
 

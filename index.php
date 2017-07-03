@@ -35,7 +35,9 @@ include ('connect.php');
           <a href="https://twitter.com/home/?status=LightsOfHope!"><img src="images/twitter.png" id="twitter" /></a>
           <a href=""> <img src="images/fb.png" id="fb" /></a>
         </div>
-            <a href="https://secure3.convio.net/sphf/site/Donation2;jsessionid=00000000.app340b?df_id=1480&mfc_pref=T&1480.donation=form1&NONCE_TOKEN=A4F10372DEF9F743AC3BC962CD7F5E4F&_ga=2.146544183.241198011.1497985408-1422913765.1496341390">Donate</a>
+        
+        <!-- donate btn in side menu -->
+        <a href="https://secure3.convio.net/sphf/site/Donation2;jsessionid=00000000.app340b?df_id=1480&mfc_pref=T&1480.donation=form1&NONCE_TOKEN=A4F10372DEF9F743AC3BC962CD7F5E4F&_ga=2.146544183.241198011.1497985408-1422913765.1496341390">Donate</a>
 	</div>
 
 
@@ -65,14 +67,18 @@ include ('connect.php');
         <li class="item"><a href="#home"><img src="images/big_star.png" width="30px" height="30px" /></a></li>
       </ul>
     </div>
-
+    
     <img src="images/hospital.png" class="hospital" />
 
-
+    <!-- smaller social media icons -->
+    <div>
+        <a href="#"><img src="images/fb_small.png" width="30px" /></a>
+        <a href="#"><img src="images/twitter_sm.png" width="30px" /></a>
+    </div>
+    
     <a href="https://secure3.convio.net/sphf/site/Donation2;jsessionid=00000000.app340b?df_id=1480&mfc_pref=T&1480.donation=form1&NONCE_TOKEN=A4F10372DEF9F743AC3BC962CD7F5E4F&_ga=2.146544183.241198011.1497985408-1422913765.1496341390">
         <img class="donate" src="images/donate.png" />
     </a>
-
 
 
 

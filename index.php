@@ -56,7 +56,7 @@ else{
         <a href="#" onclick="openShare()">Share<span class="caret"></span></a>
         <div id="shareMenu">
           <a href="https://twitter.com/home/?status=LightsOfHope!"><img src="images/twitter.png" id="twitter" /></a>
-          <a href=""> <img src="images/fb.png" id="fb" /></a>
+          <a href="https://www.facebook.com/login.php?skip_api_login=1&api_key=113869198637480&signed_next=1&next=https%3A%2F%2Fwww.facebook.com%2Fsharer%2Fsharer.php%3Fapp_id%3D113869198637480%26kid_directed_site%3D0%26sdk%3Djoey%26u%3Dhttps%253A%252F%252Fdevelopers.facebook.com%252Fdocs%252Fplugins%252F%26display%3Dpopup%26ref%3Dplugin%26src%3Dshare_button&cancel_url=https%3A%2F%2Fwww.facebook.com%2Fdialog%2Freturn%2Fclose%3Ferror_code%3D4201%26error_message%3DUser%2Bcanceled%2Bthe%2BDialog%2Bflow%23_%3D_&display=popup&locale=en_US&kid_directed_site=0"> <img src="images/fb.png" id="fb" /></a>
         </div>
         
         <!-- donate btn in side menu -->

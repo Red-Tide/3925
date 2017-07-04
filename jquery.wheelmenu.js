@@ -27,8 +27,8 @@
         buttonY = (offset.top -  $(document).scrollTop() ) + height / 2,
         objectOffset = this.offset();
     this.css("position","fixed");
-    this.css("top", buttonY  - (this.outerHeight() / 3.3)  + "px");
-    this.css("left", buttonX - (this.outerWidth() / 2.6) - 80  + "px");
+    this.css("top", buttonY  - (this.outerHeight() / 2.8)  + "px");
+    this.css("left", buttonX - (this.outerWidth() / 2.4) - 80  + "px");
     return this;
   }
   

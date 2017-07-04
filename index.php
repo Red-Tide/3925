@@ -9,8 +9,8 @@ $cookie_insName = "instruction";
 $cookie_insValue = "instructionValue";
 
 
-setcookie($cookie_insName,$cookie_insValue,time() - 3600);
-
+//setcookie($cookie_insName,$cookie_insValue,time() - 3600);
+/*
 if(!isset($_COOKIE[$cookie_name])) {
     echo "The cookie is not set";
 }
@@ -24,6 +24,7 @@ if(!isset($_COOKIE[$cookie_insName])) {
 else{
     echo "cookie set";
 }
+*/
 ?>
 
 <!DOCTYPE html>
@@ -48,6 +49,21 @@ else{
 </head>
     
 <body onload="start()">
+    
+    <!-- Load facebook SDK for JS -->
+    <div id="fb-root"></div>
+    <script>
+        (function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) 
+                return;
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.9";
+            fjs.parentNode.insertBefore(js, fjs);
+        }
+            (document, 'script', 'facebook-jssdk')
+        );
+    </script>
 
 	<div id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
@@ -56,7 +72,12 @@ else{
         <a href="#" onclick="openShare()">Share<span class="caret"></span></a>
         <div id="shareMenu">
           <a href="https://twitter.com/home/?status=LightsOfHope!"><img src="images/twitter.png" id="twitter" /></a>
-          <a href=""> <img src="images/fb.png" id="fb" /></a>
+            
+        <div class="fb-share-button" data-href="http://159.203.33.253" data-layout="button_count" data-size="small" data-mobile-iframe="true">
+            <a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2F159.203.33.253%2F&amp;src=sdkpreparse">Share</a>
+        </div>
+            
+          <!--<a href="#"> <img src="images/fb.png" id="fb" /></a>-->
         </div>
         
         <!-- donate btn in side menu -->
@@ -95,7 +116,9 @@ else{
 
     <!-- smaller social media icons -->
     <div>
-        <a href="#"><img src="images/fb_small.png" width="30px" /></a>
+        <iframe src="https://www.facebook.com/plugins/share_button.php?href=http%3A%2F%2F159.203.33.253&layout=button_count&size=small&mobile_iframe=false&width=69&height=20&appId" width="69" height="20" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true">
+        </iframe>
+        <!--<a href="#"><img src="images/fb_small.png" width="30px" /></a>-->
         <a href="#"><img src="images/twitter_sm.png" width="30px" /></a>
     </div>
     

@@ -27,13 +27,14 @@
         buttonY = (offset.top -  $(document).scrollTop() ) + height / 2,
         objectOffset = this.offset();
     this.css("position","fixed");
-    this.css("top", buttonY  - (this.outerHeight() / 2.4)  + "px");
-    this.css("left", buttonX - (this.outerWidth() / 2.8) - 80  + "px");
+    this.css("top", buttonY  - (this.outerHeight() / 3.3)  + "px");
+    this.css("left", buttonX - (this.outerWidth() / 2.6) - 80  + "px");
     return this;
   }
   
   $.fn.flyIn = function (el, button, width, height, angle, step, radius, settings) {
     var d = 0;
+      
     this.stop(true,true);
     this.each(function(index) {
       angle = (settings.angle[0] + (step * index)) * (Math.PI/180); 
@@ -57,6 +58,7 @@
   
   $.fn.flyOut = function (el, button) {
     var d = 0;
+      
     this.stop(true,true);
     $(this.get().reverse()).each(function() {
 	    $(this).animateRotate(-360).delay(d).animate({
@@ -112,6 +114,7 @@
     
       case 'fly': 
         fields.flyOut(el, button)
+              
         break; 
     }
 	  

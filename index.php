@@ -1,6 +1,29 @@
 <?php
 error_reporting(0);
 include ('connect.php');
+
+$cookie_name = "user";
+$cookie_value = "default";
+
+$cookie_insName = "instruction";
+$cookie_insValue = "instructionValue";
+
+
+setcookie($cookie_insName,$cookie_insValue,time() - 3600);
+
+if(!isset($_COOKIE[$cookie_name])) {
+    echo "The cookie is not set";
+}
+else{
+    echo "cookie set";
+}
+
+if(!isset($_COOKIE[$cookie_insName])) {
+    echo "The instruction cookie is not set";
+}
+else{
+    echo "cookie set";
+}
 ?>
 
 <!DOCTYPE html>
@@ -56,15 +79,15 @@ include ('connect.php');
     <div class="container">
         
         <a href="#wheel" class="wheel-button">
-            <span><img src="images/big_star_click.png" width="60px" /></span>
+            <span><img src="images/big_star_click.png" width="800%" /></span>
         </a>
 	    
       <ul id="wheel" data-angle="all">
-        <li class="item"><a href="#home"><img src="images/big_star.png" width="30px" height="30px" /></a></li>
-        <li class="item"><a href="#home"><img src="images/big_star.png" width="30px" height="30px" /></a></li>
-        <li class="item"><a href="#home"><img src="images/big_star.png" width="30px" height="30px" /></a></li>
-        <li class="item"><a href="#home"><img src="images/big_star.png" width="30px" height="30px" /></a></li>
-        <li class="item"><a href="#home"><img src="images/big_star.png" width="30px" height="30px" /></a></li>
+        <li class="item"><a href="#home"><img src="images/big_star.png" width="200%" height="200%" /></a></li>
+        <li class="item"><a href="#home"><img src="images/big_star.png" width="200%" height="200%" /></a></li>
+        <li class="item"><a href="#home"><img src="images/big_star.png" width="200%" height="200%" /></a></li>
+        <li class="item"><a href="#home"><img src="images/big_star.png" width="200%" height="200%" /></a></li>
+        <li class="item"><a href="#home"><img src="images/big_star.png" width="200%" height="200%" /></a></li>
       </ul>
     </div>
     
@@ -82,7 +105,15 @@ include ('connect.php');
 
 
 
-	<div class="modal-bg">
+	<div class="modal-bg" onclick="closeBlank()"> 
+        
+    <!-- instruction page -->
+    <img src="images/instructions.png" width="30%" />
+    <div class="container">
+        <span><img src="images/big_star_click.png" width="60px" /></span>
+    </div>
+
+
 	<div id="modal" class="col-xs-6 col-md-3">
 		<span>Sign In<a href="#close" id="close">×</a></span>
 		<form method="post">
@@ -93,6 +124,8 @@ include ('connect.php');
 		</form>
 	</div>
 	</div>
+    
+
 	<?php
 		
 
@@ -108,6 +141,14 @@ include ('connect.php');
 		$query = "INSERT INTO tuser (email,name) VALUES( '$email', '$name')";
 		mysql_query($query);
 			
+        if(!empty($name)){
+            $cookie_value = $email;
+            setcookie($cookie_name, $cookie_value, time() + (86400 * 30 * 200), "/");
+    
+            if(isset($_COOKIE[$cookie_name])){
+                echo "cookie is set";
+            }
+        }
 	?>
 <!--
   <script src='//zaole.net/sliding.js'></script>
@@ -116,6 +157,28 @@ include ('connect.php');
   <script src="//assets.codepen.io/assets/common/stopExecutionOnTimeout-6c99970ade81e43be51fa877be0f7600.js"></script>
 -->
   <script>
+    
+    function setCookie(c_name,value,expiredays) {
+        var exdate=new Date()
+        exdate.setDate(exdate.getDate()+expiredays)
+        document.cookie=c_name+ "=" +escape(value)+
+        ((expiredays==null) ? "" : ";expires="+exdate.toGMTString())
+    }
+      
+    function getCookie(c_name) {
+        if (document.cookie.length>0) {
+            c_start=document.cookie.indexOf(c_name + "=")
+
+            if (c_start!=-1) { 
+                c_start=c_start + c_name.length+1 
+                c_end=document.cookie.indexOf(";",c_start)
+
+                if (c_end==-1) c_end=document.cookie.length
+                    return unescape(document.cookie.substring(c_start,c_end))
+            } 
+        }
+        return ""
+    }
 
 		$('.btnLogin').click(function () {
 			$('#modal').css('display', 'block');
@@ -127,61 +190,31 @@ include ('connect.php');
 			$('#modal').fadeOut();
 			return false;
 		});
-    //@ sourceURL=pen.js
-/*
-		function starMenu() {
-		  if($('#star_s1').css('display') == "none"){
-				$('#star_s1').css('display', 'block');
-			}
-			else {
-				$('#star_s1').css('display', 'none');
-			}
-
-            if($('#star_s2').css('display') == "none"){
-				$('#star_s2').css('display', 'block');
-			}
-			else {
-				$('#star_s2').css('display', 'none');
-			}
-
-            if($('#star_s3').css('display') == "none"){
-				$('#star_s3').css('display', 'block');
-			}
-			else {
-				$('#star_s3').css('display', 'none');
-			}
-
-            if($('#star_s4').css('display') == "none"){
-				$('#star_s4').css('display', 'block');
-			}
-			else {
-				$('#star_s4').css('display', 'none');
-			}
-
-            if($('#star_s5').css('display') == "none"){
-				$('#star_s5').css('display', 'block');
-			}
-			else {
-				$('#star_s5').css('display', 'none');
-			}
-
-		}
-
-		function starWork(){
-
-			if(flag == "none"){
-				$('#modal').css('display', 'block');
-				$('.modal-bg').fadeIn();
-			}
-			else{
-				alert("sending single to control panel");
-			}
-		}
-*/
+      
+        function closeBlank(){
+            $('.modal-bg').fadeOut();
+            $('.modal2-bg').fadeIn();
+            
+        }
+      
+        function closeBlank2(){
+            $('.modal2-bg').fadeOut();
+    
+            
+        }
 
 		function start(){
 			$('.modal-bg').fadeOut();
+            $('.modal2-bg').fadeOut();
 			$('#modal').fadeOut();
+            var instruction = getCookie("instruction");
+            if(!instruction){
+                console.log("no cookie");
+                $('.modal-bg').fadeIn();
+                setCookie("instruction", "instructionValue", 200);
+                //setcookie($cookie_insName, $cookie_insValue, time() + (86400 * 30 * 200), "/");
+                
+            }
 		}
 
 		function openNav() {
@@ -206,9 +239,5 @@ include ('connect.php');
         }
 	</script>
 </body>
-<!--
-<footer>
-	<p>footer</p>
-</footer>
--->
+
 </html>

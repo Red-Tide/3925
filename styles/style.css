@@ -260,6 +260,11 @@ button:hover{
 
 #shareMenu {
     display: none;
+    padding: 8px 8px 8px 10px;
+}
+
+#shareMenu a {
+    padding: 0;
 }
 
 #twitter {

@@ -9,7 +9,7 @@ $cookie_insName = "instruction";
 $cookie_insValue = "instructionValue";
 
 
-//setcookie($cookie_insName,$cookie_insValue,time() - 3600);
+setcookie($cookie_insName,$cookie_insValue,time() - 3600);
 /*
 if(!isset($_COOKIE[$cookie_name])) {
     echo "The cookie is not set";
@@ -73,11 +73,10 @@ else{
         <div id="shareMenu">
           <a href="https://twitter.com/home/?status=LightsOfHope!"><img src="images/twitter.png" id="twitter" /></a>
             
-        <div class="fb-share-button" data-href="http://159.203.33.253" data-layout="button_count" data-size="small" data-mobile-iframe="true">
-            <a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2F159.203.33.253%2F&amp;src=sdkpreparse">Share</a>
-        </div>
-            
+          <div data-href="http://159.203.33.253" data-layout="button_count" data-size="large" data-mobile-iframe="false"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2F159.203.33.253%2F&amp;src=sdkpreparse"><img src="images/fb.png" id="fb" /></a></div>
+
           <!--<a href="#"> <img src="images/fb.png" id="fb" /></a>-->
+
         </div>
         
         <!-- donate btn in side menu -->
@@ -116,10 +115,9 @@ else{
 
     <!-- smaller social media icons -->
     <div>
-        <iframe src="https://www.facebook.com/plugins/share_button.php?href=http%3A%2F%2F159.203.33.253&layout=button_count&size=small&mobile_iframe=false&width=69&height=20&appId" width="69" height="20" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true">
-        </iframe>
-        <!--<a href="#"><img src="images/fb_small.png" width="30px" /></a>-->
-        <a href="#"><img src="images/twitter_sm.png" width="30px" /></a>
+        <div data-href="http://159.203.33.253" data-layout="button_count" data-size="large" data-mobile-iframe="false"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2F159.203.33.253%2F&amp;src=sdkpreparse"><img src="images/fb_small.png" width="30px" /></a></div>
+        
+        <a href="https://twitter.com/home/?status=LightsOfHope!"><img src="images/twitter_sm.png" width="30px" /></a>
     </div>
     
     <a href="https://secure3.convio.net/sphf/site/Donation2;jsessionid=00000000.app340b?df_id=1480&mfc_pref=T&1480.donation=form1&NONCE_TOKEN=A4F10372DEF9F743AC3BC962CD7F5E4F&_ga=2.146544183.241198011.1497985408-1422913765.1496341390">

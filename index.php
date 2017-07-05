@@ -103,11 +103,11 @@ else{
         </a>
 	    
       <ul id="wheel" data-angle="all">
-        <li class="item"><a href="#home"><img src="images/big_star.png" width="200%" height="200%" /></a></li>
-        <li class="item"><a href="#home"><img src="images/big_star.png" width="200%" height="200%" /></a></li>
-        <li class="item"><a href="#home"><img src="images/big_star.png" width="200%" height="200%" /></a></li>
-        <li class="item"><a href="#home"><img src="images/big_star.png" width="200%" height="200%" /></a></li>
-        <li class="item"><a href="#home"><img src="images/big_star.png" width="200%" height="200%" /></a></li>
+        <li class="item"><a href="#home"><img src="images/big_star.png" width="100%" height="100%" /></a></li>
+        <li class="item"><a href="#home"><img src="images/big_star.png" width="100%" height="100%" /></a></li>
+        <li class="item"><a href="#home"><img src="images/big_star.png" width="100%" height="100%" /></a></li>
+        <li class="item"><a href="#home"><img src="images/big_star.png" width="100%" height="100%" /></a></li>
+        <li class="item"><a href="#home"><img src="images/big_star.png" width="100%" height="100%" /></a></li>
       </ul>
     </div>
     

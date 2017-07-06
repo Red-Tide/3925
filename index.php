@@ -9,7 +9,7 @@ $cookie_insName = "instruction";
 $cookie_insValue = "instructionValue";
 
 
-setcookie($cookie_insName,$cookie_insValue,time() - 3600);
+//setcookie($cookie_insName,$cookie_insValue,time() - 3600);
 /*
 if(!isset($_COOKIE[$cookie_name])) {
     echo "The cookie is not set";
@@ -99,7 +99,7 @@ else{
     <div class="container">
         
         <a href="#wheel" class="wheel-button">
-            <span><img src="images/big_star_click.png" width="800%" /></span>
+            <span><img src="images/big_star.png" width="800%" /></span>
         </a>
 	    
       <ul id="wheel" data-angle="all">
@@ -133,25 +133,29 @@ else{
 
 
 
-	<div class="modal-bg" onclick="closeBlank()"> 
+	<div class="modal-bg"> 
         
-    <!-- instruction page -->
-    <img src="images/instructions.png" width="30%" />
-    <div class="container">
-        <span><img src="images/big_star_click.png" width="60px" /></span>
+    <!-- login instruction -->
+        <img src="images/login_instruc.png" class="login-instruc" />
+
+        <div class="modal">
+            <span>Register<a href="#close" id="close">×</a></span>
+            <form method="post">
+                <input id="username" name="name" type="textbox" class="nameEdit" placeholder="Name" required>
+                <input id="password" name="email" type="textbox" class="emailEdit" placeholder="Email" required>
+                <button name="submit" id="submit" type="submit" class="btnSubmit">Play!</button>
+
+            </form>
+        </div>
+	</div>
+    
+    <div class="modal3-bg" onclick="closeBlank()">
+        <img src="images/instruction1.png" class="instruction" />
     </div>
-
-
-	<div id="modal" class="col-xs-6 col-md-3">
-		<span>Sign In<a href="#close" id="close">×</a></span>
-		<form method="post">
-			<input id="username" name="name" type="textbox" placeholder="Name" required>
-			<input id="password" name="email" type="textbox" placeholder="Email" required>
-			<button name="submit" id="submit" type="submit">Sign in</button>
-
-		</form>
-	</div>
-	</div>
+    
+    <div class="modal2-bg" onclick="closeBlank2()">
+        <img src="images/instruction2.png" class="instruction" />
+    </div>
     
 
 	<?php
@@ -209,31 +213,34 @@ else{
     }
 
 		$('.btnLogin').click(function () {
-			$('#modal').css('display', 'block');
+			$('.modal').css('display', 'block');
 			$('.modal-bg').fadeIn();
 		});
 
 		$('#close').click(function () {
 			$('.modal-bg').fadeOut();
-			$('#modal').fadeOut();
+			$('.modal').fadeOut();
 			return false;
 		});
       
         function closeBlank(){
-            $('.modal-bg').fadeOut();
+            $('.modal3-bg').fadeOut();
             $('.modal2-bg').fadeIn();
             
         }
       
         function closeBlank2(){
             $('.modal2-bg').fadeOut();
-    
+            $('.modal-bg').fadeOut();
+            
             
         }
+      
 
 		function start(){
 			$('.modal-bg').fadeOut();
             $('.modal2-bg').fadeOut();
+            //$('.modal3-bg').fadeOut();
 			$('#modal').fadeOut();
             var instruction = getCookie("instruction");
             if(!instruction){

@@ -116,9 +116,22 @@ a{
 	background-color:rgba(50,50,50,0.5);
 }
 
+.modal3-bg{
+	position:fixed;
+	left:0;
+    right:0;
+	top:0;
+    bottom:0;
+	z-index:100;
+	background-color:rgba(50,50,50,0.5);
+}
+
 .top{
 	width:100%;
 }
+
+
+/* Login stuff */
 
 form{
 	display:block;
@@ -137,9 +150,11 @@ input:focus{
 
 input{
 	width:90%;
-	padding:7px;
+	padding:5px;
+    margin-top: 3%;
 	border:2px solid #ccc ;
 	border-radius:3px;
+    
 }
 button{
 	float: right;
@@ -156,26 +171,40 @@ button{
 button:hover{
 	background-color: #0FC491;
 }
-#modal{
+
+
+.login-instruc {
+    width: 30%;
+    position: absolute;
+    margin: auto;   
+    left: -5%;
+    right: 0;
+    bottom: 0;
+    top: -50%;
+}
+
+.modal{
 	position:absolute;
+    width: 30%;
+    height: 30%;
 	display:none;
 	background-color:#F5F5F6;
-	top:50%;
-	left:50%;
 	z-index:101;
-	margin-top:-130px;
-	margin-left:-170px;
+	margin: auto;   
+    left: 0;
+    right: 0;
 	border-bottom: 3px solid #5DC3A7;
 	box-shadow:0 0 10px 0 rgba(0,0,0,0.3);
 }
 
-#modal span{
+.modal span{
 	display: block;
 	background:#5DC3A7;
 	padding: 10px;
 	color:#fff;
 	border-radius:3px;
 	width:100%;
+    padding-top: 0;
 }
 
 #close{
@@ -220,7 +249,7 @@ button:hover{
 .donate {
 	margin: auto;
     padding: none;
-	width: 260px;
+	width: 18%;
 	float: right;
 }
 
@@ -372,7 +401,18 @@ button:hover{
     right: 25%;
 }
 
-
+/* for instruction on first load */
+.instruction {
+    width: 50%;
+    position: absolute;
+    margin: auto;   
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border: 5px solid black;
+    box-shadow: 10px 10px 5px #333333;
+}
 
 @media (max-width: 450px ) {
     .fb-btn {
@@ -388,5 +428,20 @@ button:hover{
         
     }
     
+    .instruction {
+        width: 80%;
+    }
+    
+    .login-instruc {
+        width: 90%;
+    }
+    
+    .modal {
+        width: 90%;
+        height: 30%;
+        
+    }
 }
+
+
 	

@@ -123,11 +123,11 @@ else{
         
         <!-- smaller social media icons -->
         <div data-href="http://159.203.33.253" data-layout="button_count" data-size="large" data-mobile-iframe="false" ><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2F159.203.33.253%2F&amp;src=sdkpreparse">
-            <img src="images/fb_small.png" width="30px" class="social-img pull-right social-btn" />
+            <img src="images/fb_small.png" class=" fb-btn" />
         </a></div>
         
         <a href="https://twitter.com/home/?status=LightsOfHope!">
-            <img src="images/twitter_sm.png" width="30px" class="pull-right social-btn twitter-btn social-img" />
+            <img src="images/twitter_sm.png" class=" twitter-btn " />
         </a>
     </div>
 

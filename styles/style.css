@@ -356,19 +356,37 @@ button:hover{
 }
  
 /* social icon stuff */
-.social-btn{
-    margin: 10px 3px 0 0;
+.fb-btn{
+    padding-bottom: 10px;
+    position: absolute; 
+    width: 4%;
+    bottom: 0;
+    right: 20%;
 }
 
 .twitter-btn{
-    margin-right: 5px;
+    padding-bottom: 10px;
+    position: absolute; 
+    width: 4%;
+    bottom: 0;
+    right: 25%;
 }
 
 
 
-@media (min-width: 451px) {
-    .social-img {
-        width: 64px;
+@media (max-width: 450px ) {
+    .fb-btn {
+        width:8%;
+        right:31%;
+        padding-bottom: 5px;
+        
     }
+    .twitter-btn {
+        width:8%;
+        right: 40%;
+        padding-bottom: 5px;
+        
+    }
+    
 }
 	

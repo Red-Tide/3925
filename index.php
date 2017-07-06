@@ -113,16 +113,23 @@ else{
     
     <img src="images/hospital.png" class="hospital" />
 
-    <!-- smaller social media icons -->
-    <div>
-        <div data-href="http://159.203.33.253" data-layout="button_count" data-size="large" data-mobile-iframe="false"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2F159.203.33.253%2F&amp;src=sdkpreparse"><img src="images/fb_small.png" width="30px" /></a></div>
-        
-        <a href="https://twitter.com/home/?status=LightsOfHope!"><img src="images/twitter_sm.png" width="30px" /></a>
-    </div>
     
-    <a href="https://secure3.convio.net/sphf/site/Donation2;jsessionid=00000000.app340b?df_id=1480&mfc_pref=T&1480.donation=form1&NONCE_TOKEN=A4F10372DEF9F743AC3BC962CD7F5E4F&_ga=2.146544183.241198011.1497985408-1422913765.1496341390">
-        <img class="donate" src="images/donate.png" />
-    </a>
+    <!-- All of the bottom right absolute position stuff together -->
+    <div class="bottom-right">
+        <!-- donate button -->
+        <a href="https://secure3.convio.net/sphf/site/Donation2;jsessionid=00000000.app340b?df_id=1480&mfc_pref=T&1480.donation=form1&NONCE_TOKEN=A4F10372DEF9F743AC3BC962CD7F5E4F&_ga=2.146544183.241198011.1497985408-1422913765.1496341390">
+            <img class="donate pull-right" src="images/donate.png" />
+        </a>
+        
+        <!-- smaller social media icons -->
+        <div data-href="http://159.203.33.253" data-layout="button_count" data-size="large" data-mobile-iframe="false" ><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2F159.203.33.253%2F&amp;src=sdkpreparse">
+            <img src="images/fb_small.png" width="30px" class="social-img pull-right social-btn" />
+        </a></div>
+        
+        <a href="https://twitter.com/home/?status=LightsOfHope!">
+            <img src="images/twitter_sm.png" width="30px" class="pull-right social-btn twitter-btn social-img" />
+        </a>
+    </div>
 
 
 

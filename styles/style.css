@@ -220,10 +220,7 @@ button:hover{
 .donate {
 	margin: auto;
     padding: none;
-    position: absolute;
 	width: 260px;
-	bottom: 0px;
-	right: 0px;
 	float: right;
 }
 
@@ -350,4 +347,28 @@ button:hover{
     background: rgba(0,0,0,0.8);
 }
 
+/* bottom right absolute position */
+.bottom-right {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+}
+ 
+/* social icon stuff */
+.social-btn{
+    margin: 10px 3px 0 0;
+}
+
+.twitter-btn{
+    margin-right: 5px;
+}
+
+
+
+@media (min-width: 451px) {
+    .social-img {
+        width: 64px;
+    }
+}
 	

@@ -90,7 +90,7 @@ else{
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-xs-12 col-md-6 col-md-offset-3">
-				<img src="images/big_title.png" class="celebrate" />
+				<img src="images/big_title1.png" class="celebrate" />
 			</div>
 		</div>
 	</div>

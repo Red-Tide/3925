@@ -71,11 +71,9 @@ else{
         <a href="#" class="btnAbout">About Us</a>
         <a href="#" onclick="openShare()">Share<span class="caret"></span></a>
         <div id="shareMenu">
-          <a href="https://twitter.com/home/?status=LightsOfHope!"><img src="images/twitter.png" id="twitter" /></a>
+          <a href="http://twitter.com/intent/tweet?text=Lights+of+Hope!"><img src="images/twitter.png" id="twitter" /></a>
             
           <div data-href="http://159.203.33.253" data-layout="button_count" data-size="large" data-mobile-iframe="false"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2F159.203.33.253%2F&amp;src=sdkpreparse"><img src="images/fb.png" id="fb" /></a></div>
-
-          <!--<a href="#"> <img src="images/fb.png" id="fb" /></a>-->
 
         </div>
         
@@ -90,7 +88,7 @@ else{
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-xs-12 col-md-6 col-md-offset-3">
-				<img src="images/big_title.png" class="celebrate" />
+				<img src="images/big_title1.png" class="celebrate" />
 			</div>
 		</div>
 	</div>
@@ -103,9 +101,8 @@ else{
         </a>
 	    
       <ul id="wheel" data-angle="all">
-        <li class="item"><a href="#home"><img src="images/big_star.png" width="100%" height="100%" /></a></li>
-        <li class="item"><a href="#home"><img src="images/big_star.png" width="100%" height="100%" /></a></li>
-        <li class="item"><a href="#home"><img src="images/big_star.png" width="100%" height="100%" /></a></li>
+        <li class="item"><a href="#home"><img src="images/star1.png" width="100%" height="100%" /></a></li>
+        <li class="item"><a href="#home"><img src="images/star2.png" width="100%" height="100%" /></a></li>
         <li class="item"><a href="#home"><img src="images/big_star.png" width="100%" height="100%" /></a></li>
         <li class="item"><a href="#home"><img src="images/big_star.png" width="100%" height="100%" /></a></li>
       </ul>
@@ -126,7 +123,7 @@ else{
             <img src="images/fb_small.png" class=" fb-btn" />
         </a></div>
         
-        <a href="https://twitter.com/home/?status=LightsOfHope!">
+        <a href="http://twitter.com/intent/tweet?text=Lights+of+Hope!">
             <img src="images/twitter_sm.png" class=" twitter-btn " />
         </a>
     </div>
@@ -141,19 +138,19 @@ else{
         <div class="modal">
             <span>Register<a href="#close" id="close">×</a></span>
             <form method="post">
-                <input id="username" name="name" type="textbox" class="nameEdit" placeholder="Name" required>
-                <input id="password" name="email" type="textbox" class="emailEdit" placeholder="Email" required>
+                <input id="username" name="name" type="textbox" class="input" placeholder="Name" required>
+                <input id="password" name="email" type="textbox" class="input" placeholder="Email" required>
                 <button name="submit" id="submit" type="submit" class="btnSubmit">Play!</button>
 
             </form>
         </div>
 	</div>
     
-    <div class="modal3-bg" onclick="closeBlank()">
+    <div class="modal2-bg" onclick="closeBlank()">
         <img src="images/instruction1.png" class="instruction" />
     </div>
     
-    <div class="modal2-bg" onclick="closeBlank2()">
+    <div class="modal3-bg" onclick="closeBlank2()">
         <img src="images/instruction2.png" class="instruction" />
     </div>
     
@@ -190,23 +187,23 @@ else{
 -->
   <script>
     
-    function setCookie(c_name,value,expiredays) {
-        var exdate=new Date()
-        exdate.setDate(exdate.getDate()+expiredays)
-        document.cookie=c_name+ "=" +escape(value)+
-        ((expiredays==null) ? "" : ";expires="+exdate.toGMTString())
+    function setCookie(c_name, value, expiredays) {
+        var exdate = new Date()
+        exdate.setDate(exdate.getDate() + expiredays)
+        document.cookie=c_name+ "=" + escape(value) +
+        ((expiredays==null) ? "" : ";expires=" + exdate.toGMTString())
     }
       
     function getCookie(c_name) {
-        if (document.cookie.length>0) {
+        if (document.cookie.length > 0) {
             c_start=document.cookie.indexOf(c_name + "=")
 
-            if (c_start!=-1) { 
-                c_start=c_start + c_name.length+1 
-                c_end=document.cookie.indexOf(";",c_start)
+            if (c_start != -1) { 
+                c_start = c_start + c_name.length + 1 
+                c_end=document.cookie.indexOf(";", c_start)
 
-                if (c_end==-1) c_end=document.cookie.length
-                    return unescape(document.cookie.substring(c_start,c_end))
+                if (c_end == -1) c_end = document.cookie.length
+                    return unescape(document.cookie.substring(c_start, c_end))
             } 
         }
         return ""
@@ -224,14 +221,14 @@ else{
 		});
       
         function closeBlank(){
-            $('.modal3-bg').fadeOut();
-            $('.modal2-bg').fadeIn();
+            $('.modal2-bg').fadeOut();
+            $('.modal3-bg').fadeIn();
             
         }
       
         function closeBlank2(){
-            $('.modal2-bg').fadeOut();
-            $('.modal-bg').fadeOut();
+            $('.modal3-bg').fadeOut();
+            //$('.modal-bg').fadeOut();
             
             
         }
@@ -240,12 +237,13 @@ else{
 		function start(){
 			$('.modal-bg').fadeOut();
             $('.modal2-bg').fadeOut();
-            //$('.modal3-bg').fadeOut();
+            $('.modal3-bg').fadeOut();
 			$('#modal').fadeOut();
             var instruction = getCookie("instruction");
             if(!instruction){
                 console.log("no cookie");
-                $('.modal-bg').fadeIn();
+                $('.modal2-bg').fadeIn();
+                //$('.modal3-bg').fadeOut();
                 setCookie("instruction", "instructionValue", 200);
                 //setcookie($cookie_insName, $cookie_insValue, time() + (86400 * 30 * 200), "/");
                 

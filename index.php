@@ -105,7 +105,6 @@ else{
         <li class="item"><a href="#home"><img src="images/star2.png" width="100%" height="100%" /></a></li>
         <li class="item"><a href="#home"><img src="images/big_star.png" width="100%" height="100%" /></a></li>
         <li class="item"><a href="#home"><img src="images/big_star.png" width="100%" height="100%" /></a></li>
-        <li class="item"><a href="#home"><img src="images/big_star.png" width="100%" height="100%" /></a></li>
       </ul>
     </div>
     
@@ -147,11 +146,11 @@ else{
         </div>
 	</div>
     
-    <div class="modal3-bg" onclick="closeBlank()">
+    <div class="modal2-bg" onclick="closeBlank()">
         <img src="images/instruction1.png" class="instruction" />
     </div>
     
-    <div class="modal2-bg" onclick="closeBlank2()">
+    <div class="modal3-bg" onclick="closeBlank2()">
         <img src="images/instruction2.png" class="instruction" />
     </div>
     
@@ -222,14 +221,14 @@ else{
 		});
       
         function closeBlank(){
-            $('.modal3-bg').fadeOut();
-            $('.modal2-bg').fadeIn();
+            $('.modal2-bg').fadeOut();
+            $('.modal3-bg').fadeIn();
             
         }
       
         function closeBlank2(){
-            $('.modal2-bg').fadeOut();
-            $('.modal-bg').fadeOut();
+            $('.modal3-bg').fadeOut();
+            //$('.modal-bg').fadeOut();
             
             
         }
@@ -238,12 +237,13 @@ else{
 		function start(){
 			$('.modal-bg').fadeOut();
             $('.modal2-bg').fadeOut();
-            //$('.modal3-bg').fadeOut();
+            $('.modal3-bg').fadeOut();
 			$('#modal').fadeOut();
             var instruction = getCookie("instruction");
             if(!instruction){
                 console.log("no cookie");
-                $('.modal-bg').fadeIn();
+                $('.modal2-bg').fadeIn();
+                //$('.modal3-bg').fadeOut();
                 setCookie("instruction", "instructionValue", 200);
                 //setcookie($cookie_insName, $cookie_insValue, time() + (86400 * 30 * 200), "/");
                 

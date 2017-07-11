@@ -223,11 +223,25 @@ form *{
 	
 }
 
+/* Original logo design */
+/*
 .celebrate {
 	margin: auto;
 	display: block;
 	padding-top: 5%;
 	width: 100%;
+}
+*/
+
+.celebrate {
+    margin: auto;
+    margin-top: 12px;
+    display: block;
+    padding-top: 5%;
+    width: 100%;
+    padding: 0px 6px 9px 5px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 34px;
 }
 
 .hospital {

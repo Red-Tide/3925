@@ -114,7 +114,6 @@
     
       case 'fly': 
         fields.flyOut(el, button)
-              
         break; 
     }
 	  

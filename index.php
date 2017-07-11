@@ -92,19 +92,25 @@ else{
 			</div>
 		</div>
 	</div>
-
+    
+    <!-- List of sounds for star wheel -->
+    <audio src="sounds/bigStar.wav" type="audio/wav" id="bigStar"></audio>
+    <audio src="sounds/smallStar.wav" type="audio/wav" id="smallStar"></audio>
+    
     <!-- Big star animation -->
     <div class="container">
         
         <a href="#wheel" class="wheel-button">
-            <span><img src="images/big_star.png" width="800%" /></span>
+            
+            <span><img src="images/big_star.png" width="800%" onclick="bigStarSound()"/></span>
+                
         </a>
 	    
       <ul id="wheel" data-angle="all">
-        <li class="item"><a href="#home"><img src="images/star1.png" width="100%" height="100%" /></a></li>
-        <li class="item"><a href="#home"><img src="images/star2.png" width="100%" height="100%" /></a></li>
-        <li class="item"><a href="#home"><img src="images/big_star.png" width="100%" height="100%" /></a></li>
-        <li class="item"><a href="#home"><img src="images/big_star.png" width="100%" height="100%" /></a></li>
+        <li class="item"><a href="#home"><img src="images/star1.png" width="100%" height="100%" onclick="smallStarSound()" /></a></li>
+        <li class="item"><a href="#home"><img src="images/star2.png" width="100%" height="100%" onclick="smallStarSound()" /></a></li>
+        <li class="item"><a href="#home"><img src="images/star3.png" width="100%" height="100%" onclick="smallStarSound()" /></a></li>
+        <li class="item"><a href="#home"><img src="images/star4.png" width="100%" height="100%" onclick="smallStarSound()" /></a></li>
       </ul>
     </div>
     
@@ -270,6 +276,17 @@ else{
 				$('#shareMenu').css('display', 'none');
 			}
         }
+      
+        // Big star sound
+        function bigStarSound() {
+            document.getElementById("bigStar").play();
+        }
+      
+        // Small star sound
+        function smallStarSound() {
+            document.getElementById("smallStar").play();
+        }
+      
 	</script>
 </body>
 

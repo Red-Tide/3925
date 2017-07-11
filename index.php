@@ -145,7 +145,7 @@ else{
             <span>Register<a href="#close" id="close">×</a></span>
             <form method="post">
                 <input id="username" name="name" type="textbox" class="input" placeholder="Name" required>
-                <input id="password" name="email" type="textbox" class="input" placeholder="Email" required>
+                <input id="password" name="email" type="email" class="input" placeholder="Email" required>
                 <button name="submit" id="submit" type="submit" class="btnSubmit">Play!</button>
 
             </form>

@@ -1,12 +1,10 @@
 <?php
-$con = mysql_connect("localhost", "root", "");
-$connect = mysql_select_db("lights", $con);
-mysql_query("set names gb2313");
+$con = mysqli_connect("localhost", "root", "","lights");
 
 
-if(!$connect)
+if(!$con)
 {
-	die('Could not connect: ' . mysql_error());
+	die('Could not connect: ' . mysqli_error());
 }
 
 //echo 'connect successful';

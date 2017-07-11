@@ -1,6 +1,7 @@
 <?php
 error_reporting(0);
 include ('connect.php');
+$con = mysqli_connect("localhost", "root", "","lights");
 
 $cookie_name = "user";
 $cookie_value = "default";
@@ -77,8 +78,12 @@ else{
 
         </div>
         
+        <!-- Privacy policy link -->
+        <a href="http://helpstpauls.com/privacy-policy">Privacy Policy</a>
+        
         <!-- donate btn in side menu -->
         <a href="https://secure3.convio.net/sphf/site/Donation2;jsessionid=00000000.app340b?df_id=1480&mfc_pref=T&1480.donation=form1&NONCE_TOKEN=A4F10372DEF9F743AC3BC962CD7F5E4F&_ga=2.146544183.241198011.1497985408-1422913765.1496341390">Donate</a>
+        
 	</div>
 
 
@@ -146,7 +151,11 @@ else{
             <form method="post">
                 <input id="username" name="name" type="textbox" class="input" placeholder="Name" required>
                 <input id="password" name="email" type="email" class="input" placeholder="Email" required>
+                <div class="emailCheck">
+                <input type="checkbox" checked="checked" name="checkBox" value="emailCheck" />
+                Yes, I would like to receive emails from St. Paul's Foundation.</div>
                 <button name="submit" id="submit" type="submit" class="btnSubmit">Play!</button>
+ 
 
             </form>
         </div>
@@ -162,19 +171,21 @@ else{
     
 
 	<?php
-		
 
-		$name = $_POST["name"];
-		$email = $_POST["email"];
+       // define("name",$_POST["name"]);
+       // define("email",$_POST["email"]);
+    
+        $name = $_POST["name"];
+        $email = $_POST["email"];
 		
-		
-		$query = "SELECT * FROM tuser"; 
-		$result = mysql_query($query);
-		$row = mysql_fetch_array($result);
+		//echo name;
+		//$query = "SELECT * FROM tuser"; 
+		//$result = mysqli_query($con, $query);
+		//$row = mysqli_fetch_array($result);
 			
 		
-		$query = "INSERT INTO tuser (email,name) VALUES( '$email', '$name')";
-		mysql_query($query);
+		$query = "INSERT INTO tuser (email,name) VALUES('$email','$name')";
+		mysqli_query($con,$query);
 			
         if(!empty($name)){
             $cookie_value = $email;

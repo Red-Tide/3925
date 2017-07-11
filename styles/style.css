@@ -188,8 +188,8 @@ form *{
 .modal{
 	position:absolute;
     width: 30%;
-    height: 34%;
-    max-height: 200px;
+    height: 30%;
+    max-height: 400px;
 	display:none;
 	background-color:#F5F5F6;
 	z-index:101;
@@ -208,6 +208,11 @@ form *{
 	border-radius:3px;
 	width:100%;
     padding-top: 2%;
+}
+
+.emailCheck{
+    font-size: 80%;
+    display: inline;    
 }
 
 #close{
@@ -423,8 +428,9 @@ form *{
     
     .modal {
         width: 90%;
-        height: 34%;
-        max-height: 200px;
+        height: 40%;
+        max-height: 300px;
+        top:100px;
     }
     
     .input{

@@ -1,6 +1,9 @@
 <?php
 error_reporting(0);
 include ('connect.php');
+$con = mysqli_connect("localhost", "root", "","lights");
+
+date_default_timezone_set('America/Los_Angeles');
 
 $cookie_name = "user";
 $cookie_value = "default";
@@ -77,8 +80,12 @@ else{
 
         </div>
         
+        <!-- Privacy policy link -->
+        <a href="http://helpstpauls.com/privacy-policy">Privacy Policy</a>
+        
         <!-- donate btn in side menu -->
         <a href="https://secure3.convio.net/sphf/site/Donation2;jsessionid=00000000.app340b?df_id=1480&mfc_pref=T&1480.donation=form1&NONCE_TOKEN=A4F10372DEF9F743AC3BC962CD7F5E4F&_ga=2.146544183.241198011.1497985408-1422913765.1496341390">Donate</a>
+        
 	</div>
 
 
@@ -92,19 +99,25 @@ else{
 			</div>
 		</div>
 	</div>
-
+    
+    <!-- List of sounds for star wheel -->
+    <audio src="sounds/bigStar.wav" type="audio/wav" id="bigStar"></audio>
+    <audio src="sounds/smallStar.wav" type="audio/wav" id="smallStar"></audio>
+    
     <!-- Big star animation -->
     <div class="container">
         
         <a href="#wheel" class="wheel-button">
-            <span><img src="images/big_star.png" width="800%" /></span>
+            
+            <span><img src="images/big_star.png" width="800%" onclick="bigStarSound()"/></span>
+                
         </a>
 	    
       <ul id="wheel" data-angle="all">
-        <li class="item"><a href="#home"><img src="images/star1.png" width="100%" height="100%" /></a></li>
-        <li class="item"><a href="#home"><img src="images/star2.png" width="100%" height="100%" /></a></li>
-        <li class="item"><a href="#home"><img src="images/big_star.png" width="100%" height="100%" /></a></li>
-        <li class="item"><a href="#home"><img src="images/big_star.png" width="100%" height="100%" /></a></li>
+        <li class="item"><a href="#home"><img src="images/star1.png" width="100%" height="100%" onclick="smallStarSound()" /></a></li>
+        <li class="item"><a href="#home"><img src="images/star2.png" width="100%" height="100%" onclick="smallStarSound()" /></a></li>
+        <li class="item"><a href="#home"><img src="images/star3.png" width="100%" height="100%" onclick="smallStarSound()" /></a></li>
+        <li class="item"><a href="#home"><img src="images/star4.png" width="100%" height="100%" onclick="smallStarSound()" /></a></li>
       </ul>
     </div>
     
@@ -139,8 +152,12 @@ else{
             <span>Register<a href="#close" id="close">×</a></span>
             <form method="post">
                 <input id="username" name="name" type="textbox" class="input" placeholder="Name" required>
-                <input id="password" name="email" type="textbox" class="input" placeholder="Email" required>
+                <input id="password" name="email" type="email" class="input" placeholder="Email" required>
+                <div class="emailCheck">
+                <input type="checkbox" checked="checked" name="checkBox" value="emailCheck" />
+                Yes, I would like to receive emails from St. Paul's Foundation.</div>
                 <button name="submit" id="submit" type="submit" class="btnSubmit">Play!</button>
+ 
 
             </form>
         </div>
@@ -156,19 +173,28 @@ else{
     
 
 	<?php
-		
 
-		$name = $_POST["name"];
-		$email = $_POST["email"];
+       // define("name",$_POST["name"]);
+       // define("email",$_POST["email"]);
+    
+        $name = $_POST["name"];
+        $email = $_POST["email"];
+        $date = date('m/d/Y h:i:s a', time());
+        if (isset($_POST["checkBox"])) {
+            $check = 1;    
+        } else {
+            $check = 0;
+        }
+        
 		
-		
-		$query = "SELECT * FROM tuser"; 
-		$result = mysql_query($query);
-		$row = mysql_fetch_array($result);
+		//echo name;
+		//$query = "SELECT * FROM tuser"; 
+		//$result = mysqli_query($con, $query);
+		//$row = mysqli_fetch_array($result);
 			
 		
-		$query = "INSERT INTO tuser (email,name) VALUES( '$email', '$name')";
-		mysql_query($query);
+		$query = "INSERT INTO tuser (email, name, login_time, email_check) VALUES('$email','$name', '$date', $check)";
+		mysqli_query($con,$query);
 			
         if(!empty($name)){
             $cookie_value = $email;
@@ -270,6 +296,17 @@ else{
 				$('#shareMenu').css('display', 'none');
 			}
         }
+      
+        // Big star sound
+        function bigStarSound() {
+            document.getElementById("bigStar").play();
+        }
+      
+        // Small star sound
+        function smallStarSound() {
+            document.getElementById("smallStar").play();
+        }
+      
 	</script>
 </body>
 

@@ -188,8 +188,8 @@ form *{
 .modal{
 	position:absolute;
     width: 30%;
-    height: 34%;
-    max-height: 200px;
+    height: 30%;
+    max-height: 400px;
 	display:none;
 	background-color:#F5F5F6;
 	z-index:101;
@@ -210,6 +210,11 @@ form *{
     padding-top: 2%;
 }
 
+.emailCheck{
+    font-size: 80%;
+    display: inline;    
+}
+
 #close{
 	float: right;
 	color: #fff;
@@ -223,25 +228,11 @@ form *{
 	
 }
 
-/* Original logo design */
-/*
 .celebrate {
 	margin: auto;
 	display: block;
 	padding-top: 5%;
 	width: 100%;
-}
-*/
-
-.celebrate {
-    margin: auto;
-    margin-top: 12px;
-    display: block;
-    padding-top: 5%;
-    width: 100%;
-    padding: 0px 6px 9px 5px;
-    background-color: rgba(0, 0, 0, 0.5);
-    border-radius: 34px;
 }
 
 .hospital {
@@ -282,8 +273,8 @@ form *{
     margin: 0;
     padding: 0;
     list-style: none;
-    width: 500px; /* this will determine the diameter of the circle  */
-    height: 500px; /* this will determine the diameter of the circle  */
+    width: 550px; /* this will determine the diameter of the circle  */
+    height: 550px; /* this will determine the diameter of the circle  */
     visibility: hidden;
     position: relative;
     display: none;
@@ -330,30 +321,14 @@ form *{
     height: 35px;
     color: white;
     display: block;
-    margin: 70px auto 20px;
+    margin: auto;
+    top: 80px;
+    right:40px;
 
 }
 
 .wheel-button:hover{ 
     color: white;
-}
-
-.wheel-button.ne {
-    border-color: white;
-    background: #1ABC9C;
-    color: #34FFFF;
-    position: absolute;
-    bottom: 10px;
-    left: 10px;
-}
-
-.wheel-button.nw {
-    border-color: white;
-    background-color: #E67E22;
-    color: #FFFC44;
-    position: absolute;
-    bottom: 10px;
-    right: 10px;
 }
 
 .wheel-button span, .wheel span{
@@ -366,9 +341,9 @@ form *{
 }
 
 .wheel-button.active span{
-    transform: rotate(135deg);
-    -ms-transform: rotate(135deg); /* IE 9 */
-    -webkit-transform: rotate(135deg); /* Safari and Chrome */
+    transform: rotate(360deg);
+    -ms-transform: rotate(360deg); /* IE 9 */
+    -webkit-transform: rotate(360deg); /* Safari and Chrome */
 }
 
 .wheel li a, .wheel li a:visited{
@@ -429,7 +404,7 @@ form *{
 }
 
 
-@media (max-width: 450px ) {
+@media (max-width: 450px) {
     .fb-btn {
         width:8%;
         right:31%;
@@ -453,8 +428,9 @@ form *{
     
     .modal {
         width: 90%;
-        height: 34%;
-        max-height: 200px;
+        height: 40%;
+        max-height: 300px;
+        top:100px;
     }
     
     .input{
@@ -476,30 +452,28 @@ form *{
         border-radius: 3px;
         cursor: pointer;
     }
-}
-
-
-/*
-@media (max-width: 320px) {
-    .instruction {
-        width: 80%;
-        position: absolute;
-        margin: auto;   
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        border: 5px solid black;
-        box-shadow: 10px 10px 5px #333333;
-    }   
     
-    .modal {
-        width: 90%;
-        height: 42%;
-        margin-top: 67%;   
+    .wheel{
+        width: 450px;
+        height: 450px;
     }
 }
 
-*/
+@media (max-height: 550px) {
+    .modal {
+        width: 90%;
+        height: 45%;
+        max-height: 300px;
+        top:100px;
+    }
+}
 
+@media (max-height: 480px) {
+    .modal {
+        width: 90%;
+        height: 50%;
+        max-height: 300px;
+        top:100px;
+    }
+}
 	

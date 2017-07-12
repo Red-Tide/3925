@@ -74,7 +74,7 @@ else{
         <a href="#" class="btnAbout">About Us</a>
         <a href="#" onclick="openShare()">Share<span class="caret"></span></a>
         <div id="shareMenu">
-          <a href="http://twitter.com/intent/tweet?text=Lights+of+Hope!"><img src="images/twitter.png" id="twitter" /></a>
+          <a href="http://twitter.com/intent/tweet?text=I+just+controlled+St.+Paul’s+Foundation’s+Lights+of+Hope+display+with+my+phone,+click+here+and+you+can+too!+%23LOH2018"><img src="images/twitter.png" id="twitter" /></a>
             
           <div data-href="http://159.203.33.253" data-layout="button_count" data-size="large" data-mobile-iframe="false"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2F159.203.33.253%2F&amp;src=sdkpreparse"><img src="images/fb.png" id="fb" /></a></div>
 
@@ -136,7 +136,7 @@ else{
             <img src="images/fb_small.png" class=" fb-btn" />
         </a></div>
         
-        <a href="http://twitter.com/intent/tweet?text=Lights+of+Hope!">
+        <a href="http://twitter.com/intent/tweet?text=I+just+controlled+St.+Paul’s+Foundation’s+Lights+of+Hope+display+with+my+phone,+click+here+and+you+can+too!+%23LOH2018">
             <img src="images/twitter_sm.png" class=" twitter-btn " />
         </a>
     </div>

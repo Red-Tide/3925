@@ -404,7 +404,7 @@ form *{
 }
 
 
-@media (max-width: 450px ) {
+@media (max-width: 450px) {
     .fb-btn {
         width:8%;
         right:31%;
@@ -459,28 +459,21 @@ form *{
     }
 }
 
-
-/*
-@media (max-width: 320px) {
-    .instruction {
-        width: 80%;
-        position: absolute;
-        margin: auto;   
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        border: 5px solid black;
-        box-shadow: 10px 10px 5px #333333;
-    }   
-    
+@media (max-height: 550px) {
     .modal {
         width: 90%;
-        height: 42%;
-        margin-top: 67%;   
+        height: 45%;
+        max-height: 300px;
+        top:100px;
     }
 }
 
-*/
-
+@media (max-height: 480px) {
+    .modal {
+        width: 90%;
+        height: 50%;
+        max-height: 300px;
+        top:100px;
+    }
+}
 	

@@ -3,6 +3,8 @@ error_reporting(0);
 include ('connect.php');
 $con = mysqli_connect("localhost", "root", "","lights");
 
+date_default_timezone_set('America/Los_Angeles');
+
 $cookie_name = "user";
 $cookie_value = "default";
 
@@ -177,6 +179,13 @@ else{
     
         $name = $_POST["name"];
         $email = $_POST["email"];
+        $date = date('m/d/Y h:i:s a', time());
+        if (isset($_POST["checkBox"])) {
+            $check = 1;    
+        } else {
+            $check = 0;
+        }
+        
 		
 		//echo name;
 		//$query = "SELECT * FROM tuser"; 
@@ -184,7 +193,7 @@ else{
 		//$row = mysqli_fetch_array($result);
 			
 		
-		$query = "INSERT INTO tuser (email,name) VALUES('$email','$name')";
+		$query = "INSERT INTO tuser (email, name, login_time, email_check) VALUES('$email','$name', '$date', $check)";
 		mysqli_query($con,$query);
 			
         if(!empty($name)){

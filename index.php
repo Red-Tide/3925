@@ -90,7 +90,9 @@ else{
 
 
 	<span style="font-size:30px;cursor:pointer" onclick="openNav()"> <img src="images/hamburger.png" width="100px" /> </span>
-
+    
+    <!-- SPF Logo - top right corner -->
+    <img src="images/spf_logo.png" class="spfLogo" />
 
 	<div class="container-fluid">
 		<div class="row">
@@ -121,6 +123,8 @@ else{
       </ul>
     </div>
     
+    
+    <!-- Hospital image -->
     <img src="images/hospital.png" class="hospital" />
 
     

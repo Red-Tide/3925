@@ -63,34 +63,6 @@ body{
   .sidenav a {font-size: 18px;}
 }
 
-/*
-#star_s1{
-    margin-top: -240px;
-    display: none;  
-}
-
-#star_s2{
-    margin-left: 240px;
-    display: none;
-}
-
-#star_s3{
-    margin-left: -140px;
-    display: none;
-}
-
-#star_s4{
-    margin-top: 100px;
-    display: none;
-}
-
-#star_s5{
-    margin-top: -82px;
-    margin-left: 227px;
-    display: none;
-}
-*/
-
 a{
 	outline: 0;
 	text-decoration: none;
@@ -226,6 +198,12 @@ form *{
 #close:hover{
 	color: #000;
 	
+}
+
+.spfLogo {
+    width: 10%;
+    float: right;
+    margin: 1% 1% 0 0;
 }
 
 .celebrate {
@@ -403,7 +381,7 @@ form *{
     box-shadow: 10px 10px 5px #333333;
 }
 
-
+/* Mobile css */
 @media (max-width: 450px) {
     .fb-btn {
         width:8%;
@@ -456,6 +434,12 @@ form *{
     .wheel{
         width: 450px;
         height: 450px;
+    }
+    
+    .spfLogo {
+        width: 25%;
+        float: right;
+        margin: 7% 7% 0 0;
     }
 }
 

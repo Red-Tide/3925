@@ -116,8 +116,8 @@ else{
         </a>
 	    
       <ul id="wheel" data-angle="all">
-        <li class="item"><a href="#home"><img src="images/star1.png" width="100%" height="100%" onclick="smallStarSound()" /></a></li>
-        <li class="item"><a href="#home"><img src="images/star2.png" width="100%" height="100%" onclick="smallStarSound()" /></a></li>
+        <li class="item"><a href="#home"><img src="images/blue_star.png" width="100%" height="100%" onclick="smallStarSound()" /></a></li>
+        <li class="item"><a href="#home"><img src="images/blue_star2.png" width="100%" height="100%" onclick="smallStarSound()" /></a></li>
         <li class="item"><a href="#home"><img src="images/star3.png" width="100%" height="100%" onclick="smallStarSound()" /></a></li>
         <li class="item"><a href="#home"><img src="images/star4.png" width="100%" height="100%" onclick="smallStarSound()" /></a></li>
       </ul>

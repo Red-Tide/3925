@@ -71,7 +71,7 @@ else{
 	<div id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
         <a href="#" class="btnLogin">Login</a>
-        <a href="#" class="btnAbout">About Us</a>
+        <a href="#" onclick="aboutUs()" class="btnAbout">About Us</a>
         <a href="#" onclick="openShare()">Share<span class="caret"></span></a>
         <div id="shareMenu">
           <a href="http://twitter.com/intent/tweet?text=I+just+controlled+St.+Paul’s+Foundation’s+Lights+of+Hope+display+with+my+phone,+click+here+and+you+can+too!+%23LOH2018"><img src="images/twitter.png" id="twitter" /></a>
@@ -175,6 +175,31 @@ else{
         <img src="images/instruction2.png" class="instruction" />
     </div>
     
+    <!-- about us box -->
+    <div class="modal4-bg" onclick="closeBlank3()">
+        <div class="aboutUs">
+            <h2>
+                St. Paul’s Foundation raises funds to support compassionate, inspired care at all Providence Health Care hospitals and residences in British Columbia.
+            </h2>
+
+            <p>
+                Combined, these sites engage close to 8,000 doctors, health care providers, support staff and researchers who care for hundreds of thousands of British Columbians every year, from neo-natal care to palliative care.
+            </p>
+
+            <p>
+                Working closely with our care providers, St. Paul’s Foundation is proud to engage our community to support world-class research, education and patient care.
+            </p>
+
+            <p>
+                Support from the community, especially donations, has been key to Providence Health Care since its founding in 1896. Today, many Providence physicians and researchers are world figures in numerous fields including heart and lung, renal, HIV/AIDS and elder care. Since its founding in 1986, St. Paul’s Foundation has played an integral role in supporting this work.
+            </p>
+
+            <p>
+                The sites for which St. Paul’s Foundation raises funds include St. Paul’s Hospital, Holy Family Hospital, Mount Saint Joseph Hospital, St. Michael’s Centre, St. Vincent’s: Brock Fahrni, St. Vincent’s: Honoria Conway-Heather, St. Vincent’s: Langara, and Youville Residence.
+            </p>
+        </div>
+    </div>
+    
 
 	<?php
 
@@ -259,10 +284,11 @@ else{
         function closeBlank2(){
             $('.modal3-bg').fadeOut();
             //$('.modal-bg').fadeOut();
-            
-            
         }
       
+        function closeBlank3() {
+            $('.modal4-bg').fadeOut();
+        }
 
 		function start(){
 			$('.modal-bg').fadeOut();
@@ -309,6 +335,12 @@ else{
         // Small star sound
         function smallStarSound() {
             document.getElementById("smallStar").play();
+        }
+      
+        // about us function
+        function aboutUs() {
+            $('.modal4-bg').fadeIn();
+            $('.aboutUs').css('display', 'block');
         }
       
 	</script>

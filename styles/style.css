@@ -101,6 +101,18 @@ a{
 	background-color:rgba(50,50,50,0.5);
 }
 
+/* about us */
+.modal4-bg {
+	position:fixed;
+	left:0;
+    right:0;
+	top:0;
+    bottom:0;
+	z-index:100;
+    display: none;
+	background-color:rgba(50,50,50,0.5);
+}
+
 .top{
 	width:100%;
 }
@@ -142,6 +154,7 @@ form *{
 	cursor: pointer;
     padding-top: 3px;
 }
+
 .btnSubmit:hover{
 	background-color: #0FC491;
 }
@@ -180,6 +193,24 @@ form *{
 	border-radius:3px;
 	width:100%;
     padding-top: 2%;
+}
+
+.aboutUs {
+    background-color: white;
+    color: black;
+    position: absolute;
+    width: 47%;
+    height: 53%;
+    padding: 0 9px 0 12px;
+	display:none;
+	z-index:101;
+	margin: auto;   
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+	/*border: 5px solid #00cccc;*/
+	box-shadow: 10px 10px 5px #333333;
 }
 
 .emailCheck{
@@ -441,7 +472,24 @@ form *{
         float: right;
         margin: 7% 7% 0 0;
     }
-}
+    
+    /* about us box */
+    .aboutUs {
+        background-color: white;
+        color: black;
+        position: absolute;
+        width: 80%;
+        height: 80%;
+        padding: 0 9px 0 12px;
+        display: none;
+        z-index: 101;
+        margin: auto;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        box-shadow: 10px 10px 5px #333333;
+    }
 
 @media (max-height: 550px) {
     .modal {

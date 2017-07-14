@@ -12,14 +12,14 @@
 
 !function($){
   
-  var defaults = {
+    var defaults = {
 		trigger: "click",
 		animation: "fade",
 		angle: "[0,360]",
 		animationSpeed: "medium"
 	};
 	
-	$.fn.centerAround = function (button) {
+    $.fn.centerAround = function (button) {
     var offset = button.offset(),
         width = button.outerWidth(),
         height = button.outerHeight(),
@@ -155,30 +155,30 @@
       step = (settings.angle[1] - settings.angle[0]) / fields.length;
      
      
-      switch (settings.animation) { 
-        case 'fade': 
-          fields.fadeInIcon(el, button, width, height, angle, step, radius, settings)
-          break; 
+        switch (settings.animation) { 
+            case 'fade': 
+                fields.fadeInIcon(el, button, width, height, angle, step, radius, settings)
+                break; 
           
-        case 'fly': 
-          if(getCookie("user")){
-              fields.flyIn(el, button, width, height, angle, step, radius, settings)
-          }
+            case 'fly': 
+                if(getCookie("user")){
+                    fields.flyIn(el, button, width, height, angle, step, radius, settings)
+                }
 
-        /*
-          if (getCookie("user")) {
-              fields.flyIn(el, button, width, height, angle, step, radius, settings)
-          } else {
-              
-			 $('.modal').css('display', 'block');
-			 $('.modal-bg').fadeIn();
-		
-          }
-        */
-          break; 
+            /*
+                if (getCookie("user")) {
+                    fields.flyIn(el, button, width, height, angle, step, radius, settings)
+                } else {
+
+                 $('.modal').css('display', 'block');
+                 $('.modal-bg').fadeIn();
+
+                }
+            */
+                break; 
       }
     
-	}
+	   }
     
     /* get cookie function */
     function getCookie(c_name) {
@@ -193,7 +193,7 @@
                     return unescape(document.cookie.substring(c_start, c_end))
             } 
         }
-        return ""
+        return "";
     }
 	
 	$.fn.animateRotate = function(angle, duration, easing, complete) {

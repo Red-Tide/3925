@@ -135,8 +135,11 @@
         position: 'absolute',
         'z-index': '5',
  // add safe zone for mouseover
-    }).centerAround(button); 
+    }).centerAround(button);
+    if(getCookie("user")){
+           
     el.addClass("wheel active").css("visibility", "visible").show();
+    }
 	  
 	  if (el.attr('data-angle')) {
       settings.angle = el.attr('data-angle')
@@ -158,9 +161,10 @@
           break; 
           
         case 'fly': 
-        
-          fields.flyIn(el, button, width, height, angle, step, radius, settings)
-        
+          if(getCookie("user")){
+              fields.flyIn(el, button, width, height, angle, step, radius, settings)
+          }
+
         /*
           if (getCookie("user")) {
               fields.flyIn(el, button, width, height, angle, step, radius, settings)

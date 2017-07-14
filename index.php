@@ -35,11 +35,22 @@ else{
 <head>
 	<title>Lights of Hope</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <meta property="og:url" content="http://104.236.138.127" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Your Website Title" />
+    <meta property="og:description" content="Your description" />
+    <meta property="og:image" content="http://104.236.138.127/images/logo.png" />
+    
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="styles/style.css">
 	<script type="text/javascript" src="jquery-1.9.1.js"></script>
 	<script src="//assets.codepen.io/assets/libs/modernizr-0e41cf622f0788eca25945c37bdc5b15.js"></script>
 	<script type="text/javascript" src="jquery.wheelmenu.js"></script>
+    
+    <!-- captcha -->
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+    
 	<script>
         $(document).ready(function(){
             $(".wheel-button").wheelmenu({
@@ -70,13 +81,13 @@ else{
 
 	<div id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <a href="#" class="btnLogin">Login</a>
+        <a href="#" onclick="openLogin()" class="btnLogin">Login</a>
         <a href="#" onclick="aboutUs()" class="btnAbout">About Us</a>
         <a href="#" onclick="openShare()">Share<span class="caret"></span></a>
         <div id="shareMenu">
           <a href="http://twitter.com/intent/tweet?text=I+just+controlled+St.+Paul’s+Foundation’s+Lights+of+Hope+display+with+my+phone,+click+here+and+you+can+too!+%23LOH2018"><img src="images/twitter.png" id="twitter" /></a>
             
-          <div data-href="http://159.203.33.253" data-layout="button_count" data-size="large" data-mobile-iframe="false"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2F159.203.33.253%2F&amp;src=sdkpreparse"><img src="images/fb.png" id="fb" /></a></div>
+          <div data-href="http://104.236.138.127" data-layout="button_count" data-size="large" data-mobile-iframe="false"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flightsofhope.helpstpauls.com%2F&amp;src=sdkpreparse"><img src="images/fb.png" id="fb" /></a></div>
 
         </div>
         
@@ -111,7 +122,7 @@ else{
         
         <a href="#wheel" class="wheel-button">
             
-            <span><img src="images/big_star.png" width="800%" onclick="bigStarSound()"/></span>
+            <span><img src="images/big_star.png" width="800%" onclick="bigStarClick()"/></span>
                 
         </a>
 	    
@@ -136,7 +147,7 @@ else{
         </a>
         
         <!-- smaller social media icons -->
-        <div data-href="http://159.203.33.253" data-layout="button_count" data-size="large" data-mobile-iframe="false" ><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2F159.203.33.253%2F&amp;src=sdkpreparse">
+        <div data-href="http://104.236.138.127" data-layout="button_count" data-size="large" data-mobile-iframe="false" ><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flightsofhope.helpstpauls.com%2F&amp;src=sdkpreparse">
             <img src="images/fb_small.png" class=" fb-btn" />
         </a></div>
         
@@ -149,17 +160,20 @@ else{
 
 	<div class="modal-bg"> 
         
-    <!-- login instruction -->
+        <!-- login instruction -->
         <img src="images/login_instruc.png" class="login-instruc" />
 
         <div class="modal">
             <span>Register<a href="#close" id="close">×</a></span>
-            <form method="post">
+            <form method="post" onsubmit="submitCheck()">
                 <input id="username" name="name" type="textbox" class="input" placeholder="Name" required>
                 <input id="password" name="email" type="email" class="input" placeholder="Email" required>
                 <div class="emailCheck">
                 <input type="checkbox" checked="checked" name="checkBox" value="emailCheck" />
                 Yes, I would like to receive emails from St. Paul's Foundation.</div>
+                <!--
+                <div class="g-recaptcha" data-sitekey="6LcaBykUAAAAAJPVSHmOPV6vGwBpszHhq5Z2_0j2"></div>
+                -->
                 <button name="submit" id="submit" type="submit" class="btnSubmit">Play!</button>
  
 
@@ -225,14 +239,6 @@ else{
 		$query = "INSERT INTO tuser (email, name, login_time, email_check) VALUES('$email','$name', '$date', $check)";
 		mysqli_query($con,$query);
 			
-        if(!empty($name)){
-            $cookie_value = $email;
-            setcookie($cookie_name, $cookie_value, time() + (86400 * 30 * 200), "/");
-    
-            if(isset($_COOKIE[$cookie_name])){
-                echo "cookie is set";
-            }
-        }
 	?>
 <!--
   <script src='//zaole.net/sliding.js'></script>
@@ -263,11 +269,16 @@ else{
         }
         return ""
     }
+      
+        function submitCheck(){
+            setCookie("user", "default", 200);
+            
+        }
 
-		$('.btnLogin').click(function () {
+		function openLogin() {
 			$('.modal').css('display', 'block');
 			$('.modal-bg').fadeIn();
-		});
+		}
 
 		$('#close').click(function () {
 			$('.modal-bg').fadeOut();
@@ -328,8 +339,11 @@ else{
         }
       
         // Big star sound
-        function bigStarSound() {
+        function bigStarClick() {
             document.getElementById("bigStar").play();
+            if(!getCookie("user")){
+                openLogin();
+            }
         }
       
         // Small star sound

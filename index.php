@@ -377,6 +377,7 @@ else{
                 $('.modal4-bg').fadeIn();
                 $('.aboutUs').css('display', 'block');
             }
+            
 
         </script>
     </body>

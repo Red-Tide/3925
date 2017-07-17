@@ -235,7 +235,7 @@ form *{
 }
 
 .spfLogo {
-    width: 10%;
+    width: 15%;
     float: right;
     margin: 1% 1% 0 0;
 }
@@ -266,7 +266,7 @@ form *{
 .donate {
 	margin: auto;
     padding: none;
-	width: 18%;
+	width: 24%;
 	float: right;
 }
 
@@ -388,18 +388,18 @@ form *{
 /* social icon stuff */
 .fb-btn{
     padding-bottom: 10px;
-    position: absolute; 
-    width: 4%;
-    bottom: 0;
-    right: 20%;
+    position: absolute;
+    width: 5%;
+    bottom: 87%;
+    right: 1%;
 }
 
 .twitter-btn{
     padding-bottom: 10px;
-    position: absolute; 
-    width: 4%;
-    bottom: 0;
-    right: 25%;
+    position: absolute;
+    width: 5%;
+    bottom: 87%;
+    right: 7%;
 }
 
 /* for instruction on first load */
@@ -418,16 +418,15 @@ form *{
 /* Mobile css */
 @media (max-width: 450px) {
     .fb-btn {
-        width:8%;
-        right:31%;
-        padding-bottom: 5px;
-        
+        width: 10%;
+        right: 2%;
+        padding-bottom: 2%;
     }
+    
     .twitter-btn {
-        width:8%;
-        right: 40%;
-        padding-bottom: 5px;
-        
+        width: 10%;
+        right: 14%;
+        padding-bottom: 2%;
     }
     
     .instruction {

@@ -90,7 +90,7 @@ else{
             <a href="#" onclick="openShare()">Share<span class="caret"></span></a>
             
             <div id="shareMenu">
-                <a href="http://twitter.com/intent/tweet?text=I+just+controlled+St.+Paul’s+Foundation’s+Lights+of+Hope+display+with+my+phone,+click+here+and+you+can+too!+%23LOH2018">
+                <a href="http://twitter.com/intent/tweet?text=I+just+controlled+St.+Paul’s+Foundation’s+Lights+of+Hope+display+with+my+phone,+click+here+and+you+can+too!+http://104.236.138.127+%23LOH2018">
                     <img src="images/twitter.png" id="twitter" />
                 </a>
 
@@ -139,16 +139,16 @@ else{
 
             <ul id="wheel" data-angle="all">
                 <li class="item">
-                    <a href="#home"><img src="images/star3.png" width="100%" height="100%" onclick="smallStarSound()" /></a>
+                    <a href="#home"><img src="images/star3.png" width="100%" height="100%" onclick="smallStarSound1()" /></a>
                 </li>
                 <li class="item">
-                    <a href="#home"><img src="images/blue_star2.png" width="100%" height="100%" onclick="smallStarSound()" /></a>
+                    <a href="#home"><img src="images/blue_star2.png" width="100%" height="100%" onclick="smallStarSound2()" /></a>
                 </li>
                 <li class="item">
-                    <a href="#home"><img src="images/blue_star.png" width="100%" height="100%" onclick="smallStarSound()" /></a>
+                    <a href="#home"><img src="images/blue_star.png" width="100%" height="100%" onclick="smallStarSound3()" /></a>
                 </li>
                 <li class="item">
-                    <a href="#home"><img src="images/star4.png" width="100%" height="100%" onclick="smallStarSound()" /></a>
+                    <a href="#home"><img src="images/star4.png" width="100%" height="100%" onclick="smallStarSound4()" /></a>
                 </li>
             </ul>
         </div>
@@ -170,7 +170,7 @@ else{
                 <img src="images/fb_small.png" class=" fb-btn" />
             </a></div>
 
-            <a href="http://twitter.com/intent/tweet?text=I+just+controlled+St.+Paul’s+Foundation’s+Lights+of+Hope+display+with+my+phone,+click+here+and+you+can+too!+%23LOH2018">
+            <a href="http://twitter.com/intent/tweet?text=I+just+controlled+St.+Paul’s+Foundation’s+Lights+of+Hope+display+with+my+phone,+click+here+and+you+can+too!+http://104.236.138.127+%23LOH2018">
                 <img src="images/twitter_sm.png" class=" twitter-btn " />
             </a>
         </div>
@@ -211,27 +211,23 @@ else{
         </div>
 
         <!-- about us box -->
+        
+        
         <div class="modal4-bg" onclick="closeBlank3()">
             <div class="aboutUs">
-                <h2>
-                    St. Paul’s Foundation raises funds to support compassionate, inspired care at all Providence Health Care hospitals and residences in British Columbia.
-                </h2>
+                <div class="aboutRow">
+                    <h1>
+                        About
+                    </h1>
+                
+                    <img src="images/spf_logo_colour.png" class="aboutUsLogo" />
+                </div>
+                
 
                 <p>
-                    Combined, these sites engage close to 8,000 doctors, health care providers, support staff and researchers who care for hundreds of thousands of British Columbians every year, from neo-natal care to palliative care.
+                    Where there is light there is hope. Every holiday season, St. Paul’s Foundation invites the community to support St. Paul’s greatest needs through our Lights of Hope campaign. Your donations help to bring comfort, support and hope to the thousands of British Columbians who rely on St. Paul’s and other Providence Health Care hospitals and residences  for the best possible care. Any gift you can give will make a difference. 
                 </p>
-
-                <p>
-                    Working closely with our care providers, St. Paul’s Foundation is proud to engage our community to support world-class research, education and patient care.
-                </p>
-
-                <p>
-                    Support from the community, especially donations, has been key to Providence Health Care since its founding in 1896. Today, many Providence physicians and researchers are world figures in numerous fields including heart and lung, renal, HIV/AIDS and elder care. Since its founding in 1986, St. Paul’s Foundation has played an integral role in supporting this work.
-                </p>
-
-                <p>
-                    The sites for which St. Paul’s Foundation raises funds include St. Paul’s Hospital, Holy Family Hospital, Mount Saint Joseph Hospital, St. Michael’s Centre, St. Vincent’s: Brock Fahrni, St. Vincent’s: Honoria Conway-Heather, St. Vincent’s: Langara, and Youville Residence.
-                </p>
+                <a href="http://helpstpauls.com/about" >More Info</a>
             </div>
         </div>
 
@@ -368,7 +364,20 @@ else{
             }
 
             // Small star sound
-            function smallStarSound() {
+            function smallStarSound1() {
+                document.getElementById("smallStar").play();
+                document.write("<?php echo'hello'; ?>");
+            }
+            
+            function smallStarSound2() {
+                document.getElementById("smallStar").play();
+            }
+            
+            function smallStarSound3() {
+                document.getElementById("smallStar").play();
+            }
+            
+            function smallStarSound4() {
                 document.getElementById("smallStar").play();
             }
 
@@ -380,6 +389,7 @@ else{
             
 
         </script>
+        
     </body>
 
 </html>

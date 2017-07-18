@@ -528,7 +528,7 @@ form *{
         padding-top: 2.8%;
     }
 
-@media (max-height: 570px) {
+@media (max-height: 640px) {
     .modal {
         width: 90%;
         height: 45%;

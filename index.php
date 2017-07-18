@@ -45,13 +45,21 @@ else{
         <meta property="og:image" content="http://104.236.138.127/images/logo.png" />
         -->
 
+        <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        
         <link rel="stylesheet" type="text/css" href="styles/style.css">
         <script type="text/javascript" src="jquery-1.9.1.js"></script>
         <script src="//assets.codepen.io/assets/libs/modernizr-0e41cf622f0788eca25945c37bdc5b15.js"></script>
         <script type="text/javascript" src="jquery.wheelmenu.js"></script>
 
-        <!-- captcha -->
+        <!-- Captcha -->
         <script src='https://www.google.com/recaptcha/api.js'></script>
 
         <script>
@@ -139,16 +147,16 @@ else{
 
             <ul id="wheel" data-angle="all">
                 <li class="item">
-                    <a href="#home"><img src="images/star3.png" width="100%" height="100%" onclick="smallStarSound1()" /></a>
+                    <a href="#home"><img src="images/star3.png" width="100%" height="100%" onclick="smallStarSound1(); controlLight('star1');" /></a>
                 </li>
                 <li class="item">
-                    <a href="#home"><img src="images/blue_star2.png" width="100%" height="100%" onclick="smallStarSound2()" /></a>
+                    <a href="#home"><img src="images/blue_star2.png" width="100%" height="100%" onclick="smallStarSound2(); controlLight('star2');" /></a>
                 </li>
                 <li class="item">
-                    <a href="#home"><img src="images/blue_star.png" width="100%" height="100%" onclick="smallStarSound3()" /></a>
+                    <a href="#home"><img src="images/blue_star.png" width="100%" height="100%" onclick="smallStarSound3(); controlLight('star3');" /></a>
                 </li>
                 <li class="item">
-                    <a href="#home"><img src="images/star4.png" width="100%" height="100%" onclick="smallStarSound4()" /></a>
+                    <a href="#home"><img src="images/star4.png" width="100%" height="100%" onclick="smallStarSound4(); controlLight('star4');" /></a>
                 </li>
             </ul>
         </div>
@@ -185,18 +193,26 @@ else{
             <div class="modal">
                 <span>Register<a href="#close" id="close">×</a></span>
                 <form method="post" onsubmit="submitCheck()">
-                    <input id="username" name="name" type="textbox" class="input" placeholder="Name" required>
-                    <input id="password" name="email" type="email" class="input" placeholder="Email" required>
-                    <div class="emailCheck">
-                    <input type="checkbox" checked="checked" name="checkBox" value="emailCheck" />
-                    Yes, I would like to receive emails from St. Paul's Foundation.</div>
-                    
-                    <!--
-                    <div class="g-recaptcha" data-sitekey="6LcaBykUAAAAAJPVSHmOPV6vGwBpszHhq5Z2_0j2"></div>
-                    -->
-                    
-                    <button name="submit" id="submit" type="submit" class="btnSubmit">Play!</button>
+                    <table>
+                        <tr>
+                            <input id="username" name="name" type="textbox" class="input" placeholder="Name" required>
+                        </tr>
+                        <tr>
+                            <input id="password" name="email" type="email" class="input" placeholder="Email"   required>
+                        </tr>
+                        <tr>
+                            <div class="emailCheck">
+                            <input type="checkbox" checked="checked" name="checkBox" value="emailCheck" />
+                            Yes, I would like to receive emails from St. Paul's Foundation.</div>
+                        </tr>
 
+                        <!--
+                        <div class="g-recaptcha" data-sitekey="6LcaBykUAAAAAJPVSHmOPV6vGwBpszHhq5Z2_0j2"></div>
+                        -->
+                        <tr>
+                            <button name="submit" id="submit" type="submit" class="btnSubmit">Play!</button>
+                        </tr>
+                    </table>
 
                 </form>
             </div>
@@ -211,8 +227,6 @@ else{
         </div>
 
         <!-- about us box -->
-        
-        
         <div class="modal4-bg" onclick="closeBlank3()">
             <div class="aboutUs">
                 <div class="aboutRow">
@@ -366,7 +380,6 @@ else{
             // Small star sound
             function smallStarSound1() {
                 document.getElementById("smallStar").play();
-                document.write("<?php echo'hello'; ?>");
             }
             
             function smallStarSound2() {
@@ -386,6 +399,21 @@ else{
                 $('.modal4-bg').fadeIn();
                 $('.aboutUs').css('display', 'block');
             }
+            
+            var timeUntilPlay = 0;
+            
+            // controls for the CueServer output
+            function controlLight(star) {
+                var xhttp = new XMLHttpRequest();
+                    xhttp.onreadystatechange = function() {
+                        if (this.readyState == 4 && this.status == 200) {
+                            timeUntilPlay = this.responseText;
+                        }
+                    };
+                xhttp.open("POST", "http://192.168.43.130:8888", true);
+                xhttp.send(star);
+            }
+            
             
 
         </script>

@@ -93,7 +93,7 @@ else{
         <div id="mySidenav" class="sidenav">
             
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-            <a href="#" onclick="openLogin()" class="btnLogin">Login</a>
+            <a href="#" onclick="openLogin()" data-toggle="modal" data-target="#myLoginModal" class="btnLogin">Login</a>
             <a href="#" onclick="aboutUs()" data-toggle="modal" data-target="#myModal">About Us</a>
             <a href="#" onclick="openShare()">Share<span class="caret"></span></a>
             
@@ -184,10 +184,11 @@ else{
         </div>
 
 
-
+        <!--
         <div class="modal-bg"> 
-
+        -->
             <!-- login instruction -->
+            <!--
             <img src="images/login_instruc.png" class="login-instruc" />
 
             <div class="loginModal">
@@ -201,17 +202,61 @@ else{
                     <div class="emailCheck">
                     <input type="checkbox" checked="checked" name="checkBox" value="emailCheck" />
                     Yes, I would like to receive emails from St. Paul's Foundation.</div>
-                        
+                --> 
 
                     <!--
                     <div class="g-recaptcha" data-sitekey="6LcaBykUAAAAAJPVSHmOPV6vGwBpszHhq5Z2_0j2"></div>
                     -->
-
+        <!--
                     <button name="submit" id="submit" type="submit" class="btnSubmit">Play!</button>
                      
 
                 </form>
             </div>
+        </div>
+        -->
+        
+        <!-- Modal for Login -->
+        <div id="myLoginModal" class="modal fade" role="dialog">
+              <div class="modal-dialog">
+
+                    <!-- Modal for Login content-->
+                    <div class="modal-content">
+                          <div class="modal-header">
+                                <img src="images/spf_logo_colour.png" class="aboutUsLogo" />
+                                <h2 class="modal-title">Register</h2>
+                          </div>
+                      <div class="modal-body">
+                            
+                            <form method="post" onsubmit="submitCheck()">
+                    
+                                <input id="username" name="name" type="textbox" class="input" placeholder="Name" required>
+
+                                <input id="password" name="email" type="email" class="input" placeholder="Email"   required>
+
+                                <div class="emailCheck">
+                                <input type="checkbox" checked="checked" name="checkBox" value="emailCheck" />
+                                Yes, I would like to receive emails from St. Paul's Foundation.</div>
+                
+
+                    <!--
+                    <div class="g-recaptcha" data-sitekey="6LcaBykUAAAAAJPVSHmOPV6vGwBpszHhq5Z2_0j2"></div>
+                    -->
+        
+                                <button name="submit" id="submit" type="submit" class="btnSubmit">Play!</button>
+                     
+
+                            </form>
+                          
+                      </div>
+                        <!--
+                      <div class="modal-footer">
+                            <button id="aboutInfo" type="button" class="btn btn-default" onclick="aboutLink()">More Info</button>
+                      </div>
+                    -->
+                    </div>
+
+              </div>
         </div>
     
 
@@ -225,21 +270,23 @@ else{
 
         <!-- about us box -->
         
-        <!-- Modal -->
+        <!-- Modal for about -->
         <div id="myModal" class="modal fade" role="dialog">
               <div class="modal-dialog">
 
-                    <!-- Modal content-->
+                    <!-- Modal for about content-->
                     <div class="modal-content">
                           <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                <h4 class="modal-title">About</h4>
+                                <img src="images/spf_logo_colour.png" class="aboutUsLogo" />
+                                <h2 class="modal-title">About</h2>
                           </div>
                       <div class="modal-body">
+                            
                             <p>Where there is light there is hope. Every holiday season, St. Paul’s Foundation invites the community to support St. Paul’s greatest needs through our Lights of Hope campaign. Your donations help to bring comfort, support and hope to the thousands of British Columbians who rely on St. Paul’s and other Providence Health Care hospitals and residences  for the best possible care. Any gift you can give will make a difference.</p>
+                          
                       </div>
                       <div class="modal-footer">
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            <button id="aboutInfo" type="button" class="btn btn-default" onclick="aboutLink()">More Info</button>
                       </div>
                     </div>
 
@@ -416,6 +463,10 @@ else{
             function aboutUs() {
                 $('.modal4-bg').fadeIn();
                 $('.aboutUs').css('display', 'block');
+            }
+            
+            function aboutLink() {
+                window.open("http://helpstpauls.com/about");
             }
             
             // controls for the CueServer output

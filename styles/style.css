@@ -139,7 +139,7 @@ form *{
 
 .input{
 	width:90%;
-    margin-top: 1%;
+   
 	border:2px solid #ccc ;
 	border-radius:3px;
     
@@ -184,6 +184,8 @@ form *{
 	margin: auto;   
     left: 0;
     right: 0;
+    top:0;
+    bottom: 0;
 	border-bottom: 3px solid #5DC3A7;
 	box-shadow:0 0 10px 0 rgba(0,0,0,0.3);
 }
@@ -196,6 +198,27 @@ form *{
 	border-radius:3px;
 	width:100%;
     padding-top: 2%;
+}
+
+/* about us stuff */
+.modal-dialog {
+    margin: auto;
+    top:25%;
+    padding: 0 2% 0 2%; 
+    
+}
+
+.modal-body {
+    background-color: #EFEFEF;
+}
+
+#aboutInfo {
+    background-color: #EF3340;
+    color: white;
+}
+
+.modal-title {
+    font-weight: bold;
 }
 
 /*
@@ -228,14 +251,12 @@ form *{
     font-weight: bold;
     font-size: 300%;
 }
-
+*/
 .aboutUsLogo {
     width: 45%;
     float: right;
-    padding-top: 2%;
-    padding-right: 2%;
 }
-
+/*
 .aboutUs a {
     background-color: #EF3340;
     color: white;

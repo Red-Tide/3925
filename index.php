@@ -94,7 +94,7 @@ else{
             
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
             <a href="#" onclick="openLogin()" class="btnLogin">Login</a>
-            <a href="#" onclick="aboutUs()" class="btnAbout">About Us</a>
+            <a href="#" onclick="aboutUs()" data-toggle="modal" data-target="#myModal">About Us</a>
             <a href="#" onclick="openShare()">Share<span class="caret"></span></a>
             
             <div id="shareMenu">
@@ -190,7 +190,7 @@ else{
             <!-- login instruction -->
             <img src="images/login_instruc.png" class="login-instruc" />
 
-            <div class="modal">
+            <div class="loginModal">
                 <span>Register<a href="#close" id="close">×</a></span>
                 <form method="post" onsubmit="submitCheck()">
                     
@@ -224,6 +224,29 @@ else{
         </div>
 
         <!-- about us box -->
+        
+        <!-- Modal -->
+        <div id="myModal" class="modal fade" role="dialog">
+              <div class="modal-dialog">
+
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                          <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h4 class="modal-title">About</h4>
+                          </div>
+                      <div class="modal-body">
+                            <p>Where there is light there is hope. Every holiday season, St. Paul’s Foundation invites the community to support St. Paul’s greatest needs through our Lights of Hope campaign. Your donations help to bring comfort, support and hope to the thousands of British Columbians who rely on St. Paul’s and other Providence Health Care hospitals and residences  for the best possible care. Any gift you can give will make a difference.</p>
+                      </div>
+                      <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+
+              </div>
+        </div>
+        
+        <!--
         <div class="modal4-bg" onclick="closeBlank3()">
             <div class="aboutUs">
                 <div class="aboutRow">
@@ -241,6 +264,7 @@ else{
                 <a href="http://helpstpauls.com/about" >More Info</a>
             </div>
         </div>
+        -->
 
 
         <?php
@@ -301,13 +325,13 @@ else{
             }
 
             function openLogin() {
-                $('.modal').css('display', 'block');
+                $('.loginModal').css('display', 'block');
                 $('.modal-bg').fadeIn();
             }
 
             $('#close').click(function () {
                 $('.modal-bg').fadeOut();
-                $('.modal').fadeOut();
+                $('.loginModal').fadeOut();
                 return false;
             });
 

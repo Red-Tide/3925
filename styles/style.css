@@ -173,7 +173,7 @@ form *{
     top: -50%;
 }
 
-.modal{
+.loginModal{
 	position:absolute;
     width: 30%;
     height: 30%;
@@ -188,7 +188,7 @@ form *{
 	box-shadow:0 0 10px 0 rgba(0,0,0,0.3);
 }
 
-.modal span{
+.loginModal span{
 	display: block;
 	background:#5DC3A7;
 	padding: 10px;
@@ -198,6 +198,7 @@ form *{
     padding-top: 2%;
 }
 
+/*
 .aboutUs {
     background-color: white;
     color: black;
@@ -213,7 +214,6 @@ form *{
     right: 0;
     top: 0;
     bottom: 0;
-	/*border: 5px solid #00cccc;*/
 	box-shadow: 10px 10px 5px #333333;
     font-size: 80%;
 }
@@ -245,7 +245,7 @@ form *{
     margin-bottom: 0;
     
 }
-
+*/
 .emailCheck{
     font-size: 80%;
     display: inline;    
@@ -467,7 +467,7 @@ form *{
         width: 90%;
     }
     
-    .modal {
+    .loginModal {
         width: 90%;
         height: 40%;
         max-height: 300px;
@@ -529,7 +529,8 @@ form *{
     }
 
 @media (max-height: 640px) {
-    .modal {
+    
+    .loginModal {
         width: 90%;
         height: 45%;
         max-height: 300px;
@@ -542,12 +543,14 @@ form *{
 }
 
 @media (max-height: 480px) {
-    .modal {
+    
+    .loginModal {
         width: 90%;
         height: 50%;
         max-height: 300px;
         top:100px;
     }
+    
 }
     
 /* 6s plus */

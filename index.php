@@ -193,30 +193,27 @@ else{
             <div class="modal">
                 <span>Register<a href="#close" id="close">×</a></span>
                 <form method="post" onsubmit="submitCheck()">
-                    <table>
-                        <tr>
-                            <input id="username" name="name" type="textbox" class="input" placeholder="Name" required>
-                        </tr>
-                        <tr>
-                            <input id="password" name="email" type="email" class="input" placeholder="Email"   required>
-                        </tr>
-                        <tr>
-                            <div class="emailCheck">
-                            <input type="checkbox" checked="checked" name="checkBox" value="emailCheck" />
-                            Yes, I would like to receive emails from St. Paul's Foundation.</div>
-                        </tr>
+                    
+                    <input id="username" name="name" type="textbox" class="input" placeholder="Name" required>
 
-                        <!--
-                        <div class="g-recaptcha" data-sitekey="6LcaBykUAAAAAJPVSHmOPV6vGwBpszHhq5Z2_0j2"></div>
-                        -->
-                        <tr>
-                            <button name="submit" id="submit" type="submit" class="btnSubmit">Play!</button>
-                        </tr>
-                    </table>
+                    <input id="password" name="email" type="email" class="input" placeholder="Email"   required>
+
+                    <div class="emailCheck">
+                    <input type="checkbox" checked="checked" name="checkBox" value="emailCheck" />
+                    Yes, I would like to receive emails from St. Paul's Foundation.</div>
+                        
+
+                    <!--
+                    <div class="g-recaptcha" data-sitekey="6LcaBykUAAAAAJPVSHmOPV6vGwBpszHhq5Z2_0j2"></div>
+                    -->
+
+                    <button name="submit" id="submit" type="submit" class="btnSubmit">Play!</button>
+                     
 
                 </form>
             </div>
         </div>
+    
 
         <div class="modal2-bg" onclick="closeBlank()">
             <img src="images/instruction1.png" class="instruction" />
@@ -271,12 +268,9 @@ else{
             mysqli_query($con,$query);
 
         ?>
-    <!--
-      <script src='//zaole.net/sliding.js'></script>
-
-
-      <script src="//assets.codepen.io/assets/common/stopExecutionOnTimeout-6c99970ade81e43be51fa877be0f7600.js"></script>
-    -->
+  
+        
+        
         <script>
 
             function setCookie(c_name, value, expiredays) {
@@ -400,14 +394,15 @@ else{
                 $('.aboutUs').css('display', 'block');
             }
             
+            // controls for the CueServer output
             var timeUntilPlay = 0;
             
-            // controls for the CueServer output
             function controlLight(star) {
                 var xhttp = new XMLHttpRequest();
                     xhttp.onreadystatechange = function() {
                         if (this.readyState == 4 && this.status == 200) {
                             timeUntilPlay = this.responseText;
+                            alert(timeUntilPlay.toString());
                         }
                     };
                 xhttp.open("POST", "http://192.168.43.130:8888", true);

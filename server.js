@@ -1,5 +1,6 @@
 const http = require('http');
-///Raspberry Pi for Testing and presentation
+//Raspberry Pi for Testing and presentation
+
 const cmd = require('node-cmd');
 //const req = require('request-promise');
 
@@ -11,14 +12,17 @@ const star1 = {
 	method: 'GET',
 	uri:'http://remote.eosligthmedia.com:8083/exe.cgi?cmd=m12'
 }
+
 const star2 = {
 	method: 'GET',
 	uri:'http://remote.eosligthmedia.com:8083/exe.cgi?cmd=m13'
 }
+
 const star3 = {
 	method: 'GET',
 	uri:'http://remote.eosligthmedia.com:8083/exe.cgi?cmd=m14'
 }
+
 const star4 = {
 	method: 'GET',
 	uri:'http://remote.eosligthmedia.com:8083/exe.cgi?cmd=m15'
@@ -47,7 +51,7 @@ function count_up() {
 function snd_command() {
 	if (queue.length > 0 && ready) {
 		send = queue.shift().toString();
-	console.log("Dequeuing " + send);
+	    console.log("Dequeuing " + send);
 
 	
 		switch (send) {
@@ -75,21 +79,21 @@ function snd_command() {
 			console.log("Invalid Command")
 		}
 		ready = false;
-		count=0;
-		setTimeout(ready_state_enable,time*1000);
+		count = 0;
+		setTimeout(ready_state_enable, time * 1000);
 	}
 }
 
 function onRequest (request, response) {
 	let body = [];
-	request.on('data',(data) => {
+	request.on('data', (data) => {
 		console.log("Request!");
 		body.push(data);
 	}).on('end',() => {
 		body = Buffer.concat(body).toString();
 		if (!ready || queue > 0) {
 			//response.write(queue.toString() + " " + (queue.length * time + (time - count)).toString() + " seconds\n");
-			response.write((queue.length * time + (time - count)).toString() +" " );
+			response.write((queue.length * time + (time - count)).toString() + " ");
 		} else {
 			//response.write(queue.toString() + " " + "0" + " seconds\n");
 			response.write("0");

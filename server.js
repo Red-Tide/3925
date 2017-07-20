@@ -10,22 +10,22 @@ const time = 10;
 //Constants for sending get requests to CueServer
 const star1 = {
 	method: 'GET',
-	uri:'http://remote.eosligthmedia.com:8083/exe.cgi?cmd=m12'
+	uri:'http://remote.eoslightmedia.com:8083/exe.cgi?cmd=m12'
 }
 
 const star2 = {
 	method: 'GET',
-	uri:'http://remote.eosligthmedia.com:8083/exe.cgi?cmd=m13'
+	uri:'http://remote.eoslightmedia.com:8083/exe.cgi?cmd=m13'
 }
 
 const star3 = {
 	method: 'GET',
-	uri:'http://remote.eosligthmedia.com:8083/exe.cgi?cmd=m14'
+	uri:'http://remote.eoslightmedia.com:8083/exe.cgi?cmd=m14'
 }
 
 const star4 = {
 	method: 'GET',
-	uri:'http://remote.eosligthmedia.com:8083/exe.cgi?cmd=m15'
+	uri:'http://remote.eoslightmedia.com:8083/exe.cgi?cmd=m15'
 }
 
 var queue = [];

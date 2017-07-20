@@ -402,7 +402,7 @@ else{
                     xhttp.onreadystatechange = function() {
                         if (this.readyState == 4 && this.status == 200) {
                             timeUntilPlay = this.responseText;
-                            alert(timeUntilPlay.toString());
+                            alert("This is a placeholder for a really exciting count down animation. Your light show will begin in " + timeUntilPlay.toString() + " seconds.");
                         }
                     };
                 xhttp.open("POST", "http://192.168.43.130:8888", true);

@@ -218,7 +218,10 @@ else{
         
         <!-- Modal for Login -->
         <div id="myLoginModal" class="modal fade" role="dialog">
-              <div class="modal-dialog login-dialog">
+            
+            <img src="images/login_instruc.png" class="login-instruc" />
+            
+            <div class="modal-dialog login-dialog">
 
                     <!-- Modal for Login content-->
                     <div class="modal-content">
@@ -231,7 +234,7 @@ else{
                             
                             <form method="post" onsubmit="submitCheck()">
                                 <div class="form-group">
-                                    <p>Please enter your name email to interact with the lights!</p>
+                                    
                                     <input id="username" name="name" type="textbox" class="form-control" placeholder="Name" required>
 
                                     <input id="password" name="email" type="email" class="form-control" placeholder="Email" required>
@@ -262,7 +265,7 @@ else{
                     -->
                     </div>
 
-              </div>
+            </div>
         </div>
     
 

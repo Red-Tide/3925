@@ -134,7 +134,7 @@ form *{
     margin: 0;
 }
 
-.login-body p, .modal-header h4 {
+.modal-header h4 {
     font-weight: bold;
 }
 
@@ -170,7 +170,7 @@ form *{
     left: -5%;
     right: 0;
     bottom: 0;
-    top: -50%;
+    top: -53%;
 }
 
 .loginModal{
@@ -202,7 +202,7 @@ form *{
 
 .login-dialog {
     margin: auto;
-    top: 20%;
+    top: 31%;
     padding: 0 2% 0 2%;
 }
 

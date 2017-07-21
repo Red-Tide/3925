@@ -226,7 +226,7 @@ else{
                     <!-- Modal for Login content-->
                     <div class="modal-content">
                           <div class="modal-header">
-                                <img src="images/spf_logo_colour.png" class="aboutUsLogo" />
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
                                 <h4 class="modal-title">Register</h4>
                           </div>
                       <div class="modal-body login-body">

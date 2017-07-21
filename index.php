@@ -218,30 +218,32 @@ else{
         
         <!-- Modal for Login -->
         <div id="myLoginModal" class="modal fade" role="dialog">
-              <div class="modal-dialog">
+              <div class="modal-dialog login-dialog">
 
                     <!-- Modal for Login content-->
                     <div class="modal-content">
                           <div class="modal-header">
                                 <img src="images/spf_logo_colour.png" class="aboutUsLogo" />
-                                <h2 class="modal-title">Register</h2>
+                                <h4 class="modal-title">Register</h4>
                           </div>
-                      <div class="modal-body">
+                      <div class="modal-body login-body">
                             
                             <form method="post" onsubmit="submitCheck()">
                     
                                 <input id="username" name="name" type="textbox" class="input" placeholder="Name" required>
 
-                                <input id="password" name="email" type="email" class="input" placeholder="Email"   required>
+                                <input id="password" name="email" type="email" class="input" placeholder="Email" required>
 
                                 <div class="emailCheck">
                                 <input type="checkbox" checked="checked" name="checkBox" value="emailCheck" />
                                 Yes, I would like to receive emails from St. Paul's Foundation.</div>
                 
 
-                    <!--
-                    <div class="g-recaptcha" data-sitekey="6LcaBykUAAAAAJPVSHmOPV6vGwBpszHhq5Z2_0j2"></div>
-                    -->
+                    
+                                
+                                <div class="g-recaptcha" data-sitekey="6LcaBykUAAAAAJPVSHmOPV6vGwBpszHhq5Z2_0j2"></div>
+
+                    
         
                                 <button name="submit" id="submit" type="submit" class="btnSubmit">Play!</button>
                      
@@ -268,24 +270,25 @@ else{
             <img src="images/instruction2.png" class="instruction" />
         </div>
 
-        <!-- about us box -->
         
+        <!-- about us box -->
         <!-- Modal for about -->
         <div id="myModal" class="modal fade" role="dialog">
-              <div class="modal-dialog">
+              <div class="modal-dialog aboutDialog">
 
                     <!-- Modal for about content-->
                     <div class="modal-content">
                           <div class="modal-header">
                                 <img src="images/spf_logo_colour.png" class="aboutUsLogo" />
-                                <h2 class="modal-title">About</h2>
+                                <h2 class="modal-title aboutTitle">About</h2>
                           </div>
-                      <div class="modal-body">
+                      <div class="modal-body bodyAbout">
                             
                             <p>Where there is light there is hope. Every holiday season, St. Paul’s Foundation invites the community to support St. Paul’s greatest needs through our Lights of Hope campaign. Your donations help to bring comfort, support and hope to the thousands of British Columbians who rely on St. Paul’s and other Providence Health Care hospitals and residences  for the best possible care. Any gift you can give will make a difference.</p>
                           
                       </div>
                       <div class="modal-footer">
+                            <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
                             <button id="aboutInfo" type="button" class="btn btn-default" onclick="aboutLink()">More Info</button>
                       </div>
                     </div>

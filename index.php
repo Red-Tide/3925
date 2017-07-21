@@ -229,24 +229,26 @@ else{
                       <div class="modal-body login-body">
                             
                             <form method="post" onsubmit="submitCheck()">
-                    
-                                <input id="username" name="name" type="textbox" class="input" placeholder="Name" required>
+                                <div class="form-group">
+                                    <input id="username" name="name" type="textbox" class="form-control" placeholder="Name" required>
 
-                                <input id="password" name="email" type="email" class="input" placeholder="Email" required>
-
+                                    <input id="password" name="email" type="email" class="form-control" placeholder="Email" required>
+                                </div>
                                 <div class="emailCheck">
                                 <input type="checkbox" checked="checked" name="checkBox" value="emailCheck" />
                                 Yes, I would like to receive emails from St. Paul's Foundation.</div>
                 
 
                     
-                                
-                                <div class="g-recaptcha" data-sitekey="6LcaBykUAAAAAJPVSHmOPV6vGwBpszHhq5Z2_0j2"></div>
+                                <div class="row inputEnd">
+                                    <div class="col-xs-6">
+                                        <div class="g-recaptcha" data-sitekey="6LcaBykUAAAAAJPVSHmOPV6vGwBpszHhq5Z2_0j2" style="transform:scale(0.70);-webkit-transform:scale(0.70);transform-origin:0 0;-webkit-transform-origin:0 0;"></div>
+                                    </div>
 
-                    
-        
-                                <button name="submit" id="submit" type="submit" class="btnSubmit">Play!</button>
-                     
+                                    <div class="col-xs-6">
+                                        <button name="submit" id="submit" type="submit" class="btn btn-lg btnSubmit pull-right">Play!</button>
+                                    </div>
+                                </div>
 
                             </form>
                           

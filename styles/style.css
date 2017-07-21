@@ -139,6 +139,10 @@ form *{
     font-weight: bold;
 }
 
+.modal-header h4 {
+    font-weight: bold;
+}
+
 .input:focus{
 	border:2px solid #5DC3A7;
     outline:0;

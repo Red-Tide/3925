@@ -120,7 +120,6 @@ a{
 	width:100%;
 }
 
-
 /* Login stuff */
 form{
 	display:block;
@@ -135,11 +134,7 @@ form *{
     margin: 0;
 }
 
-.modal-body p {
-    font-weight: bold;
-}
-
-.modal-header h4 {
+.login-body p, .modal-header h4 {
     font-weight: bold;
 }
 

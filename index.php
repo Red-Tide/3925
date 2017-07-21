@@ -227,9 +227,11 @@ else{
                                 <h4 class="modal-title">Register</h4>
                           </div>
                       <div class="modal-body login-body">
+                    
                             
                             <form method="post" onsubmit="submitCheck()">
                                 <div class="form-group">
+                                    <p>Please enter your name email to interact with the lights!</p>
                                     <input id="username" name="name" type="textbox" class="form-control" placeholder="Name" required>
 
                                     <input id="password" name="email" type="email" class="form-control" placeholder="Email" required>

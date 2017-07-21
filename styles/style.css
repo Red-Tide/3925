@@ -135,6 +135,10 @@ form *{
     margin: 0;
 }
 
+.modal-body p {
+    font-weight: bold;
+}
+
 .input:focus{
 	border:2px solid #5DC3A7;
     outline:0;

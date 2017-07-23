@@ -156,6 +156,8 @@ form *{
 .btnSubmit{
     background: #5DC3A7;
     color: #fff;
+    float: right;
+    padding: 7% 15% 7% 15%;
 }
 
 .btnSubmit:hover{
@@ -208,6 +210,13 @@ form *{
 
 .login-body {
     background-color: #EFEFEF;
+}
+
+.captcha{
+    transform:scale(0.70);
+    -webkit-transform:scale(0.70);
+    transform-origin:0 0;
+    -webkit-transform-origin:0 0;
 }
 
 /* about us stuff */
@@ -515,6 +524,7 @@ form *{
     .btnSubmit{
         background: #5DC3A7;
         color: #fff;
+        padding: 10% 15% 10% 15%;
     }
     
     .wheel{
@@ -558,27 +568,30 @@ form *{
         top: 15%;
     }
 
-@media (max-height: 640px) {
+@media (max-height: 680px) {
     
-    .loginModal {
-        width: 90%;
-        height: 45%;
-        max-height: 300px;
-        top:100px;
+    .captcha{
+        transform:scale(0.60);
+        -webkit-transform:scale(0.60);
+        transform-origin:0 0;
+        -webkit-transform-origin:0 0;
     }
     
-    .aboutUs {
-        font-size: 80%;
+    .btnSubmit{
+        padding: 10% 15% 10% 15%;
     }
 }
 
-@media (max-height: 480px) {
+@media (max-height: 580px) {
+    .captcha{
+        transform:scale(0.50);
+        -webkit-transform:scale(0.50);
+        transform-origin:0 0;
+        -webkit-transform-origin:0 0;
+    }
     
-    .loginModal {
-        width: 90%;
-        height: 50%;
-        max-height: 300px;
-        top:100px;
+    .btnSubmit{
+        padding: 10% 15% 10% 15%;
     }
     
 }

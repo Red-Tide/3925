@@ -247,11 +247,11 @@ else{
                     
                                 <div class="row inputEnd">
                                     <div class="col-xs-6">
-                                        <div class="g-recaptcha" data-sitekey="6LcaBykUAAAAAJPVSHmOPV6vGwBpszHhq5Z2_0j2" style="transform:scale(0.70);-webkit-transform:scale(0.70);transform-origin:0 0;-webkit-transform-origin:0 0;"></div>
+                                        <div class="g-recaptcha captcha" data-sitekey="6LcaBykUAAAAAJPVSHmOPV6vGwBpszHhq5Z2_0j2"></div>
                                     </div>
 
                                     <div class="col-xs-6">
-                                        <button name="submit" id="submit" type="submit" class="btn btn-lg btnSubmit pull-right">Play!</button>
+                                        <button name="submit" id="submit" type="submit" class="btn btnSubmit">Play!</button>
                                     </div>
                                 </div>
 
@@ -381,10 +381,6 @@ else{
 
             }
 
-            function openLogin() {
-                $('.loginModal').css('display', 'block');
-                $('.modal-bg').fadeIn();
-            }
 
             $('#close').click(function () {
                 $('.modal-bg').fadeOut();

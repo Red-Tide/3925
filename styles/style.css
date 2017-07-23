@@ -164,6 +164,9 @@ form *{
 	background-color: #0FC491;
 }
 
+.empty{
+    height: 30%;
+}
 
 .login-instruc {
     width: 30%;
@@ -175,36 +178,8 @@ form *{
     top: -53%;
 }
 
-.loginModal{
-	position:absolute;
-    width: 30%;
-    height: 30%;
-    max-height: 400px;
-	display:none;
-	background-color:#F5F5F6;
-	z-index:101;
-	margin: auto;   
-    left: 0;
-    right: 0;
-    top:0;
-    bottom: 0;
-	border-bottom: 3px solid #5DC3A7;
-	box-shadow:0 0 10px 0 rgba(0,0,0,0.3);
-}
-
-.loginModal span{
-	display: block;
-	background:#5DC3A7;
-	padding: 10px;
-	color:#fff;
-	border-radius:3px;
-	width:100%;
-    padding-top: 2%;
-}
-
 .login-dialog {
     margin: auto;
-    top: 31%;
     padding: 0 2% 0 2%;
 }
 

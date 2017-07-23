@@ -93,7 +93,7 @@ else{
         <div id="mySidenav" class="sidenav">
             
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-            <a href="#" onclick="openLogin()" data-toggle="modal" data-target="#myLoginModal" class="btnLogin">Login</a>
+            <a href="#" onclick="openLogin()" data-toggle="modal" data-target="#myLoginModal" class="btnLogin" id="btnLogin">Login</a>
             <a href="#" onclick="aboutUs()" data-toggle="modal" data-target="#myModal">About Us</a>
             <a href="#" onclick="openShare()">Share<span class="caret"></span></a>
             
@@ -222,10 +222,13 @@ else{
         <!-- Modal for Login -->
         <div id="myLoginModal" class="modal fade" role="dialog">
             
+            <div class="empty">
+            </div>
+            
             <img src="images/login_instruc.png" class="login-instruc" />
             
             <div class="modal-dialog login-dialog">
-
+                    
                     <!-- Modal for Login content-->
                     <div class="modal-content">
                           <div class="modal-header">
@@ -447,7 +450,7 @@ else{
             function bigStarClick() {
                 document.getElementById("bigStar").play();
                 if(!getCookie("user")){
-                    openLogin();
+                     document.getElementById("btnLogin").click();
                 }
             }
 

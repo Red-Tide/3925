@@ -93,8 +93,8 @@ else{
         <div id="mySidenav" class="sidenav">
             
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-            <a href="#" onclick="openLogin()" class="btnLogin">Login</a>
-            <a href="#" onclick="aboutUs()" class="btnAbout">About Us</a>
+            <a href="#" onclick="openLogin()" data-toggle="modal" data-target="#myLoginModal" class="btnLogin" id="btnLogin">Login</a>
+            <a href="#" onclick="aboutUs()" data-toggle="modal" data-target="#myModal">About Us</a>
             <a href="#" onclick="openShare()">Share<span class="caret"></span></a>
             
             <div id="shareMenu">
@@ -136,7 +136,10 @@ else{
 
         <!-- List of sounds for star wheel -->
         <audio src="sounds/bigStar.wav" type="audio/wav" id="bigStar"></audio>
-        <audio src="sounds/smallStar.wav" type="audio/wav" id="smallStar"></audio>
+        <audio src="sounds/smallstar1.wav" type="audio/wav" id="smallStar1"></audio>
+        <audio src="sounds/smallstar2.wav" type="audio/wav" id="smallStar2"></audio>
+        <audio src="sounds/smallstar3.wav" type="audio/wav" id="smallStar3"></audio>
+        <audio src="sounds/smallstar4.wav" type="audio/wav" id="smallStar4"></audio>
 
         <!-- Big star animation -->
         <div class="container">
@@ -184,13 +187,14 @@ else{
         </div>
 
 
-
+        <!--
         <div class="modal-bg"> 
-
+        -->
             <!-- login instruction -->
+            <!--
             <img src="images/login_instruc.png" class="login-instruc" />
 
-            <div class="modal">
+            <div class="loginModal">
                 <span>Register<a href="#close" id="close">×</a></span>
                 <form method="post" onsubmit="submitCheck()">
                     
@@ -201,16 +205,72 @@ else{
                     <div class="emailCheck">
                     <input type="checkbox" checked="checked" name="checkBox" value="emailCheck" />
                     Yes, I would like to receive emails from St. Paul's Foundation.</div>
-                        
+                --> 
 
                     <!--
                     <div class="g-recaptcha" data-sitekey="6LcaBykUAAAAAJPVSHmOPV6vGwBpszHhq5Z2_0j2"></div>
                     -->
-
+        <!--
                     <button name="submit" id="submit" type="submit" class="btnSubmit">Play!</button>
                      
 
                 </form>
+            </div>
+        </div>
+        -->
+        
+        <!-- Modal for Login -->
+        <div id="myLoginModal" class="modal fade" role="dialog">
+            
+            <div class="empty">
+            </div>
+            
+            <img src="images/login_instruc.png" class="login-instruc" />
+            
+            <div class="modal-dialog login-dialog">
+                    
+                    <!-- Modal for Login content-->
+                    <div class="modal-content">
+                          <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h4 class="modal-title">Register</h4>
+                          </div>
+                      <div class="modal-body login-body">
+                    
+                            
+                            <form method="post" onsubmit="submitCheck()">
+                                <div class="form-group">
+                                    
+                                    <input id="username" name="name" type="textbox" class="form-control" placeholder="Name" required>
+
+                                    <input id="password" name="email" type="email" class="form-control" placeholder="Email" required>
+                                </div>
+                                <div class="emailCheck">
+                                <input type="checkbox" checked="checked" name="checkBox" value="emailCheck" />
+                                Yes, I would like to receive emails from St. Paul's Foundation.</div>
+                
+
+                    
+                                <div class="row inputEnd">
+                                    <div class="col-xs-6">
+                                        <div class="g-recaptcha captcha" data-sitekey="6LcaBykUAAAAAJPVSHmOPV6vGwBpszHhq5Z2_0j2"></div>
+                                    </div>
+
+                                    <div class="col-xs-6">
+                                        <button name="submit" id="submit" type="submit" class="btn btnSubmit">Play!</button>
+                                    </div>
+                                </div>
+
+                            </form>
+                          
+                      </div>
+                    <!--
+                      <div class="modal-footer">
+                            <button id="aboutInfo" type="button" class="btn btn-default" onclick="aboutLink()">More Info</button>
+                      </div>
+                    -->
+                    </div>
+
             </div>
         </div>
     
@@ -223,7 +283,37 @@ else{
             <img src="images/instruction2.png" class="instruction" />
         </div>
 
+        
         <!-- about us box -->
+        <!-- Modal for about -->
+        <div id="myModal" class="modal fade" role="dialog">
+            
+            <div class="emptyAbout">
+            </div>
+            
+            <div class="modal-dialog aboutDialog">
+
+                <!-- Modal for about content-->
+                <div class="modal-content"> 
+                    <div class="modal-header">
+                        <img src="images/spf_logo_colour.png" class="aboutUsLogo" />
+                        <h2 class="modal-title aboutTitle">About</h2>
+                    </div>
+                    <div class="modal-body bodyAbout">
+
+                        <p>Where there is light there is hope. Every holiday season, St. Paul’s Foundation invites the community to support St. Paul’s greatest needs through our Lights of Hope campaign. Your donations help to bring comfort, support and hope to the thousands of British Columbians who rely on St. Paul’s and other Providence Health Care hospitals and residences  for the best possible care. Any gift you can give will make a difference.</p>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+                        <button id="aboutInfo" type="button" class="btn btn-default" onclick="aboutLink()">More Info</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        
+        <!--
         <div class="modal4-bg" onclick="closeBlank3()">
             <div class="aboutUs">
                 <div class="aboutRow">
@@ -241,6 +331,7 @@ else{
                 <a href="http://helpstpauls.com/about" >More Info</a>
             </div>
         </div>
+        -->
 
 
         <?php
@@ -300,14 +391,10 @@ else{
 
             }
 
-            function openLogin() {
-                $('.modal').css('display', 'block');
-                $('.modal-bg').fadeIn();
-            }
 
             $('#close').click(function () {
                 $('.modal-bg').fadeOut();
-                $('.modal').fadeOut();
+                $('.loginModal').fadeOut();
                 return false;
             });
 
@@ -367,31 +454,35 @@ else{
             function bigStarClick() {
                 document.getElementById("bigStar").play();
                 if(!getCookie("user")){
-                    openLogin();
+                     document.getElementById("btnLogin").click();
                 }
             }
 
             // Small star sound
             function smallStarSound1() {
-                document.getElementById("smallStar").play();
+                document.getElementById("smallStar1").play();
             }
             
             function smallStarSound2() {
-                document.getElementById("smallStar").play();
+                document.getElementById("smallStar2").play();
             }
             
             function smallStarSound3() {
-                document.getElementById("smallStar").play();
+                document.getElementById("smallStar3").play();
             }
             
             function smallStarSound4() {
-                document.getElementById("smallStar").play();
+                document.getElementById("smallStar4").play();
             }
 
             // about us function
             function aboutUs() {
                 $('.modal4-bg').fadeIn();
                 $('.aboutUs').css('display', 'block');
+            }
+            
+            function aboutLink() {
+                window.open("http://helpstpauls.com/about");
             }
             
             // controls for the CueServer output

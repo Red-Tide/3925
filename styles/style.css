@@ -120,7 +120,6 @@ a{
 	width:100%;
 }
 
-
 /* Login stuff */
 form{
 	display:block;
@@ -128,8 +127,15 @@ form{
 }
 
 form *{
-	margin:10px;
+	margin:10px 0;
+}
 
+.g-recaptcha div, .g-recaptcha iframe{
+    margin: 0;
+}
+
+.modal-header h4 {
+    font-weight: bold;
 }
 
 .input:focus{
@@ -138,30 +144,29 @@ form *{
 }
 
 .input{
-	width:90%;
-    margin-top: 1%;
 	border:2px solid #ccc ;
 	border-radius:3px;
-    
+    margin-top: 0;
 }
+
+.inputEnd{
+    max-height: 68px;
+}
+
 .btnSubmit{
-    width:30%;
-	float: right;
-	margin-top: 15px;
-    margin-right: 8%;
-	background: #5DC3A7;
-	border: none;
-	color: #fff;
-	border-bottom: 3px solid #23AA84;
-	border-radius: 3px;
-	cursor: pointer;
-    padding-top: 3px;
+    background: #5DC3A7;
+    color: #fff;
+    float: right;
+    padding: 7% 15% 7% 15%;
 }
 
 .btnSubmit:hover{
 	background-color: #0FC491;
 }
 
+.empty{
+    height: 30%;
+}
 
 .login-instruc {
     width: 30%;
@@ -170,34 +175,49 @@ form *{
     left: -5%;
     right: 0;
     bottom: 0;
-    top: -50%;
+    top: -53%;
 }
 
-.modal{
-	position:absolute;
-    width: 30%;
-    height: 30%;
-    max-height: 400px;
-	display:none;
-	background-color:#F5F5F6;
-	z-index:101;
-	margin: auto;   
-    left: 0;
-    right: 0;
-	border-bottom: 3px solid #5DC3A7;
-	box-shadow:0 0 10px 0 rgba(0,0,0,0.3);
+.login-dialog {
+    margin: auto;
+    padding: 0 2% 2% 2%;
 }
 
-.modal span{
-	display: block;
-	background:#5DC3A7;
-	padding: 10px;
-	color:#fff;
-	border-radius:3px;
-	width:100%;
-    padding-top: 2%;
+.login-body {
+    background-color: #EFEFEF;
 }
 
+.captcha{
+    transform:scale(0.70);
+    -webkit-transform:scale(0.70);
+    transform-origin:0 0;
+    -webkit-transform-origin:0 0;
+}
+
+/* about us stuff */
+.emptyAbout{
+    height: 25%;
+}
+
+.aboutDialog {
+    margin: auto;
+    padding: 0 2% 0 2%; 
+}
+
+.bodyAbout {
+    background-color: #EFEFEF;
+}
+
+#aboutInfo {
+    background-color: #EF3340;
+    color: white;
+}
+
+.aboutTitle {
+    font-weight: bold;
+}
+
+/*
 .aboutUs {
     background-color: white;
     color: black;
@@ -213,7 +233,6 @@ form *{
     right: 0;
     top: 0;
     bottom: 0;
-	/*border: 5px solid #00cccc;*/
 	box-shadow: 10px 10px 5px #333333;
     font-size: 80%;
 }
@@ -228,14 +247,12 @@ form *{
     font-weight: bold;
     font-size: 300%;
 }
-
+*/
 .aboutUsLogo {
     width: 45%;
     float: right;
-    padding-top: 2%;
-    padding-right: 2%;
 }
-
+/*
 .aboutUs a {
     background-color: #EF3340;
     color: white;
@@ -245,7 +262,7 @@ form *{
     margin-bottom: 0;
     
 }
-
+*/
 .emailCheck{
     font-size: 80%;
     display: inline;    
@@ -467,7 +484,7 @@ form *{
         width: 90%;
     }
     
-    .modal {
+    .loginModal {
         width: 90%;
         height: 40%;
         max-height: 300px;
@@ -483,15 +500,9 @@ form *{
     }
     
     .btnSubmit{
-        width: 30%;
-        margin-right: 8%;
-        margin-bottom: 5%;
         background: #5DC3A7;
-        border: none;
         color: #fff;
-        border-bottom: 3px solid #23AA84;
-        border-radius: 3px;
-        cursor: pointer;
+        padding: 10% 15% 10% 15%;
     }
     
     .wheel{
@@ -506,6 +517,7 @@ form *{
     }
     
     /* about us box */
+    /*
     .aboutUs {
         background-color: white;
         color: black;
@@ -523,37 +535,42 @@ form *{
         bottom: 0;
         box-shadow: 10px 10px 5px #333333;
     }
+    */
     
     .aboutUsLogo {
         padding-top: 2.8%;
     }
 
-@media (max-height: 640px) {
-    .modal {
-        width: 90%;
-        height: 45%;
-        max-height: 300px;
-        top:100px;
+@media (max-height: 680px) {
+    
+    .captcha{
+        transform:scale(0.60);
+        -webkit-transform:scale(0.60);
+        transform-origin:0 0;
+        -webkit-transform-origin:0 0;
     }
     
-    .aboutUs {
-        font-size: 80%;
+    .btnSubmit{
+        padding: 10% 15% 10% 15%;
     }
 }
 
-@media (max-height: 480px) {
-    .modal {
-        width: 90%;
-        height: 50%;
-        max-height: 300px;
-        top:100px;
+@media (max-height: 580px) {
+    .captcha{
+        transform:scale(0.50);
+        -webkit-transform:scale(0.50);
+        transform-origin:0 0;
+        -webkit-transform-origin:0 0;
     }
+    
+    .btnSubmit{
+        padding: 10% 15% 10% 15%;
+    }
+    
+    .emptyAbout{
+        height: 18%;
+    }
+    
 }
     
-/* 6s plus */
-@media (height: 736px) {
-    .aboutUs{
-        font-size: 110%;
-    }
-}
 	

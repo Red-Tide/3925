@@ -136,7 +136,10 @@ else{
 
         <!-- List of sounds for star wheel -->
         <audio src="sounds/bigStar.wav" type="audio/wav" id="bigStar"></audio>
-        <audio src="sounds/smallStar.wav" type="audio/wav" id="smallStar"></audio>
+        <audio src="sounds/smallstar1.wav" type="audio/wav" id="smallStar1"></audio>
+        <audio src="sounds/smallstar2.wav" type="audio/wav" id="smallStar2"></audio>
+        <audio src="sounds/smallstar3.wav" type="audio/wav" id="smallStar3"></audio>
+        <audio src="sounds/smallstar4.wav" type="audio/wav" id="smallStar4"></audio>
 
         <!-- Big star animation -->
         <div class="container">
@@ -450,19 +453,19 @@ else{
 
             // Small star sound
             function smallStarSound1() {
-                document.getElementById("smallStar").play();
+                document.getElementById("smallStar1").play();
             }
             
             function smallStarSound2() {
-                document.getElementById("smallStar").play();
+                document.getElementById("smallStar2").play();
             }
             
             function smallStarSound3() {
-                document.getElementById("smallStar").play();
+                document.getElementById("smallStar3").play();
             }
             
             function smallStarSound4() {
-                document.getElementById("smallStar").play();
+                document.getElementById("smallStar4").play();
             }
 
             // about us function

@@ -180,7 +180,7 @@ form *{
 
 .login-dialog {
     margin: auto;
-    padding: 0 2% 0 2%;
+    padding: 0 2% 2% 2%;
 }
 
 .login-body {
@@ -195,9 +195,12 @@ form *{
 }
 
 /* about us stuff */
+.emptyAbout{
+    height: 25%;
+}
+
 .aboutDialog {
     margin: auto;
-    top: 25%;
     padding: 0 2% 0 2%; 
 }
 
@@ -537,11 +540,6 @@ form *{
     .aboutUsLogo {
         padding-top: 2.8%;
     }
-    
-    /* bootstrap modal about us stuff */
-    .aboutDialog {
-        top: 15%;
-    }
 
 @media (max-height: 680px) {
     
@@ -569,12 +567,10 @@ form *{
         padding: 10% 15% 10% 15%;
     }
     
+    .emptyAbout{
+        height: 18%;
+    }
+    
 }
     
-/* 6s plus */
-@media (height: 736px) {
-    .aboutUs{
-        font-size: 110%;
-    }
-}
 	

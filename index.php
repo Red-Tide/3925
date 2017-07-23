@@ -287,6 +287,10 @@ else{
         <!-- about us box -->
         <!-- Modal for about -->
         <div id="myModal" class="modal fade" role="dialog">
+            
+            <div class="emptyAbout">
+            </div>
+            
             <div class="modal-dialog aboutDialog">
 
                 <!-- Modal for about content-->

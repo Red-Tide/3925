@@ -258,7 +258,7 @@ else{
                             </form>
                           
                       </div>
-                        <!--
+                    <!--
                       <div class="modal-footer">
                             <button id="aboutInfo" type="button" class="btn btn-default" onclick="aboutLink()">More Info</button>
                       </div>
@@ -281,26 +281,26 @@ else{
         <!-- about us box -->
         <!-- Modal for about -->
         <div id="myModal" class="modal fade" role="dialog">
-              <div class="modal-dialog aboutDialog">
+            <div class="modal-dialog aboutDialog">
 
-                    <!-- Modal for about content-->
-                    <div class="modal-content">
-                          <div class="modal-header">
-                                <img src="images/spf_logo_colour.png" class="aboutUsLogo" />
-                                <h2 class="modal-title aboutTitle">About</h2>
-                          </div>
-                      <div class="modal-body bodyAbout">
-                            
-                            <p>Where there is light there is hope. Every holiday season, St. Paul’s Foundation invites the community to support St. Paul’s greatest needs through our Lights of Hope campaign. Your donations help to bring comfort, support and hope to the thousands of British Columbians who rely on St. Paul’s and other Providence Health Care hospitals and residences  for the best possible care. Any gift you can give will make a difference.</p>
-                          
-                      </div>
-                      <div class="modal-footer">
-                            <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
-                            <button id="aboutInfo" type="button" class="btn btn-default" onclick="aboutLink()">More Info</button>
-                      </div>
+                <!-- Modal for about content-->
+                <div class="modal-content"> 
+                    <div class="modal-header">
+                        <img src="images/spf_logo_colour.png" class="aboutUsLogo" />
+                        <h2 class="modal-title aboutTitle">About</h2>
                     </div>
+                    <div class="modal-body bodyAbout">
 
-              </div>
+                        <p>Where there is light there is hope. Every holiday season, St. Paul’s Foundation invites the community to support St. Paul’s greatest needs through our Lights of Hope campaign. Your donations help to bring comfort, support and hope to the thousands of British Columbians who rely on St. Paul’s and other Providence Health Care hospitals and residences  for the best possible care. Any gift you can give will make a difference.</p>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+                        <button id="aboutInfo" type="button" class="btn btn-default" onclick="aboutLink()">More Info</button>
+                    </div>
+                </div>
+
+            </div>
         </div>
         
         <!--

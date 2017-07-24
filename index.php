@@ -56,8 +56,8 @@ else{
         
         <link rel="stylesheet" type="text/css" href="styles/style.css">
         <script type="text/javascript" src="jquery-1.9.1.js"></script>
-        <script src="//assets.codepen.io/assets/libs/modernizr-0e41cf622f0788eca25945c37bdc5b15.js"></script>
         <script type="text/javascript" src="jquery.wheelmenu.js"></script>
+
 
         <!-- Captcha -->
         <script src='https://www.google.com/recaptcha/api.js'></script>
@@ -93,8 +93,8 @@ else{
         <div id="mySidenav" class="sidenav">
             
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-            <a href="#" onclick="openLogin()" data-toggle="modal" data-target="#myLoginModal" class="btnLogin" id="btnLogin">Login</a>
-            <a href="#" onclick="aboutUs()" data-toggle="modal" data-target="#myModal">About Us</a>
+            <a href="#" data-toggle="modal" data-target="#myLoginModal" class="btnLogin" id="btnLogin">Login</a>
+            <a href="#" data-toggle="modal" data-target="#myModal">About Us</a>
             <a href="#" onclick="openShare()">Share<span class="caret"></span></a>
             
             <div id="shareMenu">
@@ -282,9 +282,37 @@ else{
         <div class="modal3-bg" onclick="closeBlank2()">
             <img src="images/instruction2.png" class="instruction" />
         </div>
+        
+        <div class="modal4-bg">
+
+            
+            <div class="modal-dialog aboutDialog" style="z-index: 2">
+
+                <!-- Modal for about content-->
+                <div class="modal-content"> 
+                    <div class="modal-header">
+                        <img src="images/spf_logo_colour.png" class="aboutUsLogo" />
+                        <h2 class="modal-title aboutTitle">About</h2>
+                    </div>
+                    <div class="modal-body bodyAbout">
+
+                        <p>Where there is light there is hope. Every holiday season, St. Paul’s Foundation invites the community to support St. Paul’s greatest needs through our Lights of Hope campaign. Your donations help to bring comfort, support and hope to the thousands of British Columbians who rely on St. Paul’s and other Providence Health Care hospitals and residences  for the best possible care. Any gift you can give will make a difference.</p>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+                        <button id="aboutInfo" type="button" class="btn btn-default" onclick="aboutLink()">More Info</button>
+                    </div>
+                </div>
+
+            </div>
+            
+                    
+            <canvas id="canvas" style="z-index: 0 ; display: inline;"></canvas>
+            <canvas id="canvas2" style="z-index: 1"></canvas>
+        </div>
 
         
-        <!-- about us box -->
         <!-- Modal for about -->
         <div id="myModal" class="modal fade" role="dialog">
             
@@ -475,35 +503,16 @@ else{
                 document.getElementById("smallStar4").play();
             }
 
-            // about us function
-            function aboutUs() {
-                $('.modal4-bg').fadeIn();
-                $('.aboutUs').css('display', 'block');
-            }
             
             function aboutLink() {
                 window.open("http://helpstpauls.com/about");
             }
             
-            // controls for the CueServer output
-            var timeUntilPlay = 0;
-            
-            function controlLight(star) {
-                var xhttp = new XMLHttpRequest();
-                    xhttp.onreadystatechange = function() {
-                        if (this.readyState == 4 && this.status == 200) {
-                            timeUntilPlay = this.responseText;
-                            alert("This is a placeholder for a really exciting count down animation. Your light show will begin in " + timeUntilPlay.toString() + " seconds.");
-                        }
-                    };
-                xhttp.open("POST", "http://192.168.43.130:8888", true);
-                xhttp.send(star);
-            }
             
             
 
         </script>
-        
+        <script type="text/javascript" src="js/firework.js"></script>
     </body>
 
 </html>

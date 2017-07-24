@@ -113,7 +113,6 @@ a{
     bottom:0;
 	z-index:100;
     display: none;
-	background-color:rgba(50,50,50,0.5);
 }
 
 .top{
@@ -202,6 +201,10 @@ form *{
 .aboutDialog {
     margin: auto;
     padding: 0 2% 0 2%; 
+}
+
+#canvas{
+    display: inline;
 }
 
 .bodyAbout {

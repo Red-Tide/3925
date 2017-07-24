@@ -231,19 +231,25 @@ else{
                     
                     <!-- Modal for Login content-->
                     <div class="modal-content">
-                          <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                <h4 class="modal-title">Register</h4>
-                          </div>
-                      <div class="modal-body login-body">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">Register</h4>
+                        </div>
+                        <div class="modal-body login-body">
+                            
+                            
+                            <div class="alert alert-danger" role="alert" data-dismiss="alert" style="display:none">
+                                <strong>Please enter a valid name and email.</strong>
+                            </div>
                     
                             
-                            <form method="post" onsubmit="submitCheck()">
+                            <form name="login_form" method="post" onsubmit="return submitCheck()">
                                 <div class="form-group">
                                     
                                     <input id="username" name="name" type="textbox" class="form-control" placeholder="Name" required>
 
-                                    <input id="password" name="email" type="email" class="form-control" placeholder="Email" required>
+                                    <input id="password" name="email" type="textbox" class="form-control" placeholder="Email" required>
+                                    
                                 </div>
                                 <div class="emailCheck">
                                 <input type="checkbox" checked="checked" name="checkBox" value="emailCheck" />
@@ -263,12 +269,8 @@ else{
 
                             </form>
                           
-                      </div>
-                    <!--
-                      <div class="modal-footer">
-                            <button id="aboutInfo" type="button" class="btn btn-default" onclick="aboutLink()">More Info</button>
-                      </div>
-                    -->
+                        </div>
+                    
                     </div>
 
             </div>
@@ -282,6 +284,8 @@ else{
         <div class="modal3-bg" onclick="closeBlank2()">
             <img src="images/instruction2.png" class="instruction" />
         </div>
+        
+        
         
         <div class="modal4-bg">
 
@@ -313,6 +317,8 @@ else{
         </div>
 
         
+        
+        
         <!-- Modal for about -->
         <div id="myModal" class="modal fade" role="dialog">
             
@@ -341,26 +347,12 @@ else{
             </div>
         </div>
         
-        <!--
-        <div class="modal4-bg" onclick="closeBlank3()">
-            <div class="aboutUs">
-                <div class="aboutRow">
-                    <h1>
-                        About
-                    </h1>
-                
-                    <img src="images/spf_logo_colour.png" class="aboutUsLogo" />
-                </div>
-                
-
-                <p>
-                    Where there is light there is hope. Every holiday season, St. Paul’s Foundation invites the community to support St. Paul’s greatest needs through our Lights of Hope campaign. Your donations help to bring comfort, support and hope to the thousands of British Columbians who rely on St. Paul’s and other Providence Health Care hospitals and residences  for the best possible care. Any gift you can give will make a difference. 
-                </p>
-                <a href="http://helpstpauls.com/about" >More Info</a>
-            </div>
-        </div>
-        -->
-
+      
+        
+        
+        
+        
+        
 
         <?php
 
@@ -411,12 +403,31 @@ else{
                             return unescape(document.cookie.substring(c_start, c_end))
                     } 
                 }
-                return ""
+                return "";
             }
 
+            // to check & validate the form
             function submitCheck(){
-                setCookie("user", "default", 200);
 
+                var nameRegExp = /^[A-Za-z]([A-Za-z]|-| )+[A-Za-z]$/; 
+                var emailRegExp = /([\w-\.]+)@((?:[\w]+\.)+)([a-zA-Z]{2,4})/;
+                
+                var name = document.forms["login_form"]["name"].value;
+                var email = document.forms["login_form"]["email"].value;
+                
+                if (!(nameRegExp.test(name) && emailRegExp.test(email))) {
+                    
+                    $('.alert').css("display", "block");
+                    document.forms["login_form"]["name"].value = "";
+                    document.forms["login_form"]["email"].value = "";
+                    return false;
+                
+                } else {
+                    
+                    setCookie("user", "default", 200);
+                    return true;
+                
+                }
             }
 
 

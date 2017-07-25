@@ -259,7 +259,7 @@ else{
                     
                                 <div class="row inputEnd">
                                     <div class="col-xs-6">
-                                        <div class="g-recaptcha captcha" data-sitekey="6LcaBykUAAAAAJPVSHmOPV6vGwBpszHhq5Z2_0j2" data-callback="recaptchaCallback()"></div>
+                                        <div class="g-recaptcha captcha" data-sitekey="6LcaBykUAAAAAJPVSHmOPV6vGwBpszHhq5Z2_0j2" data-callback="recaptchaCallback"></div>
                                     </div>
 
                                     <div class="col-xs-6">

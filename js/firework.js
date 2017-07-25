@@ -21,7 +21,7 @@ var context = canvas.getContext('2d'),
     MAX_PARTICLES = 400,
     colorCode = 0;
 
-    context.globalCompositeOperation = 'destination-over';
+    //context.globalCompositeOperation = 'destination-over';
 
 function countDown(){
     $('.modal-dialog').fadeIn();
@@ -47,8 +47,8 @@ function controlLight(star) {
             }else{
                 //alert("aaa");
                 $('.modal4-bg').fadeIn();
+                drawCanvas();
                 drawCanvas2();
-                //drawCanvas();
 
                 timer = setInterval("countDown()", 1000);
                 
@@ -60,29 +60,35 @@ function controlLight(star) {
 
 
 
-// init
+// firework canvas
 function drawCanvas() {
     //document.body.appendChild(canvas);
     canvas.width = SCREEN_WIDTH;
     canvas.height = SCREEN_HEIGHT;
+    
     star = new Image();
     
-    //context2.clearRect(0,0,canvas.width,canvas.height);
+    context2.clearRect(0, 0, canvas.width, canvas.height);
     star.src = "images/big_star.png";
 
     setInterval(launch, 800);
     setInterval(loop, 1000 / 30);
-   // star.onload = function(){
-   //     context.drawImage(star, 0, 0, 1000, 1000);
-   // }
+    /*
+    star.onload = function(){
+        context.drawImage(star, 0, 0, 1000, 1000);
+    }
+    */
 };
 
+// text / countdown
 function drawCanvas2(){
     //document.body.appendChild(canvas2);
+    //context2.globalCompositeOperation='destination-over';
     canvas2.width = SCREEN_WIDTH;
     canvas2.height = SCREEN_HEIGHT;
-    context2.fillText(count.toString(),SCREEN_WIDTH/2, SCREEN_HEIGHT/3); 
-    //context2.clearRect(0,0,canvas.width,canvas.height);
+    context2.fillStyle = 'white';
+    context2.fillText(count.toString(), SCREEN_WIDTH/2, SCREEN_HEIGHT/3.5); 
+    context2.clearRect(0,0,canvas.width,canvas.height);
     
 }
 
@@ -130,7 +136,7 @@ function loop() {
 
     // clear canvas
     context.fillStyle = "rgba(0, 0, 0, 0.1)";
-    //context.fillRect(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
+    context.fillRect(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
     context.drawImage(star, SCREEN_WIDTH/ 2 - 50, SCREEN_HEIGHT/2 - 50, 100, 100);
 
     

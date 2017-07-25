@@ -243,7 +243,7 @@ else{
                             </div>
                     
                             
-                            <form name="login_form" method="post" onsubmit="return submitCheck()" data-callback="6LcaBykUAAAAAJPVSHmOPV6vGwBpszHhq5Z2_0j2">
+                            <form name="login_form" method="post" onsubmit="return submitCheck()">
                                 <div class="form-group">
                                     
                                     <input id="username" name="name" type="textbox" class="form-control" placeholder="Name" required>
@@ -259,7 +259,7 @@ else{
                     
                                 <div class="row inputEnd">
                                     <div class="col-xs-6">
-                                        <div class="g-recaptcha captcha" data-sitekey="6LcaBykUAAAAAJPVSHmOPV6vGwBpszHhq5Z2_0j2"></div>
+                                        <div class="g-recaptcha captcha" data-sitekey="6LcaBykUAAAAAJPVSHmOPV6vGwBpszHhq5Z2_0j2" data-callback="recaptchaCallback()"></div>
                                     </div>
 
                                     <div class="col-xs-6">
@@ -483,7 +483,6 @@ else{
                 document.getElementById("smallStar4").play();
             }
 
-            
             function aboutLink() {
                 window.open("http://helpstpauls.com/about");
             }

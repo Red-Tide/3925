@@ -204,7 +204,11 @@ form *{
 }
 
 #canvas{
-    display: inline;
+    z-index: 0;
+}
+
+#canvas2{
+    z-index: 99;
 }
 
 .bodyAbout {
@@ -377,7 +381,6 @@ form *{
     font-weight: bold;
     font-size: 36px;
     padding: 10px 11px;
-    text-align: center;
     border-radius: 50px;
     width: 35px;
     height: 35px;
@@ -385,7 +388,7 @@ form *{
     display: block;
     margin: auto;
     top: 80px;
-    right:40px;
+    right:4%;
 
 }
 
@@ -454,15 +457,13 @@ form *{
 
 /* for instruction on first load */
 .instruction {
-    width: 50%;
+    width: 10%;
     position: absolute;
     margin: auto;   
-    top: 0;
+    top: 0px;
     bottom: 0;
-    left: 0;
+    left: 200px;
     right: 0;
-    border: 5px solid black;
-    box-shadow: 10px 10px 5px #333333;
 }
 
 /* Mobile css */
@@ -480,7 +481,8 @@ form *{
     }
     
     .instruction {
-        width: 80%;
+        width: 30%;
+        bottom:100px;
     }
     
     .login-instruc {
@@ -511,7 +513,9 @@ form *{
     .wheel{
         width: 450px;
         height: 450px;
+        
     }
+
     
     .spfLogo {
         width: 25%;
@@ -572,6 +576,10 @@ form *{
     
     .emptyAbout{
         height: 18%;
+    }
+    .wheel-button{
+        top:50px;
+        right:10%;
     }
     
 }

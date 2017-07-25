@@ -1,7 +1,8 @@
 // controls for the CueServer output
 var timeUntilPlay = 0;
-var count = 10;
+var count = 30;
 var timer;
+var star;
 
 var SCREEN_WIDTH = window.innerWidth,
     SCREEN_HEIGHT = window.innerHeight,
@@ -20,12 +21,14 @@ var context = canvas.getContext('2d'),
     MAX_PARTICLES = 400,
     colorCode = 0;
 
+    context.globalCompositeOperation = 'destination-over';
+
 function countDown(){
     $('.modal-dialog').fadeIn();
     count--;
     if (count > 0){    
-        alert(count);
-    } else if (count == 0){
+        //alert(count);
+    } else if (count == 0 ){
         alert("enjoy the light show")
     } else {
         clearInterval(timer);
@@ -38,14 +41,17 @@ function controlLight(star) {
         xhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
                 timeUntilPlay = this.responseText;
-                alert("This is a placeholder for a really exciting count down animation. Your light show will begin in " + timeUntilPlay.toString() + " seconds.");
+                //alert("This is a placeholder for a really exciting count down animation. Your light show will //begin in " + timeUntilPlay.toString() + " seconds.");
+                count = timeUntilPlay;
+               
             }else{
                 //alert("aaa");
                 $('.modal4-bg').fadeIn();
-                
-                drawCanvas();
-                //drawCanvas2();
+                drawCanvas2();
+                //drawCanvas();
+
                 timer = setInterval("countDown()", 1000);
+                
             }
         };
     xhttp.open("POST", "http://192.168.43.130:8888", true);
@@ -59,30 +65,24 @@ function drawCanvas() {
     //document.body.appendChild(canvas);
     canvas.width = SCREEN_WIDTH;
     canvas.height = SCREEN_HEIGHT;
-    var star = new Image();
+    star = new Image();
     
     //context2.clearRect(0,0,canvas.width,canvas.height);
-    star.onload = function(){
-        context.drawImage(star, 0, 0, 1000, 1000);
-    }
-    star.src = "../images/blue_star2.png";
+    star.src = "images/big_star.png";
+
     setInterval(launch, 800);
     setInterval(loop, 1000 / 30);
+   // star.onload = function(){
+   //     context.drawImage(star, 0, 0, 1000, 1000);
+   // }
 };
 
 function drawCanvas2(){
     //document.body.appendChild(canvas2);
     canvas2.width = SCREEN_WIDTH;
     canvas2.height = SCREEN_HEIGHT;
-    var x = window.innerWidth / 2;
-    var y = window.innerHeight / 2;
-    var star = new Image();
-    star.src = "../images/blue_star2.png";
+    context2.fillText(count.toString(),SCREEN_WIDTH/2, SCREEN_HEIGHT/3); 
     //context2.clearRect(0,0,canvas.width,canvas.height);
-    
-    context2.drawImage(star, x, y, 100, 100);
-        
-    
     
 }
 
@@ -130,7 +130,11 @@ function loop() {
 
     // clear canvas
     context.fillStyle = "rgba(0, 0, 0, 0.1)";
-    context.fillRect(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
+    //context.fillRect(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
+    context.drawImage(star, SCREEN_WIDTH/ 2 - 50, SCREEN_HEIGHT/2 - 50, 100, 100);
+
+    
+   
 
     var existingRockets = [];
 

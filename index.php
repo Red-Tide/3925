@@ -13,7 +13,7 @@ $cookie_insName = "instruction";
 $cookie_insValue = "instructionValue";
 
 
-//setcookie($cookie_insName,$cookie_insValue,time() - 3600);
+setcookie($cookie_insName,$cookie_insValue,time() - 3600);
 /*
 if(!isset($_COOKIE[$cookie_name])) {
     echo "The cookie is not set";
@@ -278,7 +278,7 @@ else{
     
 
         <div class="modal2-bg" onclick="closeBlank()">
-            <img src="images/instruction1.png" class="instruction" />
+            <img src="images/click_me_instruc.png" class="instruction" />
         </div>
 
         <div class="modal3-bg" onclick="closeBlank2()">
@@ -286,40 +286,16 @@ else{
         </div>
         
         
-        
+        <!-- Fire work animations -->
         <div class="modal4-bg">
-
-            
-            <div class="modal-dialog aboutDialog" style="z-index: 2">
-
-                <!-- Modal for about content-->
-                <div class="modal-content"> 
-                    <div class="modal-header">
-                        <img src="images/spf_logo_colour.png" class="aboutUsLogo" />
-                        <h2 class="modal-title aboutTitle">About</h2>
-                    </div>
-                    <div class="modal-body bodyAbout">
-
-                        <p>Where there is light there is hope. Every holiday season, St. Paul’s Foundation invites the community to support St. Paul’s greatest needs through our Lights of Hope campaign. Your donations help to bring comfort, support and hope to the thousands of British Columbians who rely on St. Paul’s and other Providence Health Care hospitals and residences  for the best possible care. Any gift you can give will make a difference.</p>
-
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
-                        <button id="aboutInfo" type="button" class="btn btn-default" onclick="aboutLink()">More Info</button>
-                    </div>
-                </div>
-
-            </div>
-            
-                    
-            <canvas id="canvas" style="z-index: 0 ; display: inline;"></canvas>
-            <canvas id="canvas2" style="z-index: 1"></canvas>
+            <canvas id="canvas"></canvas>
+            <canvas id="canvas2"></canvas>
         </div>
 
         
         
         
-        <!-- Modal for about -->
+        <!-- Modal for about us -->
         <div id="myModal" class="modal fade" role="dialog">
             
             <div class="emptyAbout">
@@ -356,8 +332,6 @@ else{
 
         <?php
 
-           // define("name",$_POST["name"]);
-           // define("email",$_POST["email"]);
 
             $name = $_POST["name"];
             $email = $_POST["email"];
@@ -369,13 +343,8 @@ else{
             }
 
 
-            //echo name;
-            //$query = "SELECT * FROM tuser"; 
-            //$result = mysqli_query($con, $query);
-            //$row = mysqli_fetch_array($result);
-
-
-            $query = "INSERT INTO tuser (email, name, login_time, email_check) VALUES('$email','$name', '$date', $check)";
+            $query = "INSERT INTO tuser (email, name, login_time, email_check) 
+                        VALUES('$email','$name', '$date', $check)";
             mysqli_query($con,$query);
 
         ?>

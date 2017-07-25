@@ -13,7 +13,7 @@ $cookie_insName = "instruction";
 $cookie_insValue = "instructionValue";
 
 
-//setcookie($cookie_insName,$cookie_insValue,time() - 3600);
+setcookie($cookie_insName,$cookie_insValue,time() - 3600);
 /*
 if(!isset($_COOKIE[$cookie_name])) {
     echo "The cookie is not set";
@@ -243,7 +243,7 @@ else{
                             </div>
                     
                             
-                            <form name="login_form" method="post" onsubmit="return submitCheck()">
+                            <form name="login_form" method="post" onsubmit="return submitCheck()" data-callback="6LcaBykUAAAAAJPVSHmOPV6vGwBpszHhq5Z2_0j2">
                                 <div class="form-group">
                                     
                                     <input id="username" name="name" type="textbox" class="form-control" placeholder="Name" required>
@@ -263,7 +263,7 @@ else{
                                     </div>
 
                                     <div class="col-xs-6">
-                                        <button name="submit" id="submit" type="submit" class="btn btnSubmit">Play!</button>
+                                        <button name="submit" id="submit" type="submit" class="btn btnSubmit" disabled>Play!</button>
                                     </div>
                                 </div>
 
@@ -486,6 +486,11 @@ else{
             
             function aboutLink() {
                 window.open("http://helpstpauls.com/about");
+            }
+            
+            // captcha call back function
+            function recaptchaCallback() {
+                $('#submit').removeAttr('disabled');
             }
             
             

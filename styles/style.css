@@ -19,7 +19,7 @@ body {
     background-position: center;
 	position: absolute;
     filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='bg-login.png',sizingMethod='scale');
-	font-family: Arial, sans-serif;
+	font-family: Calibri, Scene;
 }
 
 .sidenav {
@@ -88,9 +88,9 @@ a{
     right:0;
 	top:0;
     bottom:0;
-	z-index:100;
     display: none;
 	background-color:rgba(50,50,50,0.5);
+    z-index: 3;
 }
 
 .modal3-bg{
@@ -99,9 +99,9 @@ a{
     right:0;
 	top:0;
     bottom:0;
-	z-index:100;
     display: none;
 	background-color:rgba(50,50,50,0.5);
+    z-index: 3;
 }
 
 /* about us */
@@ -333,6 +333,7 @@ form *{
 /* Required Stylesheets */
 .wheel-button {
     position: relative;
+    
 }
 
 .wheel {
@@ -344,15 +345,19 @@ form *{
     visibility: hidden;
     position: relative;
     display: none;
+    z-index: 99;
+    
 }
 
 .wheel li {
     overflow: hidden;
     float:left;
+    z-index: 99;
 }
 
 .wheel li a {
     display: block;
+    z-index: 99;
 }
 
 #shareMenu {
@@ -389,11 +394,12 @@ form *{
     margin: auto;
     top: 80px;
     right:4%;
-
+    z-index: 99;
 }
 
 .wheel-button:hover{ 
     color: white;
+    z-index: 99;
 }
 
 .wheel-button span, .wheel span{
@@ -403,6 +409,7 @@ form *{
     -o-transition: all 1s ease;
     transition: all 1s ease;
     display: block;
+    z-index: 99;
 }
 
 .wheel-button.active span{
@@ -419,10 +426,12 @@ form *{
     width: 70px;
     height: 70px;
     color: white;
+    z-index:110;
     -moz-transition: all 0.25s ease;
     -webkit-transition: all 0.25s ease;
     -o-transition: all 0.25s ease;
     transition: all 0.25s ease;
+    
 }
 
 /* For black circle behind small star */
@@ -460,10 +469,24 @@ form *{
     width: 10%;
     position: absolute;
     margin: auto;   
-    top: 0px;
+    top: 13%;
     bottom: 0;
-    left: 200px;
+    left: 13%;
     right: 0;
+}
+
+.instruction2 {
+    width: 10%;
+    position: absolute;
+    margin: auto;   
+    top: 0;
+    bottom: 18%;
+    left: 13%;
+    right: 0;
+}
+
+.item{
+    z-index: 111;
 }
 
 /* Mobile css */

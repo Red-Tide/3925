@@ -13,22 +13,9 @@ $cookie_insName = "instruction";
 $cookie_insValue = "instructionValue";
 
 
-setcookie($cookie_insName,$cookie_insValue,time() - 3600);
-/*
-if(!isset($_COOKIE[$cookie_name])) {
-    echo "The cookie is not set";
-}
-else{
-    echo "cookie set";
-}
+//setcookie($cookie_insName,$cookie_insValue,time() - 3600);
+//setcookie($cookie_name,$cookie_value,time());
 
-if(!isset($_COOKIE[$cookie_insName])) {
-    echo "The instruction cookie is not set";
-}
-else{
-    echo "cookie set";
-}
-*/
 ?>
 
 <!DOCTYPE html>
@@ -36,14 +23,6 @@ else{
     <head>
         <title>Lights of Hope</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
-        <!--
-        <meta property="og:url" content="http://104.236.138.127" />
-        <meta property="og:type" content="website" />
-        <meta property="og:title" content="Your Website Title" />
-        <meta property="og:description" content="Your description" />
-        <meta property="og:image" content="http://104.236.138.127/images/logo.png" />
-        -->
 
         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -98,7 +77,7 @@ else{
             <a href="#" onclick="openShare()">Share<span class="caret"></span></a>
             
             <div id="shareMenu">
-                <a href="http://twitter.com/intent/tweet?text=I+just+controlled+St.+Paul’s+Foundation’s+Lights+of+Hope+display+with+my+phone,+click+here+and+you+can+too!+http://104.236.138.127+%23LOH2018">
+                <a href="http://twitter.com/intent/tweet?text=I+just+controlled+St.+Paul’s+Foundation’s+Lights+of+Hope+display+with+my+phone,+click+here+and+you+can+too!+http://104.236.138.127+%23LOH2018" target="_blank">
                     <img src="images/twitter.png" id="twitter" />
                 </a>
 
@@ -145,7 +124,7 @@ else{
         <div class="container">
 
             <a href="#wheel" class="wheel-button">
-                <span><img src="images/big_star.png" width="800%" onclick="bigStarClick()"/></span>
+                <span><img src="images/big_star.png" width="800%" onClick="bigStarClick()"/></span>
             </a>
 
             <ul id="wheel" data-angle="all">
@@ -181,43 +160,17 @@ else{
                 <img src="images/fb_small.png" class=" fb-btn" />
             </a></div>
 
-            <a href="http://twitter.com/intent/tweet?text=I+just+controlled+St.+Paul’s+Foundation’s+Lights+of+Hope+display+with+my+phone,+click+here+and+you+can+too!+http://104.236.138.127+%23LOH2018">
+            <a href="http://twitter.com/intent/tweet?text=I+just+controlled+St.+Paul’s+Foundation’s+Lights+of+Hope+display+with+my+phone,+click+here+and+you+can+too!+http://104.236.138.127+%23LOH2018" target="_blank">
                 <img src="images/twitter_sm.png" class=" twitter-btn " />
             </a>
         </div>
 
 
-        <!--
-        <div class="modal-bg"> 
-        -->
-            <!-- login instruction -->
-            <!--
-            <img src="images/login_instruc.png" class="login-instruc" />
-
-            <div class="loginModal">
-                <span>Register<a href="#close" id="close">×</a></span>
-                <form method="post" onsubmit="submitCheck()">
-                    
-                    <input id="username" name="name" type="textbox" class="input" placeholder="Name" required>
-
-                    <input id="password" name="email" type="email" class="input" placeholder="Email"   required>
-
-                    <div class="emailCheck">
-                    <input type="checkbox" checked="checked" name="checkBox" value="emailCheck" />
-                    Yes, I would like to receive emails from St. Paul's Foundation.</div>
-                --> 
-
-                    <!--
-                    <div class="g-recaptcha" data-sitekey="6LcaBykUAAAAAJPVSHmOPV6vGwBpszHhq5Z2_0j2"></div>
-                    -->
-        <!--
-                    <button name="submit" id="submit" type="submit" class="btnSubmit">Play!</button>
-                     
-
-                </form>
-            </div>
-        </div>
-        -->
+        
+        
+        
+        
+        
         
         <!-- Modal for Login -->
         <div id="myLoginModal" class="modal fade" role="dialog">
@@ -263,7 +216,7 @@ else{
                                     </div>
 
                                     <div class="col-xs-6">
-                                        <button name="submit" id="submit" type="submit" class="btn btnSubmit" disabled>Play!</button>
+                                        <button name="submit" id="submit" type="submit" class="btn btnSubmit" >Play!</button>
                                     </div>
                                 </div>
 
@@ -277,12 +230,13 @@ else{
         </div>
     
 
-        <div class="modal2-bg" onclick="closeBlank()">
+        <!-- First load instructions -->
+        <div class="modal2-bg">
             <img src="images/click_me_instruc.png" class="instruction" />
         </div>
 
-        <div class="modal3-bg" onclick="closeBlank2()">
-            <img src="images/instruction2.png" class="instruction" />
+        <div class="modal3-bg">
+            <img src="images/click_me_instruc.png" class="instruction2" />
         </div>
         
         
@@ -315,8 +269,8 @@ else{
 
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
-                        <button id="aboutInfo" type="button" class="btn btn-default" onclick="aboutLink()">More Info</button>
+                        <button id="aboutInfo" type="button" class="btn btn-default pull-left" onclick="aboutLink()">More Info</button>
+                        <button type="button" class="btn btn-default pull-right" data-dismiss="modal">Close</button>
                     </div>
                 </div>
 
@@ -431,7 +385,7 @@ else{
                     console.log("no cookie");
                     $('.modal2-bg').fadeIn();
                     //$('.modal3-bg').fadeOut();
-                    setCookie("instruction", "instructionValue", 200);
+                    
                     //setcookie($cookie_insName, $cookie_insValue, time() + (86400 * 30 * 200), "/");
 
                 }
@@ -461,8 +415,13 @@ else{
             // Big star sound
             function bigStarClick() {
                 document.getElementById("bigStar").play();
-                if(!getCookie("user")){
-                     document.getElementById("btnLogin").click();
+                if(getCookie("instruction")){
+                    $('.modal3-bg').fadeOut();
+                }
+                else{
+                    $('.modal2-bg').fadeOut();
+                    $('.modal3-bg').fadeIn();
+                    setCookie("instruction", "instructionValue", 200);
                 }
             }
 
@@ -496,6 +455,7 @@ else{
             
 
         </script>
+        
         <script type="text/javascript" src="js/firework.js"></script>
     </body>
 

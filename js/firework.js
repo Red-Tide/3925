@@ -36,19 +36,37 @@ function countDown(){
     }
 }
 
+function getCookie(c_name) {
+                if (document.cookie.length > 0) {
+                    c_start=document.cookie.indexOf(c_name + "=")
+
+                    if (c_start != -1) { 
+                        c_start = c_start + c_name.length + 1 
+                        c_end=document.cookie.indexOf(";", c_start)
+
+                        if (c_end == -1) c_end = document.cookie.length
+                            return unescape(document.cookie.substring(c_start, c_end))
+                    } 
+                }
+                return "";
+}
+
 function controlLight(star) {
     var xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function() {
-            if (this.readyState == 4 && this.status == 200) {
+            if(!getCookie("user")) {
+                    document.getElementById("btnLogin").click();
+            } else if (this.readyState == 4 && this.status == 200) {
                 timeUntilPlay = this.responseText;
                 //alert("This is a placeholder for a really exciting count down animation. Your light show will //begin in " + timeUntilPlay.toString() + " seconds.");
                 count = timeUntilPlay;
                
-            }else{
-                //alert("aaa");
+            } else {
+                 
+                
                 $('.modal4-bg').fadeIn();
                 drawCanvas();
-                drawCanvas2();
+                    //drawCanvas2();
 
                 timer = setInterval("countDown()", 1000);
                 

@@ -1,6 +1,6 @@
 <?php
 error_reporting(0);
-include ('connect.php');
+//include ('connect.php');
 
 $con = mysqli_connect("localhost", "root", "","lights");
 
@@ -299,7 +299,7 @@ $cookie_insValue = "instructionValue";
 
             $query = "INSERT INTO tuser (email, name, login_time, email_check) 
                         VALUES('$email','$name', '$date', $check)";
-            mysqli_query($con,$query);
+            mysqli_query($con, $query);
 
         ?>
   
@@ -310,7 +310,7 @@ $cookie_insValue = "instructionValue";
             function setCookie(c_name, value, expiredays) {
                 var exdate = new Date()
                 exdate.setDate(exdate.getDate() + expiredays)
-                document.cookie=c_name+ "=" + escape(value) +
+                document.cookie = c_name+ "=" + escape(value) +
                 ((expiredays==null) ? "" : ";expires=" + exdate.toGMTString())
             }
 
@@ -347,7 +347,7 @@ $cookie_insValue = "instructionValue";
                 
                 } else {
                     
-                    setCookie("user", "default", 200);
+                    setCookie("user", "default", 1 / 24 / 60); // need to change to 30 min
                     return true;
                 
                 }

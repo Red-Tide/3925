@@ -575,6 +575,7 @@ form *{
     }
 }
 
+/* iphone 5 */
 @media (max-height: 580px) {
     .captcha{
         transform:scale(0.50);

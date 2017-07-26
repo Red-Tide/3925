@@ -23,13 +23,13 @@ var context = canvas.getContext('2d'),
 
     //context.globalCompositeOperation = 'destination-over';
 
-function countDown(){
+function countDown() {
     $('.modal-dialog').fadeIn();
     count--;
-    if (count > 0){    
-        //alert(count);
-    } else if (count == 0 ){
-        //alert("enjoy the light show")
+    if (count > 0) {    
+        
+    } else if (count == 0 ) {
+        
     } else {
         clearInterval(timer);
         $('.modal4-bg').fadeOut();
@@ -86,11 +86,6 @@ function drawCanvas() {
 
     setInterval(launch, 800);
     setInterval(loop, 1000 / 30);
-    /*
-    star.onload = function(){
-        context.drawImage(star, 0, 0, 1000, 1000);
-    }
-    */
 };
 
 // text / countdown

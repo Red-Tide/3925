@@ -1,6 +1,6 @@
 // controls for the CueServer output
 var timeUntilPlay = 0;
-var count = 30;
+var count = 10;
 var timer;
 var star;
 
@@ -23,13 +23,13 @@ var context = canvas.getContext('2d'),
 
     //context.globalCompositeOperation = 'destination-over';
 
-function countDown(){
+function countDown() {
     $('.modal-dialog').fadeIn();
     count--;
-    if (count > 0){    
-        //alert(count);
-    } else if (count == 0 ){
-        alert("enjoy the light show")
+    if (count > 0) {    
+        
+    } else if (count == 0 ) {
+        
     } else {
         clearInterval(timer);
         $('.modal4-bg').fadeOut();
@@ -59,8 +59,7 @@ function controlLight(star) {
         var xhttp = new XMLHttpRequest();
             xhttp.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 200) {
-                    timeUntilPlay = this.responseText;
-                    alert("This is a placeholder for a really exciting count down animation. Your light show will begin in " + timeUntilPlay.toString() + " seconds.");
+                    count = this.responseText - 1;
                 }
             };
         xhttp.open("POST", "http://192.168.43.130:8888", true);
@@ -68,7 +67,6 @@ function controlLight(star) {
         
         $('.modal4-bg').fadeIn();
         drawCanvas();
-        //drawCanvas2();
 
         timer = setInterval("countDown()", 1000);
     }
@@ -88,11 +86,6 @@ function drawCanvas() {
 
     setInterval(launch, 800);
     setInterval(loop, 1000 / 30);
-    /*
-    star.onload = function(){
-        context.drawImage(star, 0, 0, 1000, 1000);
-    }
-    */
 };
 
 // text / countdown
@@ -101,8 +94,9 @@ function drawCanvas2(){
     //context2.globalCompositeOperation='destination-over';
     canvas2.width = SCREEN_WIDTH;
     canvas2.height = SCREEN_HEIGHT;
+    context2.font = 'bold 40pt Calibri';
     context2.fillStyle = 'white';
-    context2.fillText(count.toString(), SCREEN_WIDTH/2, SCREEN_HEIGHT/3.5); 
+    context2.fillText(count.toString(), SCREEN_WIDTH/2, SCREEN_HEIGHT/2.5); 
     context2.clearRect(0,0,canvas.width,canvas.height);
     
 }
@@ -154,9 +148,16 @@ function loop() {
     context.fillRect(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
     context.drawImage(star, SCREEN_WIDTH/ 2 - 50, SCREEN_HEIGHT/2 - 50, 100, 100);
 
-    
+    // draw the count down text
+    context.fillStyle = "white";
+    context.font = "5rem Calibri";
+    if (count > 0) {
+        context.fillText(count.toString() + " seconds until your light show!", SCREEN_WIDTH / 3.5, SCREEN_HEIGHT / 3.5);
+    } else {
+        context.fillText("Enjoy the light show!", SCREEN_WIDTH / 2.8, SCREEN_HEIGHT / 3.5);
+    }
    
-
+    // draw rockets
     var existingRockets = [];
 
     for (var i = 0; i < rockets.length; i++) {
@@ -175,7 +176,7 @@ function loop() {
             - going down
             - close to the mouse
             - 1% chance of random explosion
-        */
+*/
         if (rockets[i].pos.y < SCREEN_HEIGHT / 5 || rockets[i].vel.y >= 0 || distance < 50 || randomChance) {
             rockets[i].explode();
         } else {

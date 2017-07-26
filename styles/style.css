@@ -470,7 +470,7 @@ form *{
     position: absolute;
     margin: auto;   
     top: 13%;
-    bottom: 0;
+    bottom: 15%;
     left: 13%;
     right: 0;
 }
@@ -485,7 +485,7 @@ form *{
     right: 0;
 }
 
-.item{
+.item {
     z-index: 111;
 }
 
@@ -505,7 +505,18 @@ form *{
     
     .instruction {
         width: 30%;
-        bottom:100px;
+        top: 10%;
+        bottom: 30%;
+        left: 52%;
+        right: 0;
+    }
+    
+    .instruction2 {
+        width: 30%;
+        top: 0;
+        bottom: 43%;
+        left: 52%;
+        right: 0;
     }
     
     .login-instruc {
@@ -539,7 +550,6 @@ form *{
         
     }
 
-    
     .spfLogo {
         width: 25%;
         float: right;
@@ -547,26 +557,6 @@ form *{
     }
     
     /* about us box */
-    /*
-    .aboutUs {
-        background-color: white;
-        color: black;
-        position: absolute;
-        width: 80%;
-        height: 50%;
-        padding: 0 9px 0 12px;
-        display: none;
-        font-size: 100%;
-        z-index: 101;
-        margin: auto;
-        left: 0;
-        right: 0;
-        top: 0;
-        bottom: 0;
-        box-shadow: 10px 10px 5px #333333;
-    }
-    */
-    
     .aboutUsLogo {
         padding-top: 2.8%;
     }

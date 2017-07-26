@@ -13,7 +13,7 @@ $cookie_insName = "instruction";
 $cookie_insValue = "instructionValue";
 
 
-//setcookie($cookie_insName,$cookie_insValue,time() - 3600);
+setcookie($cookie_insName,$cookie_insValue,time() - 3600);
 //setcookie($cookie_name,$cookie_value,time());
 
 ?>

@@ -20,17 +20,17 @@
 	};
 	
     $.fn.centerAround = function (button) {
-    var offset = button.offset(),
-        width = button.outerWidth(),
-        height = button.outerHeight(),
-        buttonX = (offset.left - $(document).scrollLeft() ) + width / 2,
-        buttonY = (offset.top -  $(document).scrollTop() ) + height / 2,
-        objectOffset = this.offset();
-    this.css("position","fixed");
-    this.css("top", buttonY  - (this.outerHeight() / 2.7)  + "px");
-    this.css("left", buttonX - (this.outerWidth() / 2.5)  + "px");
-    return this;
-  }
+        var offset = button.offset(),
+            width = button.outerWidth(),
+            height = button.outerHeight(),
+            buttonX = (offset.left - $(document).scrollLeft() ) + width / 2,
+            buttonY = (offset.top -  $(document).scrollTop() ) + height / 2,
+            objectOffset = this.offset();
+        this.css("position","fixed");
+        this.css("top", buttonY  - (this.outerHeight() / 2.7)  + "px");
+        this.css("left", buttonX - (this.outerWidth() / 2.5)  + "px");
+        return this;
+    }
   
   $.fn.flyIn = function (el, button, width, height, angle, step, radius, settings) {
     var d = 0;
@@ -104,81 +104,69 @@
     });
   }
 	
-	$.fn.hideIcon = function (button, settings) {
-	  var fields = this.find(".item"),
-	      el = this;
-	  switch (settings.animation) { 
-      case 'fade': 
-        fields.fadeOutIcon(el, button)
-        break; 
-    
-      case 'fly': 
-        fields.flyOut(el, button)
-        break; 
-    }
-	  
-	}
+  $.fn.hideIcon = function (button, settings) {
+      var fields = this.find(".item"),
+          el = this;
+      switch (settings.animation) { 
+          case 'fade': 
+            fields.fadeOutIcon(el, button)
+            break; 
+
+          case 'fly': 
+            fields.flyOut(el, button)
+            break; 
+      }   
+
+  }
 	
-	$.fn.showIcon = function (button, settings) {
-	  var el = this,
-	      zindex = '6';
-	  if (settings.trigger == "hover") {
-	    var zindex = '3';
-    }
-	  button.addClass("active").css({
-      'z-index': zindex
-    });
+    $.fn.showIcon = function (button, settings) {
+        var el = this,
+            zindex = '6';
+        if (settings.trigger == "hover") {
+            var zindex = '3';
+        }
+        button.addClass("active").css({
+            'z-index': zindex
+        });
     
     
     
-	  el.show().css({
-        position: 'absolute',
-        'z-index': '5',
- // add safe zone for mouseover
-    }).centerAround(button);
+	   el.show().css({
+            position: 'absolute',
+            'z-index': '5',
+       // add safe zone for mouseover
+       }).centerAround(button);
    
            
-    el.addClass("wheel active").css("visibility", "visible").show();
+       el.addClass("wheel active").css("visibility", "visible").show();
     
 	  
-	  if (el.attr('data-angle')) {
-      settings.angle = el.attr('data-angle')
-    }
+	   if (el.attr('data-angle')) {
+            settings.angle = el.attr('data-angle')
+       }
     
-    settings = predefineAngle(settings);
-	  var radius = el.width() / 4,
-      fields = el.find(".item"),
-      container = el,
-      width = container.innerWidth(),
-      height = container.innerHeight(),
-      angle =  0,
-      step = (settings.angle[1] - settings.angle[0]) / fields.length;
+       settings = predefineAngle(settings);
+	   var radius = el.width() / 4,
+           fields = el.find(".item"),
+           container = el,
+           width = container.innerWidth(),
+           height = container.innerHeight(),
+           angle =  0,
+           step = (settings.angle[1] - settings.angle[0]) / fields.length;
      
      
-        switch (settings.animation) { 
+       switch (settings.animation) { 
             case 'fade': 
                 fields.fadeInIcon(el, button, width, height, angle, step, radius, settings)
                 break; 
           
             case 'fly': 
-                //if(getCookie("user")){
-                    fields.flyIn(el, button, width, height, angle, step, radius, settings)
-                //}
-
-            /*
-                if (getCookie("user")) {
-                    fields.flyIn(el, button, width, height, angle, step, radius, settings)
-                } else {
-
-                 $('.modal').css('display', 'block');
-                 $('.modal-bg').fadeIn();
-
-                }
-            */
+                
+                fields.flyIn(el, button, width, height, angle, step, radius, settings)
                 break; 
-      }
+       }
     
-	   }
+    }
     
     /* get cookie function */
     function getCookie(c_name) {

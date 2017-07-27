@@ -2,6 +2,7 @@
 var timeUntilPlay = 0;
 var count = 5;
 var timer;
+var timer2, timer3;
 var star;
 
 var SCREEN_WIDTH = window.innerWidth,
@@ -32,6 +33,8 @@ function countDown() {
         
     } else {
         clearInterval(timer);
+        clearInterval(timer2);
+        clearInterval(timer3);
         $('.modal4-bg').fadeOut();
     }
 }
@@ -84,8 +87,8 @@ function drawCanvas() {
     context2.clearRect(0, 0, canvas.width, canvas.height);
     star.src = "images/big_star.png";
 
-    setInterval(launch, 800);
-    setInterval(loop, 1000 / 30);
+    timer2 = setInterval(launch, 800);
+    timer3 = setInterval(loop, 1000 / 30);
 };
 
 // text / countdown
@@ -144,7 +147,7 @@ function loop() {
     }
 
     // clear canvas
-    context.fillStyle = "rgba(0, 0, 0, 0.5)";
+    context.fillStyle = "rgba(0, 0, 0, 0.1)";
     context.fillRect(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
     context.drawImage(star, SCREEN_WIDTH/ 2 - 50, SCREEN_HEIGHT/2 - 50, 100, 100);
 
@@ -155,7 +158,7 @@ function loop() {
     context.font = ((canvas.width * 0.05)| 0) + 'px Calibri';
     context.textAlign = "center";
 
-    if (count >= 0) {
+    if (count > 0) {
         context.fillText(count.toString() + " seconds until your light show!", SCREEN_WIDTH * 0.5, SCREEN_HEIGHT * 0.3);
     } else {    
         context.fillText("Enjoy the light show!", SCREEN_WIDTH * 0.5, SCREEN_HEIGHT * 0.3);

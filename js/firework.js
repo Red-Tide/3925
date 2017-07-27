@@ -153,20 +153,25 @@ function loop() {
     
     // responsive countdown text
     if (canvas.width < 450 && count > 0) {
-        context.font = '2.3rem Calibri';
-        context.fillText(count.toString() + " seconds until your light show!", SCREEN_WIDTH / 6.5, SCREEN_HEIGHT / 3.5);
+        context.font = ((canvas.width * 0.05)| 0) + 'px Calibri';
+        context.textAlign = "center";
+        context.fillText(count.toString() + " seconds until your light show!", SCREEN_WIDTH * 0.5, SCREEN_HEIGHT * 0.3);
         
     } else if (canvas.width < 450 && count <= 0) {
-        context.font = '2.3rem Calibri';
-        context.fillText("Enjoy the light show!", SCREEN_WIDTH / 4, SCREEN_HEIGHT / 3.5);
+        context.font = ((canvas.width * 0.05)| 0) + 'px Calibri';
+        context.textAlign = "center";
+        context.fillText("Enjoy the light show!", SCREEN_WIDTH * 0.5, SCREEN_HEIGHT * 0.3);
         
     } else if (count >= 0) {
-            context.font = '5rem Calibri';
-            context.fillText(count.toString() + " seconds until your light show!", SCREEN_WIDTH / 3.7, SCREEN_HEIGHT / 3.5);
+        context.font = ((canvas.width * 0.05)| 0) + 'px Calibri';
+        context.textAlign = "center";
+        context.fillText(count.toString() + " seconds until your light show!", SCREEN_WIDTH * 0.5, SCREEN_HEIGHT * 0.3);
     } else {
-            context.font = '5rem Calibri';
-            context.fillText("Enjoy the light show!", SCREEN_WIDTH / 3, SCREEN_HEIGHT / 3.5);
+        context.font = ((canvas.width * 0.05)| 0) + 'px Calibri';
+        context.textAlign = "center";
+        context.fillText("Enjoy the light show!", SCREEN_WIDTH * 0.5, SCREEN_HEIGHT * 0.3);
     }
+    
     
     
     //context.font = "5rem Calibri";

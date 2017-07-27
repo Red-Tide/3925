@@ -144,7 +144,7 @@ function loop() {
     }
 
     // clear canvas
-    context.fillStyle = "rgba(0, 0, 0, 0.1)";
+    context.fillStyle = "rgba(0, 0, 0, 0.5)";
     context.fillRect(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
     context.drawImage(star, SCREEN_WIDTH/ 2 - 50, SCREEN_HEIGHT/2 - 50, 100, 100);
 
@@ -161,30 +161,6 @@ function loop() {
         context.fillText("Enjoy the light show!", SCREEN_WIDTH * 0.5, SCREEN_HEIGHT * 0.3);
     }
     
-    /*
-    // responsive countdown text
-    if (canvas.width < 450 && count > 0) {
-        context.font = ((canvas.width * 0.05)| 0) + 'px Calibri';
-        context.textAlign = "center";
-        context.fillText(count.toString() + " seconds until your light show!", SCREEN_WIDTH * 0.5, SCREEN_HEIGHT * 0.3);
-        
-    } else if (canvas.width < 450 && count <= 0) {
-        context.font = ((canvas.width * 0.05)| 0) + 'px Calibri';
-        context.textAlign = "center";
-        context.fillText("Enjoy the light show!", SCREEN_WIDTH * 0.5, SCREEN_HEIGHT * 0.3);
-        
-    } else if (count >= 0) {
-        context.font = ((canvas.width * 0.05)| 0) + 'px Calibri';
-        context.textAlign = "center";
-        context.fillText(count.toString() + " seconds until your light show!", SCREEN_WIDTH * 0.5, SCREEN_HEIGHT * 0.3);
-    } else {
-        context.font = ((canvas.width * 0.05)| 0) + 'px Calibri';
-        context.textAlign = "center";
-        context.fillText("Enjoy the light show!", SCREEN_WIDTH * 0.5, SCREEN_HEIGHT * 0.3);
-    }
-    */
-    
-   
     // draw rockets
     var existingRockets = [];
 

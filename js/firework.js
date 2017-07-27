@@ -151,6 +151,17 @@ function loop() {
     // draw the count down text
     context.fillStyle = "white";
     
+    // Responsive countdown text
+    context.font = ((canvas.width * 0.05)| 0) + 'px Calibri';
+    context.textAlign = "center";
+
+    if (count >= 0) {
+        context.fillText(count.toString() + " seconds until your light show!", SCREEN_WIDTH * 0.5, SCREEN_HEIGHT * 0.3);
+    } else {    
+        context.fillText("Enjoy the light show!", SCREEN_WIDTH * 0.5, SCREEN_HEIGHT * 0.3);
+    }
+    
+    /*
     // responsive countdown text
     if (canvas.width < 450 && count > 0) {
         context.font = ((canvas.width * 0.05)| 0) + 'px Calibri';
@@ -171,18 +182,8 @@ function loop() {
         context.textAlign = "center";
         context.fillText("Enjoy the light show!", SCREEN_WIDTH * 0.5, SCREEN_HEIGHT * 0.3);
     }
-    
-    
-    
-    //context.font = "5rem Calibri";
-    
-    /*
-    if (count > 0) {
-        context.fillText(count.toString() + " seconds until your light show!", SCREEN_WIDTH / 3.7, SCREEN_HEIGHT / 3.5);
-    } else {
-        context.fillText("Enjoy the light show!", SCREEN_WIDTH / 3, SCREEN_HEIGHT / 3.5);
-    }
     */
+    
    
     // draw rockets
     var existingRockets = [];

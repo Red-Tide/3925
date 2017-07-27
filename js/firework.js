@@ -27,11 +27,7 @@ var context = canvas.getContext('2d'),
 function countDown() {
     $('.modal-dialog').fadeIn();
     count--;
-    if (count > 0) {    
-        
-    } else if (count == 0 ) {
-        
-    } else {
+    if (count < -2) {    
         clearInterval(timer);
         clearInterval(timer2);
         clearInterval(timer3);
@@ -69,7 +65,7 @@ function controlLight(star) {
         xhttp.send(star);
         
         $('.modal4-bg').fadeIn();
-        drawCanvas();
+        drawCanvas(star);
 
         timer = setInterval("countDown()", 1000);
     }
@@ -77,7 +73,7 @@ function controlLight(star) {
 
 
 // firework canvas
-function drawCanvas() {
+function drawCanvas(star_img) {
     //document.body.appendChild(canvas);
     canvas.width = SCREEN_WIDTH;
     canvas.height = SCREEN_HEIGHT;
@@ -85,10 +81,10 @@ function drawCanvas() {
     star = new Image();
     
     context2.clearRect(0, 0, canvas.width, canvas.height);
-    star.src = "images/big_star.png";
+    star.src = "images/" + star_img + ".png";
 
     timer2 = setInterval(launch, 800);
-    timer3 = setInterval(loop, 1000 / 30);
+    timer3 = setInterval(loop, 1000 / 15);
 };
 
 // text / countdown
@@ -161,7 +157,7 @@ function loop() {
     if (count > 0) {
         context.fillText(count.toString() + " seconds until your light show!", SCREEN_WIDTH * 0.5, SCREEN_HEIGHT * 0.3);
     } else {    
-        context.fillText("Enjoy the light show!", SCREEN_WIDTH * 0.5, SCREEN_HEIGHT * 0.3);
+        context.fillText("Enjoy the Light Show!", SCREEN_WIDTH * 0.5, SCREEN_HEIGHT * 0.3);
     }
     
     // draw rockets

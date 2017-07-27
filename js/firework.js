@@ -84,7 +84,7 @@ function drawCanvas(star_img) {
     star.src = "images/" + star_img + ".png";
 
     timer2 = setInterval(launch, 800);
-    timer3 = setInterval(loop, 1000 / 15);
+    timer3 = setInterval(loop, 1000 / 30);
 };
 
 // text / countdown

@@ -295,7 +295,7 @@ $cookie_insValue = "instructionValue";
 
             $query = "INSERT INTO tuser (email, name, login_time, email_check, retrieved) 
                         VALUES('$email','$name', '$date', $check, 'new')";
-            if($_POST["submit"]){
+            if(isset($email)) {
                 mysqli_query($con, $query);
             }
         ?>

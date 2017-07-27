@@ -99,19 +99,15 @@ $cookie_insValue = "instructionValue";
 
 
         <span style="font-size:30px;cursor:pointer" onclick="openNav()"> 
-            <img src="images/hamburger.png" width="100px" /> 
+            <img src="images/hamburger.png" class="hamburger"/> 
         </span>
 
         <!-- SPF Logo - top right corner -->
         <img src="images/spf_logo.png" class="spfLogo" />
 
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-xs-12 col-md-6 col-md-offset-3">
-                    <img src="images/big_title1.png" class="celebrate" />
-                </div>
-            </div>
-        </div>
+        
+        <img src="images/big_title1.png" class="celebrate" />
+
 
         <!-- List of sounds for star wheel -->
         <audio src="sounds/bigStar.wav" type="audio/wav" id="bigStar"></audio>
@@ -216,7 +212,7 @@ $cookie_insValue = "instructionValue";
                                     </div>
 
                                     <div class="col-xs-6">
-                                        <button name="submit" id="submit" type="submit" class="btn btnSubmit" disabled>Play!</button>
+                                        <button name="submit" id="submit" type="submit" class="btn btnSubmit">Play!</button>
                                     </div>
                                 </div>
 
@@ -347,7 +343,7 @@ $cookie_insValue = "instructionValue";
                 
                 } else {
                     
-                    setCookie("user", "default", 10); // need to change to 30 min
+                    setCookie("user", "default", 1 / 48); // 30 min for re login
                     return true;
                 
                 }
@@ -368,7 +364,6 @@ $cookie_insValue = "instructionValue";
 
             function closeBlank2(){
                 $('.modal3-bg').fadeOut();
-                //$('.modal-bg').fadeOut();
             }
 
             function closeBlank3() {
@@ -384,10 +379,6 @@ $cookie_insValue = "instructionValue";
                 if(!instruction){
                     console.log("no cookie");
                     $('.modal2-bg').fadeIn();
-                    //$('.modal3-bg').fadeOut();
-                    
-                    //setcookie($cookie_insName, $cookie_insValue, time() + (86400 * 30 * 200), "/");
-
                 }
             }
 

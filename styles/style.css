@@ -224,37 +224,6 @@ form *{
     font-weight: bold;
 }
 
-/*
-.aboutUs {
-    background-color: white;
-    color: black;
-    position: absolute;
-    width: 47%;
-    height: 40%;
-    min-height: 40%;
-    padding: 0 9px 0 12px;
-	display:none;
-	z-index:101;
-	margin: auto;   
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-	box-shadow: 10px 10px 5px #333333;
-    font-size: 80%;
-}
-
-.aboutRow{ 
-    padding-top: 5%;
-    padding-bottom: 5%;
-}
-
-.aboutUs h1 {
-    display: inline;
-    font-weight: bold;
-    font-size: 300%;
-}
-*/
 .aboutUsLogo {
     width: 45%;
     float: right;
@@ -294,11 +263,13 @@ form *{
     margin: 1% 1% 0 0;
 }
 
+.hamburger {
+    width: 100px;
+}
+
 .celebrate {
-	margin: auto;
-	display: block;
-	padding-top: 5%;
-	width: 100%;
+	margin: 0 0 0 15%;
+	width: 65%;
 }
 
 .hospital {
@@ -311,23 +282,11 @@ form *{
     
 }
 
-@media screen and (max-width: 450px){
-    .hospital{
-        width:50%;
-    }
-}
-
 .donate {
 	margin: auto;
     padding: none;
 	width: 24%;
 	float: right;
-}
-
-@media screen and (max-width: 450px){
-    .donate{
-        width:45%;
-    }
 }
 
 /* Required Stylesheets */
@@ -393,13 +352,15 @@ form *{
     display: block;
     margin: auto;
     top: 80px;
+    bottom: 0;
     right:4%;
-    z-index: 99;
+    left: 0;
+    z-index: 4;
 }
 
 .wheel-button:hover{ 
     color: white;
-    z-index: 99;
+    z-index: 4;
 }
 
 .wheel-button span, .wheel span{
@@ -409,7 +370,7 @@ form *{
     -o-transition: all 1s ease;
     transition: all 1s ease;
     display: block;
-    z-index: 99;
+    z-index: 4;
 }
 
 .wheel-button.active span{
@@ -491,6 +452,14 @@ form *{
 
 /* Mobile css */
 @media (max-width: 450px) {
+    .hospital{
+        width:50%;
+    }
+    
+    .donate{
+        width:45%;
+    }
+    
     .fb-btn {
         width: 10%;
         right: 2%;
@@ -547,7 +516,10 @@ form *{
     .wheel{
         width: 450px;
         height: 450px;
-        
+    }
+    
+    .wheel-button {
+        margin: 0 0 0 35%;
     }
 
     .spfLogo {
@@ -560,8 +532,40 @@ form *{
     .aboutUsLogo {
         padding-top: 2.8%;
     }
+    
+    .celebrate {
+	    width: 90%;
+        margin: 0 0 0 5%;
+    }
+    
 
-@media (max-height: 680px) {
+}
+@media screen and (max-width: 760px) and (min-width: 451px) {
+    .wheel-button {
+        top: -70px;
+    }
+    
+    .wheel {
+        width: 350px;
+        height: 350px;
+    }
+    
+    .hospital {
+        width: 30%;
+    }
+    
+    .celebrate {
+        width: 50%;
+        margin: 0 0 10% 27%;
+    }
+    
+    .hamburger {
+        width: 70px;
+    }
+    
+}
+
+@media (max-height: 680px) and (max-width: 450px) {
     
     .captcha{
         transform:scale(0.60);
@@ -576,24 +580,25 @@ form *{
 }
 
 /* iphone 5 */
-@media (max-height: 580px) {
-    .captcha{
+@media (max-height: 580px) and (max-width: 450px) {
+    .captcha {
         transform:scale(0.50);
         -webkit-transform:scale(0.50);
         transform-origin:0 0;
         -webkit-transform-origin:0 0;
     }
     
-    .btnSubmit{
+    .btnSubmit {
         padding: 10% 15% 10% 15%;
     }
     
-    .emptyAbout{
-        height: 18%;
+    .emptyAbout {
+        height: 15%;
     }
-    .wheel-button{
-        top:50px;
-        right:10%;
+    
+    .wheel-button {
+        top: 20px;
+        margin: 0 0 0 30%;
     }
     
 }

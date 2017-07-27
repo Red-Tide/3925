@@ -1,6 +1,6 @@
 // controls for the CueServer output
 var timeUntilPlay = 0;
-var count = 10;
+var count = 5;
 var timer;
 var star;
 
@@ -150,12 +150,34 @@ function loop() {
 
     // draw the count down text
     context.fillStyle = "white";
-    context.font = "5rem Calibri";
-    if (count > 0) {
-        context.fillText(count.toString() + " seconds until your light show!", SCREEN_WIDTH / 3.5, SCREEN_HEIGHT / 3.5);
+    
+    // responsive countdown text
+    if (canvas.width < 450 && count > 0) {
+        context.font = '2.3rem Calibri';
+        context.fillText(count.toString() + " seconds until your light show!", SCREEN_WIDTH / 6.5, SCREEN_HEIGHT / 3.5);
+        
+    } else if (canvas.width < 450 && count <= 0) {
+        context.font = '2.3rem Calibri';
+        context.fillText("Enjoy the light show!", SCREEN_WIDTH / 4, SCREEN_HEIGHT / 3.5);
+        
+    } else if (count >= 0) {
+            context.font = '5rem Calibri';
+            context.fillText(count.toString() + " seconds until your light show!", SCREEN_WIDTH / 3.7, SCREEN_HEIGHT / 3.5);
     } else {
-        context.fillText("Enjoy the light show!", SCREEN_WIDTH / 2.8, SCREEN_HEIGHT / 3.5);
+            context.font = '5rem Calibri';
+            context.fillText("Enjoy the light show!", SCREEN_WIDTH / 3, SCREEN_HEIGHT / 3.5);
     }
+    
+    
+    //context.font = "5rem Calibri";
+    
+    /*
+    if (count > 0) {
+        context.fillText(count.toString() + " seconds until your light show!", SCREEN_WIDTH / 3.7, SCREEN_HEIGHT / 3.5);
+    } else {
+        context.fillText("Enjoy the light show!", SCREEN_WIDTH / 3, SCREEN_HEIGHT / 3.5);
+    }
+    */
    
     // draw rockets
     var existingRockets = [];
@@ -172,10 +194,10 @@ function loop() {
         var randomChance = rockets[i].pos.y < (SCREEN_HEIGHT * 2 / 3) ? (Math.random() * 100 <= 1) : false;
 
 /* Explosion rules
-            - 80% of screen
-            - going down
-            - close to the mouse
-            - 1% chance of random explosion
+- 80% of screen
+- going down
+- close to the mouse
+- 1% chance of random explosion
 */
         if (rockets[i].pos.y < SCREEN_HEIGHT / 5 || rockets[i].vel.y >= 0 || distance < 50 || randomChance) {
             rockets[i].explode();

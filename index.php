@@ -216,7 +216,7 @@ $cookie_insValue = "instructionValue";
                                     </div>
 
                                     <div class="col-xs-6">
-                                        <button name="submit" id="submit" type="submit" class="btn btnSubmit">Play!</button>
+                                        <button name="submit" id="submit" type="submit" class="btn btnSubmit" disabled>Play!</button>
                                     </div>
                                 </div>
 
@@ -347,7 +347,7 @@ $cookie_insValue = "instructionValue";
                 
                 } else {
                     
-                    setCookie("user", "default", 1 / 24 / 60); // need to change to 30 min
+                    setCookie("user", "default", 10); // need to change to 30 min
                     return true;
                 
                 }

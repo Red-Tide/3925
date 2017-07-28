@@ -617,7 +617,52 @@ form *{
         top: 58px;
         margin: 0 0 0 30%;
     }
+}
+
+@media only screen and (device-width: 1024px) and (device-height: 768px) and (orientation: landscape) {
+    .wheel-button {
+        top: 0;
+        margin: 10% 0 0 43%;
+    }
     
+    .instruction {
+        width: 20%;
+        top: 27%;
+        bottom: 40%;
+        left: 23%;
+        right: 0;
+    }
+
+    .instruction2 {
+        width: 20%;
+        top: 0;
+        bottom: 3%;
+        left: 48%;
+        right: 0;
+    }
+}
+
+@media only screen and (device-width: 768px) and (device-height: 1024px) and (orientation: portrait) {
+    .wheel-button {
+        top: 100px;
+        margin: 20% 0 0 43%;
+    }
+    
+    .instruction {
+        width: 20%;
+        top: 3%;
+        bottom: 15%;
+        left: 30%;
+        right: 0;
+    }
+
+    .instruction2 {
+        width: 20%;
+        top: 0;
+        bottom: 3%;
+        left: 63%;
+        right: 0;
+    }
 }
     
 	

@@ -228,17 +228,7 @@ form *{
     width: 45%;
     float: right;
 }
-/*
-.aboutUs a {
-    background-color: #EF3340;
-    color: white;
-    padding: 2%;
-    float: right;
-    padding-right: 2%;
-    margin-bottom: 0;
-    
-}
-*/
+
 .emailCheck{
     font-size: 80%;
     display: inline;    
@@ -540,6 +530,8 @@ form *{
     
 
 }
+
+/* horizontal phone */
 @media screen and (max-width: 760px) and (min-width: 451px) {
     .wheel-button {
         top: -70px;
@@ -561,6 +553,10 @@ form *{
     
     .hamburger {
         width: 70px;
+    }
+    
+    .login-instruc {
+        width: 40%;
     }
     
 }

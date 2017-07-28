@@ -2,7 +2,7 @@
 error_reporting(0);
 //include ('connect.php');
 
-$con = mysqli_connect("localhost", "root", "","lights");
+$con = mysqli_connect("localhost", "root", "pumpkinpie99", "lights");
 
 date_default_timezone_set('America/Los_Angeles');
 
@@ -344,7 +344,7 @@ $cookie_insValue = "instructionValue";
                 
                 } else {
                     
-                    setCookie("user", "default", 1 / 48); // 30 min for re login
+                    setCookie("user", "default", 200); // 30 min for re login
                     return true;
                 
                 }

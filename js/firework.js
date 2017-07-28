@@ -22,8 +22,6 @@ var context = canvas.getContext('2d'),
     MAX_PARTICLES = 400,
     colorCode = 0;
 
-    //context.globalCompositeOperation = 'destination-over';
-
 function countDown() {
     $('.modal-dialog').fadeIn();
     count--;
@@ -84,7 +82,7 @@ function drawCanvas(star_img) {
     star.src = "images/" + star_img + ".png";
 
     timer2 = setInterval(launch, 800);
-    timer3 = setInterval(loop, 1000 / 30);
+    timer3 = setInterval(loop, 1000 / 100);
 };
 
 // text / countdown

@@ -25,12 +25,15 @@ var context = canvas.getContext('2d'),
 function countDown() {
     $('.modal-dialog').fadeIn();
     count--;
-    if (count < -2) {    
+    if (count < -2) {  
+        context.clearRect(0, 0, canvas.width, canvas.height);
+        drawCanvas(star);    
         clearInterval(timer);
         clearInterval(timer2);
         clearInterval(timer3);
         $('.modal4-bg').fadeOut();
-    }
+        count = 5;
+   }
 }
 
 function getCookie(c_name) {
@@ -75,13 +78,13 @@ function drawCanvas(star_img) {
     //document.body.appendChild(canvas);
     canvas.width = SCREEN_WIDTH;
     canvas.height = SCREEN_HEIGHT;
-    
+
     star = new Image();
-    
+
     context2.clearRect(0, 0, canvas.width, canvas.height);
     star.src = "images/" + star_img + ".png";
 
-    timer2 = setInterval(launch, 800);
+    timer2 = setInterval(launch, 2000);
     timer3 = setInterval(loop, 1000 / 100);
 };
 
@@ -119,7 +122,7 @@ function launch() {
 }
 
 function launchFrom(x) {
-    if (rockets.length < 10) {
+    if (rockets.length < 5) {
         var rocket = new Rocket(x);
         rocket.explosionColor = Math.floor(Math.random() * 360 / 10) * 10;
         rocket.vel.y = Math.random() * -3 - 4;

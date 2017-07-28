@@ -1,8 +1,10 @@
 <?php
+
 error_reporting(0);
 //include ('connect.php');
 
-$con = mysqli_connect("localhost", "root", "", "lights");
+// Add database password when switching between localhost & digital ocean
+$con = mysqli_connect("localhost", "root", "pumpkinpie99", "lights");
 
 date_default_timezone_set('America/Los_Angeles');
 
@@ -11,7 +13,6 @@ $cookie_value = "default";
 
 $cookie_insName = "instruction";
 $cookie_insValue = "instructionValue";
-
 
 //setcookie($cookie_insName,$cookie_insValue,time() - 3600);
 //setcookie($cookie_name,$cookie_value,time());
@@ -47,7 +48,9 @@ $cookie_insValue = "instructionValue";
         <div id="mySidenav" class="sidenav">
             
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-            <a href="#" data-toggle="modal" data-target="#myLoginModal" class="btnLogin" id="btnLogin">Login</a>
+            
+            <a href="#" style="display: none" data-toggle="modal" data-target="#myLoginModal" class="btnLogin" id="btnLogin">Login</a>
+            
             <a href="#" data-toggle="modal" data-target="#myModal">About Us</a>
             <a href="#" onclick="openShare()">Share<span class="caret"></span></a>
             
@@ -179,7 +182,7 @@ $cookie_insValue = "instructionValue";
 
                                 <!-- add 'disabled' to enable captcha -->
                                 <div class="col-xs-6">
-                                    <button name="submit" id="submit" type="submit" class="btn btnSubmit">Play!</button>
+                                    <button name="submit" id="submit" type="submit" class="btn btnSubmit" disabled>Play!</button>
                                 </div>
                             </div>
                         </form>

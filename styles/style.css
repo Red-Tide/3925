@@ -619,12 +619,12 @@ form *{
     }
     
     .instruction {
-        margin: 3% 0% 0% 32%;
+        margin: 0% 10% 0% 35%;
     }
 
     .instruction2 {
         top: 0;
-        bottom: 20%;
+        bottom: 0%;
         left: 52%;
         right: 0;
     }

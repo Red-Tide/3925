@@ -2,7 +2,7 @@
 error_reporting(0);
 //include ('connect.php');
 
-$con = mysqli_connect("localhost", "root", "pumpkinpie99", "lights");
+$con = mysqli_connect("localhost", "root", "", "lights");
 
 date_default_timezone_set('America/Los_Angeles');
 
@@ -211,6 +211,7 @@ $cookie_insValue = "instructionValue";
                                         <div class="g-recaptcha captcha" data-sitekey="6LcaBykUAAAAAJPVSHmOPV6vGwBpszHhq5Z2_0j2" data-callback="recaptchaCallback"></div>
                                     </div>
 
+                                    <!-- add 'disabled' to enable captcha -->
                                     <div class="col-xs-6">
                                         <button name="submit" id="submit" type="submit" class="btn btnSubmit">Play!</button>
                                     </div>

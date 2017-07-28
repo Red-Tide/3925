@@ -665,6 +665,15 @@ form *{
     .donate {
         width: 45%;
     }
+    
+    .fb-btn {
+        width: 8%;
+    }
+
+    .twitter-btn {
+        width: 8%;
+        right: 10%;
+    }
 }
 
 /* ipad 9.7" portrait */
@@ -692,6 +701,15 @@ form *{
     
     .donate {
         width: 45%;
+    }
+    
+    .fb-btn {
+        width: 10%;
+    }
+
+    .twitter-btn {
+        width: 10%;
+        right: 12%;
     }
 }
     

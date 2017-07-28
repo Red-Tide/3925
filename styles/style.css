@@ -556,6 +556,22 @@ form *{
         width: 70px;
     }
     
+    .instruction {
+        width: 13%;
+        top: 3%;
+        bottom: 15%;
+        left: 30%;
+        right: 0;
+    }
+
+    .instruction2 {
+        width: 13%;
+        top: 5%;
+        bottom: 0;
+        left: 50%;
+        right: 0;
+    }
+    
     .login-instruc {
         width: 40%;
     }

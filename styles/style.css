@@ -282,7 +282,6 @@ form *{
 /* Required Stylesheets */
 .wheel-button {
     position: relative;
-    
 }
 
 .wheel {
@@ -625,6 +624,17 @@ form *{
     .instruction2 {
         top: -14%;
         left: 47%;
+    }
+}
+
+/* iphone 5 landscape */
+@media only screen 
+and (min-device-width : 320px)
+and (max-device-width : 568px) 
+and (orientation : landscape) {
+    .wheel-button, .wheel-button:visited {
+        width: 32px;
+        height: 32px;
     }
 }
 

@@ -2,7 +2,7 @@
 error_reporting(0);
 //include ('connect.php');
 
-$con = mysqli_connect("localhost", "root", "pumpkinpie99", "lights");
+$con = mysqli_connect("localhost", "root", "", "lights");
 
 date_default_timezone_set('America/Los_Angeles');
 
@@ -77,7 +77,7 @@ $cookie_insValue = "instructionValue";
             <a href="#" onclick="openShare()">Share<span class="caret"></span></a>
             
             <div id="shareMenu">
-                <a href="http://twitter.com/intent/tweet?text=I+just+controlled+St.+Paul’s+Foundation’s+Lights+of+Hope+display+with+my+phone,+click+here+and+you+can+too!+http://104.236.138.127+%23LOH2018" target="_blank">
+                <a href="http://twitter.com/intent/tweet?text=I+just+controlled+St.+Paul’s+Foundation’s+Lights+of+Hope+display+with+my+phone,+click+here+and+you+can+too!+http://lightsofhope.com/display+%23LOH2018" target="_blank">
                     <img src="images/twitter.png" id="twitter" />
                 </a>
 
@@ -156,8 +156,8 @@ $cookie_insValue = "instructionValue";
                 <img src="images/fb_small.png" class="fb-btn" />
             </a></div>
 
-            <a href="http://twitter.com/intent/tweet?text=I+just+controlled+St.+Paul’s+Foundation’s+Lights+of+Hope+display+with+my+phone,+click+here+and+you+can+too!+http://104.236.138.127+%23LOH2018" target="_blank">
-                <img src="images/twitter_sm.png" class="twitter-btn " />
+            <a href="http://twitter.com/intent/tweet?text=I+just+controlled+St.+Paul’s+Foundation’s+Lights+of+Hope+display+with+my+phone,+click+here+and+you+can+too!+http://lightsofhope.com/display+%23LOH2018" target="_blank">
+                <img src="images/twitter_sm.png" class="twitter-btn" />
             </a>
         </div>
 
@@ -213,7 +213,7 @@ $cookie_insValue = "instructionValue";
 
                                     <!-- add 'disabled' to enable captcha -->
                                     <div class="col-xs-6">
-                                        <button name="submit" id="submit" type="submit" class="btn btnSubmit" disabled>Play!</button>
+                                        <button name="submit" id="submit" type="submit" class="btn btnSubmit">Play!</button>
                                     </div>
                                 </div>
 
@@ -413,7 +413,7 @@ $cookie_insValue = "instructionValue";
                 }
             }
 
-            // Small star sound
+            // Small star sounds
             function smallStarSound1() {
                 document.getElementById("smallStar1").play();
             }

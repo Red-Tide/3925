@@ -649,6 +649,10 @@ form *{
         margin: 10% 0 0 43%;
     }
     
+    .login-instruc {
+        width: 40%;
+    }
+    
     .instruction {
         width: 20%;
         margin: 5% 0% 0% 35%;
@@ -681,6 +685,10 @@ form *{
     .wheel-button {
         top: 100px;
         margin: 20% 0 0 43%;
+    }
+    
+    .login-instruc {
+        width: 65%;
     }
     
     .instruction {

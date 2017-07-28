@@ -661,6 +661,10 @@ form *{
         left: 52%;
         right: 0;
     }
+    
+    .donate {
+        width: 45%;
+    }
 }
 
 /* ipad 9.7" portrait */
@@ -684,6 +688,10 @@ form *{
         bottom: 3%;
         left: 63%;
         right: 0;
+    }
+    
+    .donate {
+        width: 45%;
     }
 }
     

@@ -531,7 +531,7 @@ form *{
 
 }
 
-/* horizontal phone */
+/* horizontal mobile phone */
 @media screen and (max-width: 760px) and (min-width: 451px) {
     .wheel-button {
         top: -70px;
@@ -628,10 +628,7 @@ form *{
 }
 
 /* iphone 5 landscape */
-@media only screen 
-and (min-device-width : 320px)
-and (max-device-width : 568px) 
-and (orientation : landscape) {
+@media only screen and (min-device-width : 320px) and (max-device-width : 568px) and (orientation : landscape) {
     .wheel-button, .wheel-button:visited {
         width: 32px;
         height: 32px;

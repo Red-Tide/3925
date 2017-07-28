@@ -2,7 +2,7 @@
 error_reporting(0);
 //include ('connect.php');
 
-$con = mysqli_connect("localhost", "root", "", "lights");
+$con = mysqli_connect("localhost", "root", "pumpkinpie99", "lights");
 
 date_default_timezone_set('America/Los_Angeles');
 
@@ -13,7 +13,7 @@ $cookie_insName = "instruction";
 $cookie_insValue = "instructionValue";
 
 
-setcookie($cookie_insName,$cookie_insValue,time() - 3600);
+//setcookie($cookie_insName,$cookie_insValue,time() - 3600);
 //setcookie($cookie_name,$cookie_value,time());
 
 ?>
@@ -213,7 +213,7 @@ setcookie($cookie_insName,$cookie_insValue,time() - 3600);
 
                                     <!-- add 'disabled' to enable captcha -->
                                     <div class="col-xs-6">
-                                        <button name="submit" id="submit" type="submit" class="btn btnSubmit">Play!</button>
+                                        <button name="submit" id="submit" type="submit" class="btn btnSubmit" disabled>Play!</button>
                                     </div>
                                 </div>
 
@@ -340,7 +340,7 @@ setcookie($cookie_insName,$cookie_insValue,time() - 3600);
                 
                 } else {
                     
-                    setCookie("user", "default", 200); // 30 min for re login
+                    setCookie("user", "default", 200); // need to change to 30 min for actual use
                     return true;
                 
                 }

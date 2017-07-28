@@ -182,7 +182,7 @@ form *{
 }
 
 /* login title area */
-.modal-header {
+.register {
     background-color: #5DC3A7;
     color: white;
     font-weight: bold;

@@ -88,6 +88,7 @@ function drawCanvas(star_img) {
     timer3 = setInterval(loop, 1000 / 100);
 };
 
+/*
 // text / countdown
 function drawCanvas2(){
     //document.body.appendChild(canvas2);
@@ -100,6 +101,7 @@ function drawCanvas2(){
     context2.clearRect(0,0,canvas.width,canvas.height);
     
 }
+*/
 
 // update mouse position
 $(document).mousemove(function(e) {

@@ -617,10 +617,7 @@ form *{
         top: 58px;
         margin: 0 0 0 30%;
     }
-}
-
-/* iPhone 5 only - more accurate */
-@media only screen and (min-device-width: 560px) and (max-device-width: 1136px) and (-webkit-min-device-pixel-ratio: 2) {
+    /*
     .instruction {
         margin: auto;
         top: 0%;
@@ -628,14 +625,13 @@ form *{
         right: 23%;
         left: 0;
     }
-/*
+*/
     .instruction2 {
         top: 0;
         bottom: 15%;
         left: 52%;
         right: 0;
     }
-    */
 }
 
 /* ipad 9.7" landscape */

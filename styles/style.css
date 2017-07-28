@@ -627,8 +627,8 @@ form *{
     
     .instruction {
         width: 20%;
-        top: 27%;
-        bottom: 40%;
+        top: 20%;
+        bottom: 46%;
         left: 23%;
         right: 0;
     }
@@ -636,8 +636,8 @@ form *{
     .instruction2 {
         width: 20%;
         top: 0;
-        bottom: 3%;
-        left: 48%;
+        bottom: 7%;
+        left: 55%;
         right: 0;
     }
 }

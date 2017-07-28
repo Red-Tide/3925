@@ -617,9 +617,20 @@ form *{
         top: 58px;
         margin: 0 0 0 30%;
     }
+    
+    .instruction {
+        margin: 3% 0% 0% 32%;
+    }
+
+    .instruction2 {
+        top: 0;
+        bottom: 20%;
+        left: 52%;
+        right: 0;
+    }
 }
 
-/* ipad landscape */
+/* ipad 9.7" landscape */
 @media only screen and (device-width: 768px) and (device-height: 1024px) and (orientation: landscape) {
     .wheel-button {
         top: 0;
@@ -640,7 +651,7 @@ form *{
     }
 }
 
-/* ipad portrait */
+/* ipad 9.7" portrait */
 @media only screen and (device-width: 768px) and (device-height: 1024px) and (orientation: portrait) {
     .wheel-button {
         top: 100px;

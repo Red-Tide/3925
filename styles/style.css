@@ -623,8 +623,8 @@ form *{
 @media only screen and (min-device-width: 560px) and (max-device-width: 1136px) and (-webkit-min-device-pixel-ratio: 2) {
     .instruction {
         margin: auto;
-        top: 3%;
-        right: 18%;
+        top: 0%;
+        right: 21%;
     }
 
     .instruction2 {

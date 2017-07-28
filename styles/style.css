@@ -464,13 +464,14 @@ form *{
     
     .instruction {
         width: 30%;
-        top: 10%;
+        top: 30%;
         bottom: 22%;
         left: 52%;
         right: 0;
     }
     
     .instruction2 {
+        margin: 57% 0 0 7%;
         width: 30%;
         top: 0;
         bottom: 35%;

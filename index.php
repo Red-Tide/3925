@@ -13,7 +13,7 @@ $cookie_insName = "instruction";
 $cookie_insValue = "instructionValue";
 
 
-//setcookie($cookie_insName,$cookie_insValue,time() - 3600);
+setcookie($cookie_insName,$cookie_insValue,time() - 3600);
 //setcookie($cookie_name,$cookie_value,time());
 
 ?>
@@ -233,7 +233,7 @@ $cookie_insValue = "instructionValue";
         </div>
 
         <div class="modal3-bg">
-            <img src="images/click_me_instruc.png" class="instruction2" />
+            <img src="images/click_me_instruc_2.png" class="instruction2" />
         </div>
         
         
@@ -275,11 +275,6 @@ $cookie_insValue = "instructionValue";
         </div>
         
       
-        
-        
-        
-        
-        
 
         <?php
 

@@ -4,7 +4,7 @@ error_reporting(0);
 //include ('connect.php');
 
 // Add database password when switching between localhost & digital ocean
-$con = mysqli_connect("localhost", "root", "pumpkinpie99", "lights");
+$con = mysqli_connect("localhost", "root", "", "lights");
 
 date_default_timezone_set('America/Los_Angeles');
 
@@ -49,7 +49,7 @@ $cookie_insValue = "instructionValue";
             
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
             
-            <a href="#" style="display: none" data-toggle="modal" data-target="#myLoginModal" class="btnLogin" id="btnLogin">Login</a>
+            <a href="#" data-toggle="modal" data-target="#myLoginModal" class="btnLogin" id="btnLogin">Login</a>
             
             <a href="#" data-toggle="modal" data-target="#myModal">About Us</a>
             <a href="#" onclick="openShare()">Share<span class="caret"></span></a>
@@ -182,7 +182,7 @@ $cookie_insValue = "instructionValue";
 
                                 <!-- add 'disabled' to enable captcha -->
                                 <div class="col-xs-6">
-                                    <button name="submit" id="submit" type="submit" class="btn btnSubmit" disabled>Play!</button>
+                                    <button name="submit" id="submit" type="submit" class="btn btnSubmit">Play!</button>
                                 </div>
                             </div>
                         </form>

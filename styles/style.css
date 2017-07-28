@@ -181,6 +181,13 @@ form *{
     background-color: #EFEFEF;
 }
 
+/* login title area */
+.modal-header {
+    background-color: #5DC3A7;
+    color: white;
+    font-weight: bold;
+}
+
 .captcha{
     transform:scale(0.70);
     -webkit-transform:scale(0.70);

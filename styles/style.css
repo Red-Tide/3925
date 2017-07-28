@@ -624,7 +624,9 @@ form *{
     .instruction {
         margin: auto;
         top: 0%;
-        right: 21%;
+        bottom: 2%;
+        right: 23%;
+        left: 0;
     }
 
     .instruction2 {
@@ -632,7 +634,6 @@ form *{
         bottom: 0%;
         left: 52%;
         right: 0;
-        margin: 0% 2% 2% 0%;
     }
 }
 

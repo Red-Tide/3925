@@ -617,15 +617,11 @@ form *{
         top: 58px;
         margin: 0 0 0 30%;
     }
-    /*
+    
     .instruction {
-        margin: auto;
-        top: 0%;
-        bottom: 2%;
-        right: 23%;
-        left: 0;
+        top: 10%;
     }
-*/
+
     .instruction2 {
         top: 0;
         bottom: 15%;

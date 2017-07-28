@@ -620,7 +620,7 @@ form *{
 }
 
 /* ipad landscape */
-@media only screen and (device-width: 1024px) and (device-height: 768px) and (orientation: landscape) {
+@media only screen and (device-width: 768px) and (device-height: 1024px) and (orientation: landscape) {
     .wheel-button {
         top: 0;
         margin: 10% 0 0 43%;
@@ -628,7 +628,7 @@ form *{
     
     .instruction {
         width: 20%;
-        margin: 0% 0% 10% 50%;
+        margin: 0% 0% 20% 60%;
     }
 
     .instruction2 {

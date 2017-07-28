@@ -35,40 +35,15 @@ $cookie_insValue = "instructionValue";
         
         <link rel="stylesheet" type="text/css" href="styles/style.css">
         
-        <script type="text/javascript" src="jquery-1.9.1.js"></script>
-        <script type="text/javascript" src="jquery.wheelmenu.js"></script>
+        <script type="text/javascript" src="js/jquery-1.9.1.js"></script>
+        <script type="text/javascript" src="js/jquery.wheelmenu.js"></script>
 
         <!-- Captcha -->
         <script src='https://www.google.com/recaptcha/api.js'></script>
-
-        <script>
-            $(document).ready(function(){
-                $(".wheel-button").wheelmenu({
-                    trigger: "click",
-                    animation: "fly",
-                    animationSpeed: "slow"
-                });
-            });
-        </script>
     </head>
 
+    
     <body onload="start()">
-
-        <!-- Load facebook SDK for JS -->
-        <div id="fb-root"></div>
-        <script>
-            (function(d, s, id) {
-                var js, fjs = d.getElementsByTagName(s)[0];
-                if (d.getElementById(id)) 
-                    return;
-                js = d.createElement(s); js.id = id;
-                js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.9";
-                fjs.parentNode.insertBefore(js, fjs);
-            }
-                (document, 'script', 'facebook-jssdk')
-            );
-        </script>
-
         <div id="mySidenav" class="sidenav">
             
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
@@ -161,68 +136,55 @@ $cookie_insValue = "instructionValue";
             </a>
         </div>
 
-
-        
-        
-        
-        
-        
         
         <!-- Modal for Login -->
         <div id="myLoginModal" class="modal fade" role="dialog">
-            
             <div class="empty">
             </div>
-            
+
             <img src="images/login_instruc.png" class="login-instruc" />
-            
+
             <div class="modal-dialog login-dialog">
-                    
-                    <!-- Modal for Login content-->
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                            <h4 class="modal-title">Register</h4>
-                        </div>
-                        <div class="modal-body login-body">
-                            
-                            
-                            <div class="alert alert-danger" role="alert" data-dismiss="alert" style="display:none">
-                                <strong>Please enter a valid name and email.</strong>
-                            </div>
-                    
-                            
-                            <form name="login_form" method="post" onsubmit="return submitCheck()">
-                                <div class="form-group">
-                                    
-                                    <input id="username" name="name" type="textbox" class="form-control" placeholder="Name" required>
 
-                                    <input id="password" name="email" type="textbox" class="form-control" placeholder="Email" required>
-                                    
-                                </div>
-                                <div class="emailCheck">
-                                <input type="checkbox" checked="checked" name="checkBox" value="emailCheck" />
-                                Yes, I would like to receive emails from St. Paul's Foundation.</div>
-                
-
-                    
-                                <div class="row inputEnd">
-                                    <div class="col-xs-6">
-                                        <div class="g-recaptcha captcha" data-sitekey="6LcaBykUAAAAAJPVSHmOPV6vGwBpszHhq5Z2_0j2" data-callback="recaptchaCallback"></div>
-                                    </div>
-
-                                    <!-- add 'disabled' to enable captcha -->
-                                    <div class="col-xs-6">
-                                        <button name="submit" id="submit" type="submit" class="btn btnSubmit">Play!</button>
-                                    </div>
-                                </div>
-
-                            </form>
-                          
-                        </div>
-                    
+                <!-- Modal for Login content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Register</h4>
                     </div>
+                    <div class="modal-body login-body">
 
+
+                        <div class="alert alert-danger" role="alert" data-dismiss="alert" style="display:none">
+                            <strong>Please enter a valid name and email.</strong>
+                        </div>
+
+
+                        <form name="login_form" method="post" onsubmit="return submitCheck()">
+                            <div class="form-group">
+                                <input id="username" name="name" type="textbox" class="form-control" placeholder="Name" required>
+                                <input id="password" name="email" type="textbox" class="form-control" placeholder="Email" required>
+                            </div>
+
+                            <div class="emailCheck">
+                                <input type="checkbox" checked="checked" name="checkBox" value="emailCheck" />
+                                Yes, I would like to receive emails from St. Paul's Foundation.
+                            </div>
+
+                            <div class="row inputEnd">
+                                <div class="col-xs-6">
+                                    <div class="g-recaptcha captcha" data-sitekey="6LcaBykUAAAAAJPVSHmOPV6vGwBpszHhq5Z2_0j2" data-callback="recaptchaCallback">
+                                    </div>
+                                </div>
+
+                                <!-- add 'disabled' to enable captcha -->
+                                <div class="col-xs-6">
+                                    <button name="submit" id="submit" type="submit" class="btn btnSubmit">Play!</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
             </div>
         </div>
     
@@ -275,19 +237,17 @@ $cookie_insValue = "instructionValue";
         </div>
         
       
-
+        <!-- Storing the login things into the database -->
         <?php
-
-
             $name = $_POST["name"];
             $email = $_POST["email"];
             $date = date('m/d/Y h:i:s a', time());
+            
             if (isset($_POST["checkBox"])) {
                 $check = 1;    
             } else {
                 $check = 0;
             }
-
 
             $query = "INSERT INTO tuser (email, name, login_time, email_check, retrieved) 
                         VALUES('$email','$name', '$date', $check, 'new')";
@@ -298,153 +258,7 @@ $cookie_insValue = "instructionValue";
   
         
         
-        <script>
-
-            function setCookie(c_name, value, expiredays) {
-                var exdate = new Date()
-                exdate.setDate(exdate.getDate() + expiredays)
-                document.cookie = c_name+ "=" + escape(value) +
-                ((expiredays==null) ? "" : ";expires=" + exdate.toGMTString())
-            }
-
-            function getCookie(c_name) {
-                if (document.cookie.length > 0) {
-                    c_start=document.cookie.indexOf(c_name + "=")
-
-                    if (c_start != -1) { 
-                        c_start = c_start + c_name.length + 1 
-                        c_end=document.cookie.indexOf(";", c_start)
-
-                        if (c_end == -1) c_end = document.cookie.length
-                            return unescape(document.cookie.substring(c_start, c_end))
-                    } 
-                }
-                return "";
-            }
-
-            // to check & validate the form
-            function submitCheck(){
-
-                var nameRegExp = /^[A-Za-z]([A-Za-z]|-| )+[A-Za-z]$/; 
-                var emailRegExp = /([\w-\.]+)@((?:[\w]+\.)+)([a-zA-Z]{2,4})/;
-                
-                var name = document.forms["login_form"]["name"].value;
-                var email = document.forms["login_form"]["email"].value;
-                
-                if (!(nameRegExp.test(name) && emailRegExp.test(email))) {
-                    
-                    $('.alert').css("display", "block");
-                    document.forms["login_form"]["name"].value = "";
-                    document.forms["login_form"]["email"].value = "";
-                    return false;
-                
-                } else {
-                    
-                    setCookie("user", "default", 200); // need to change to 30 min for actual use
-                    return true;
-                
-                }
-            }
-
-
-            $('#close').click(function () {
-                $('.modal-bg').fadeOut();
-                $('.loginModal').fadeOut();
-                return false;
-            });
-
-            function closeBlank(){
-                $('.modal2-bg').fadeOut();
-                $('.modal3-bg').fadeIn();
-
-            }
-
-            function closeBlank2(){
-                $('.modal3-bg').fadeOut();
-            }
-
-            function closeBlank3() {
-                $('.modal4-bg').fadeOut();
-            }
-
-            function start(){
-                $('.modal-bg').fadeOut();
-                $('.modal2-bg').fadeOut();
-                $('.modal3-bg').fadeOut();
-                $('#modal').fadeOut();
-                var instruction = getCookie("instruction");
-                if(!instruction){
-                    console.log("no cookie");
-                    $('.modal2-bg').fadeIn();
-                }
-            }
-
-            function openNav() {
-                document.getElementById("mySidenav").style.width = "250px";
-                document.getElementById("main").style.marginLeft = "250px";
-                document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
-            }
-
-            function closeNav() {
-                document.getElementById("mySidenav").style.width = "0";
-                document.getElementById("main").style.marginLeft= "0";
-                document.body.style.backgroundColor = "white";
-            }
-
-            // Share options
-            function openShare() {
-                if ($('#shareMenu').css('display') == "none") {
-                    $('#shareMenu').css('display', 'block');
-                } else {
-                    $('#shareMenu').css('display', 'none');
-                }
-            }
-
-            // Big star sound
-            function bigStarClick() {
-                document.getElementById("bigStar").play();
-                if(getCookie("instruction")){
-                    $('.modal3-bg').fadeOut();
-                }
-                else{
-                    $('.modal2-bg').fadeOut();
-                    $('.modal3-bg').fadeIn();
-                    setCookie("instruction", "instructionValue", 200);
-                }
-            }
-
-            // Small star sounds
-            function smallStarSound1() {
-                document.getElementById("smallStar1").play();
-            }
-            
-            function smallStarSound2() {
-                document.getElementById("smallStar2").play();
-            }
-            
-            function smallStarSound3() {
-                document.getElementById("smallStar3").play();
-            }
-            
-            function smallStarSound4() {
-                document.getElementById("smallStar4").play();
-            }
-
-            function aboutLink() {
-                window.open("http://helpstpauls.com/about");
-            }
-            
-            // captcha call back function
-            function recaptchaCallback() {
-                $('#submit').removeAttr('disabled');
-            }
-            
-            
-            
-
-        </script>
-        
+        <script type="text/javascript" src="js/site.js"></script>
         <script type="text/javascript" src="js/firework.js"></script>
     </body>
-
 </html>

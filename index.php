@@ -125,13 +125,13 @@ $cookie_insValue = "instructionValue";
 
             <ul id="wheel" data-angle="all">
                 <li class="item">
-                    <a href="#home"><img src="images/star1.png" width="100%" height="100%" onclick="smallStarSound1(); controlLight('star1');" /></a>
+                    <a href="#home"><img src="images/star3.png" width="100%" height="100%" onclick="smallStarSound1(); controlLight('star1');" /></a>
                 </li>
                 <li class="item">
                     <a href="#home"><img src="images/star2.png" width="100%" height="100%" onclick="smallStarSound2(); controlLight('star2');" /></a>
                 </li>
                 <li class="item">
-                    <a href="#home"><img src="images/star3.png" width="100%" height="100%" onclick="smallStarSound3(); controlLight('star3');" /></a>
+                    <a href="#home"><img src="images/star1.png" width="100%" height="100%" onclick="smallStarSound3(); controlLight('star3');" /></a>
                 </li>
                 <li class="item">
                     <a href="#home"><img src="images/star4.png" width="100%" height="100%" onclick="smallStarSound4(); controlLight('star4');" /></a>

@@ -1,40 +1,34 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
-
 <html>
-    <head>
-        <title>Admin</title> 
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    </head>
-
-
-    <body>
-    
-        <h1>Administration Page</h1>
-        <!--
-        <button id="getSpread" onclick="getSpreadsheet()">Get SpreadSheet</button>
-        
-        <button id="start" onclick="start()">Start Queue</button>
-        
-        <button id="stop" onclick="stop()">Stop Queue</button>
-        -->
-        
-        <a href="admin.php?hello=true">Get Spreadsheet</a>
-        
-        <?php 
-        
-        function get_spread() {
-            exec ('python /var/www/create-spread.py; sleep 1');
-        }
-        
-        if (isset($_GET['hello'])) {
-            get_spread();
-        }
-        
-        ?>
-        
-    
-        
-    </body>
-
-
+<body>
+<h1>Lights of Hope: Administration</h1>
+    <form method="post" name="login">
+        <label>Admin:</label>
+        <input type="text" name="admin"/>
+        <br />
+        <br />
+        <label>Password:</label>
+        <input type="password" name="passwd"/>
+        <br />
+        <br />
+<button type="submit" onclick="submit">Login</button>
+    </form>
+        </body>
 </html>
+<?php
+if(isset($_POST['admin']) && $_POST['passwd']){
+if ($_POST['admin'] == "lhope" && $_POST['passwd'] == "pumpkinpie99"){
+    $_SESSION['login'] = true;   
+}
+echo $_POST['admin'];
+echo "\n";
+echo $_POST['passwd'];
+}
+    
+if(isset($_SESSION['login'])){
+    header("location: panel.php");
+}
+?>

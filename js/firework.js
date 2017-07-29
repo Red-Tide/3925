@@ -124,7 +124,7 @@ function launch() {
 }
 
 function launchFrom(x) {
-    if (rockets.length < 5) {
+    if (rockets.length < 2) {
         var rocket = new Rocket(x);
         rocket.explosionColor = Math.floor(Math.random() * 360 / 10) * 10;
         rocket.vel.y = Math.random() * -3 - 4;
@@ -169,7 +169,7 @@ function loop() {
     for (var i = 0; i < rockets.length; i++) {
         // update and render
         rockets[i].update();
-        rockets[i].render(context);
+        //rockets[i].render(context);
 
         // calculate distance with Pythagoras
         var distance = Math.sqrt(Math.pow(mousePos.x - rockets[i].pos.x, 2) + Math.pow(mousePos.y - rockets[i].pos.y, 2));

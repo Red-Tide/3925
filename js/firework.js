@@ -4,6 +4,7 @@ var count = 5;
 var timer;
 var timer2, timer3;
 var star;
+var msg_num;
 
 var SCREEN_WIDTH = window.innerWidth,
     SCREEN_HEIGHT = window.innerHeight,
@@ -25,7 +26,7 @@ var context = canvas.getContext('2d'),
 function countDown() {
     $('.modal-dialog').fadeIn();
     count--;
-    if (count < -2) {  
+    if (count < 0) {  
         context.clearRect(0, 0, canvas.width, canvas.height);
         drawCanvas(star);    
         clearInterval(timer);
@@ -52,10 +53,11 @@ function getCookie(c_name) {
 }
 
 // Controls the light signals
-function controlLight(star) {
+function controlLight(star, msg_id) {
     if(!getCookie("user")) {
         document.getElementById("btnLogin").click();
     } else {
+		msg_num = msg_id;
         var xhttp = new XMLHttpRequest();
             xhttp.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 200) {
@@ -154,14 +156,23 @@ function loop() {
     context.fillStyle = "white";
     
     // Responsive countdown text
-    context.font = ((canvas.width * 0.05)| 0) + 'px Calibri';
+    context.font = ((canvas.width * 0.05) | 0) + 'px Calibri';
     context.textAlign = "center";
 
     if (count > 0) {
-        context.fillText(count.toString() + " seconds until your light show!", SCREEN_WIDTH * 0.5, SCREEN_HEIGHT * 0.3);
-    } else {    
-        context.fillText("Enjoy the Light Show!", SCREEN_WIDTH * 0.5, SCREEN_HEIGHT * 0.3);
-    }
+		var x_pos = SCREEN_WIDTH * 0.5;
+		var y_pos = SCREEN_HEIGHT * 0.3;
+		if (msg_num === 1) {
+			context.fillText(count.toString() + " seconds until the 20th Anniversary", x_pos, y_pos);
+			context.fillText("letters twinkle!", x_pos, y_pos + (10 * (SCREEN_WIDTH * 0.005)));
+		} else if (msg_num === 2) {
+			context.fillText(count.toString() + " seconds until the strobe lights go off! ", x_pos, y_pos);
+		} else if (msg_num === 3) {
+			context.fillText(count.toString() + " seconds until the mini archway stars flash! ", x_pos, y_pos);
+		} else { // msg_num === 4
+			context.fillText(count.toString() + " seconds until the red rope lights flicker! ", x_pos, y_pos);
+		}
+	} 
     
     // draw rockets
     var existingRockets = [];

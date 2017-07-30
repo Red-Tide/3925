@@ -1,7 +1,7 @@
 // controls for the CueServer output
 window.requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimation;
 var timeUntilPlay = 0;
-var count = 5;
+var count = 20;
 var timer;
 var timer2, timer3;
 var star;
@@ -88,8 +88,8 @@ function drawCanvas(star_img) {
     //context2.clearRect(0, 0, canvas.width, canvas.height);
     star.src = "images/" + star_img + ".png";
 
-    //timer2 = setInterval(launch, 2000);
-    launch();
+    timer2 = setInterval(launch, 2500);
+    //launch();
     //requestAnimationFrame(launch);
     timer3 = setInterval(loop, 1000 / 100);
     //requestAnimationFrame(loop);
@@ -116,10 +116,10 @@ function launch() {
 }
 
 function launchFrom(x) {
-    if (rockets.length < 2) {
+    if (rockets.length < 1) {
         var rocket = new Rocket(x);
         rocket.explosionColor = Math.floor(Math.random() * 360 / 10) * 10;
-        rocket.vel.y = Math.random() * -3 - 4;
+        rocket.vel.y = Math.random() * - 3 - 4;
         rocket.vel.x = Math.random() * 6 - 3;
         rocket.size = 8;
         rocket.shrink = 0.999;

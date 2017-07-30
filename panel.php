@@ -27,18 +27,21 @@ extract($_POST);
 <?php
 #redirect to login screen if logout button pressed
 
+// Restarts server
 if (isset($_POST['restart'])) {
-    echo "The Queue has been Restarted";
-    shell_exec ('killall nodejs; nodejs server.js &; disown');
-    shell_exec ('sudo echo blah > /var/www/some.txt');
+    //echo "The Queue has been Restarted";
+    $output = shell_exec ("forever stop 0;forever start server.js 2>&1");
+    echo $output;
 }
 
+// Downloads the database as spreadsheet
 if (isset($_POST['get_data'])) {
     echo "Grabbing the Database";
-    exec('/usr/bin/python /var/www/html/create-spread.py');
-    //header("location:lightsofhope.xlsx");
+    $a = shell_exec("python /var/www/html/create-spread.py");
+    header("location:lightsofhope.xlsx");
 }
 
+// Logs out of the admin panel
 if (isset($_POST['logout'])) {
     session_destroy();
     header("location: admin.php");

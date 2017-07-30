@@ -148,8 +148,9 @@ function loop() {
     }
 
     // clear canvas
-    context.fillStyle = "rgba(0, 0, 0, 0.1)";
-    context.fillRect(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
+    context.clearRect(0, 0, window.innerWidth, window.innerHeight);
+    //context.fillStyle = "rgba(0, 0, 0, 0.01)";
+    //context.fillRect(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
     context.drawImage(star, SCREEN_WIDTH/ 2 - 50, SCREEN_HEIGHT/2 - 50, 100, 100);
 
     // draw the count down text
@@ -288,7 +289,7 @@ Particle.prototype.render = function(c) {
     c.arc(this.pos.x, this.pos.y, this.flick ? Math.random() * this.size : this.size, 0, Math.PI * 2, true);
     c.closePath();
     c.fill();
-
+    
     c.restore();
 };
 
@@ -337,7 +338,7 @@ Rocket.prototype.render = function(c) {
     if (!this.exists()) {
         return;
     }
-
+    c.clearRect(0, 0, window.innerWidth, window.innerHeight);
     c.save();
 
     c.globalCompositeOperation = 'lighter';
@@ -356,6 +357,6 @@ Rocket.prototype.render = function(c) {
     c.arc(this.pos.x, this.pos.y, this.flick ? Math.random() * this.size / 2 + this.size / 2 : this.size, 0, Math.PI * 2, true);
     c.closePath();
     c.fill();
-
+    
     c.restore();
 };

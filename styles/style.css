@@ -108,6 +108,7 @@ a {
     bottom:0;
 	z-index:100;
     display: none;
+    background-color:rgba(50,50,50,0.8);
 }
 
 .top {

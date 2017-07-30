@@ -173,7 +173,7 @@ function loop() {
 			context.fillText(count.toString() + " seconds until the red rope lights flicker! ", x_pos, y_pos);
 		}
 	} 
-    
+    /*
     // draw rockets
     var existingRockets = [];
 
@@ -187,13 +187,14 @@ function loop() {
 
         // random chance of 1% if rockets is above the middle
         var randomChance = rockets[i].pos.y < (SCREEN_HEIGHT * 2 / 3) ? (Math.random() * 100 <= 1) : false;
-
+*/
 /* Explosion rules
 - 80% of screen
 - going down
 - close to the mouse
 - 1% chance of random explosion
 */
+        /*
         if (rockets[i].pos.y < SCREEN_HEIGHT / 5 || rockets[i].vel.y >= 0 || distance < 50 || randomChance) {
             rockets[i].explode();
         } else {
@@ -202,7 +203,7 @@ function loop() {
     }
 
     rockets = existingRockets;
-
+    */
     var existingParticles = [];
 
     for (var i = 0; i < particles.length; i++) {

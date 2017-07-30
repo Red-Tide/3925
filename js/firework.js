@@ -25,7 +25,7 @@ function countDown() {
     //$('.modal-dialog').fadeIn();
     count--;
     if (count < 0) {  
-        context.clearRect(0, 0, canvas.width, canvas.height);    
+        context.clearRect(0, 0, window.innerWidth, window.innerHeight);    
         clearInterval(timer);
         clearInterval(timer2);
         clearInterval(timer3);

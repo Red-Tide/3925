@@ -98,7 +98,7 @@ $cookie_insValue = "instructionValue";
         <div class="container">
 
             <a href="#wheel" class="wheel-button">
-                <span><img src="images/big_star.png" width="800%" onClick="bigStarClick()"/></span>
+                <span><img src="images/big_star.png" width="800%" id="bigstar" onClick="bigStarClick()"/></span>
             </a>
 
             <ul id="wheel" data-angle="all">

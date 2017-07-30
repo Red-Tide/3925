@@ -31,6 +31,7 @@ function countDown() {
         clearInterval(timer3);
         $('.modal4-bg').fadeOut();
         count = 5;
+        document.getElementById("bigstar").click();
         return null;
    }
 }

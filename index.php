@@ -165,8 +165,8 @@ $cookie_insValue = "instructionValue";
 
                         <form name="login_form" method="POST" onsubmit="return submitCheck()">
                             <div class="form-group">
-                                <input id="username" name="name" type="textbox" class="form-control" placeholder="Name" required>
-                                <input id="password" name="email" type="textbox" class="form-control" placeholder="Email" required>
+                                <input id="username" name="name" type="text" class="form-control" placeholder="Name" required>
+                                <input id="password" name="email" type="text" class="form-control" placeholder="Email" required>
                             </div>
 
                             <div class="emailCheck">

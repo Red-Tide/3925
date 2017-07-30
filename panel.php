@@ -38,7 +38,7 @@ if (isset($_POST['restart'])) {
 if (isset($_POST['get_data'])) {
     echo "Grabbing the Database";
     $a = shell_exec("python /var/www/html/create-spread.py");
-    header("location:lightsofhope.xlsx");
+    header("location: lightsofhope.xlsx");
 }
 
 // Logs out of the admin panel

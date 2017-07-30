@@ -15,16 +15,14 @@ var SCREEN_WIDTH = window.innerWidth,
 
 // create canvas
 var canvas = document.getElementById('canvas');
-var canvas2 = document.getElementById('canvas2');
 var context = canvas.getContext('2d'),
-    context2 = canvas2.getContext('2d'),
     particles = [],
     rockets = [],
     MAX_PARTICLES = 400,
     colorCode = 0;
 
 function countDown() {
-    $('.modal-dialog').fadeIn();
+    //$('.modal-dialog').fadeIn();
     count--;
     if (count < 0) {  
         context.clearRect(0, 0, canvas.width, canvas.height);    
@@ -83,7 +81,7 @@ function drawCanvas(star_img) {
 
     star = new Image();
 
-    context2.clearRect(0, 0, canvas.width, canvas.height);
+    //context2.clearRect(0, 0, canvas.width, canvas.height);
     star.src = "images/" + star_img + ".png";
 
     timer2 = setInterval(launch, 2000);
@@ -270,7 +268,7 @@ Particle.prototype.render = function(c) {
         return;
     }
 
-    c.save();
+   // c.save();
 
     c.globalCompositeOperation = 'lighter';
 
@@ -290,7 +288,7 @@ Particle.prototype.render = function(c) {
     c.closePath();
     c.fill();
     
-    c.restore();
+    //c.restore();
 };
 
 Particle.prototype.exists = function() {
@@ -338,8 +336,8 @@ Rocket.prototype.render = function(c) {
     if (!this.exists()) {
         return;
     }
-    c.clearRect(0, 0, window.innerWidth, window.innerHeight);
-    c.save();
+    //c.clearRect(0, 0, window.innerWidth, window.innerHeight);
+    //c.save();
 
     c.globalCompositeOperation = 'lighter';
 
@@ -358,5 +356,5 @@ Rocket.prototype.render = function(c) {
     c.closePath();
     c.fill();
     
-    c.restore();
+    //c.restore();
 };

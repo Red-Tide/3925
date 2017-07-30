@@ -27,13 +27,13 @@ function countDown() {
     $('.modal-dialog').fadeIn();
     count--;
     if (count < 0) {  
-        context.clearRect(0, 0, canvas.width, canvas.height);
-        drawCanvas(star);    
+        context.clearRect(0, 0, canvas.width, canvas.height);    
         clearInterval(timer);
         clearInterval(timer2);
         clearInterval(timer3);
         $('.modal4-bg').fadeOut();
         count = 5;
+        return null;
    }
 }
 

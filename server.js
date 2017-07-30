@@ -1,8 +1,7 @@
 const http = require('http');
-//Raspberry Pi for Testing and presentation
-
-const cmd = require('node-cmd');
-//const req = require('request-promise');
+///Raspberry Pi for Testing and presentation
+//const cmd = require('node-cmd');
+const req = require('request-promise');
 
 //Interval of time between lights signals
 const time = 10;
@@ -10,22 +9,19 @@ const time = 10;
 //Constants for sending get requests to CueServer
 const star1 = {
 	method: 'GET',
-	uri:'http://remote.eoslightmedia.com:8083/exe.cgi?cmd=m12'
+	uri:'http://remote.eosligthmedia.com:8083/exe.cgi?cmd=m12'
 }
-
 const star2 = {
 	method: 'GET',
-	uri:'http://remote.eoslightmedia.com:8083/exe.cgi?cmd=m13'
+	uri:'http://remote.eosligthmedia.com:8083/exe.cgi?cmd=m13'
 }
-
 const star3 = {
 	method: 'GET',
-	uri:'http://remote.eoslightmedia.com:8083/exe.cgi?cmd=m14'
+	uri:'http://remote.eosligthmedia.com:8083/exe.cgi?cmd=m14'
 }
-
 const star4 = {
 	method: 'GET',
-	uri:'http://remote.eoslightmedia.com:8083/exe.cgi?cmd=m15'
+	uri:'http://remote.eosligthmedia.com:8083/exe.cgi?cmd=m15'
 }
 
 var queue = [];
@@ -51,49 +47,51 @@ function count_up() {
 function snd_command() {
 	if (queue.length > 0 && ready) {
 		send = queue.shift().toString();
-	    console.log("Dequeuing " + send);
+		console.log("Dequeuing " + send);
 
 	
 		switch (send) {
 			case "star1":
-			//req(star1);
-			cmd.run('./pattern1.sh');
+			req(star1);
+			//cmd.run('./pattern1.sh');
 			break;
 
 			case "star2":
-			cmd.run('./pattern2.sh');
-			//req(star2);
+			//cmd.run('./pattern2.sh');
+			req(star2);
 			break;
 
 			case "star3":
-			cmd.run('./pattern3.sh');
-			//req(star3);
+			//cmd.run('./pattern3.sh');
+			req(star3);
 			break;
 
 			case "star4":
-			cmd.run('./pattern4.sh');
-			//req(star4);
+			//cmd.run('./pattern4.sh');
+			req(star4);
 			break;
 
 			default:
 			console.log("Invalid Command")
 		}
 		ready = false;
-		count = 0;
-		setTimeout(ready_state_enable, time * 1000);
+		count=0;
+		setTimeout(ready_state_enable,time*1000);
 	}
 }
 
 function onRequest (request, response) {
 	let body = [];
-	request.on('data', (data) => {
+	request.on('data',(data) => {
 		console.log("Request!");
 		body.push(data);
 	}).on('end',() => {
 		body = Buffer.concat(body).toString();
+		response.setHeader('Access-Control-Allow-Origin','*');
+		response.writeHead(200);
 		if (!ready || queue > 0) {
 			//response.write(queue.toString() + " " + (queue.length * time + (time - count)).toString() + " seconds\n");
-			response.write((queue.length * time + (time - count)).toString() + " ");
+			response.write((queue.length * time + (time - count)).toString() +" " );
 		} else {
 			//response.write(queue.toString() + " " + "0" + " seconds\n");
 			response.write("0");
@@ -103,3 +101,10 @@ function onRequest (request, response) {
 		response.end();
 	});
 }
+
+setInterval(count_up,1000);
+setInterval(snd_command,1000);
+const server = http.createServer(onRequest);
+server.listen(8888);
+//server.listen(80);
+console.log("Server Running");

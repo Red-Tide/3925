@@ -4,6 +4,9 @@ session_start();
 
 <!DOCTYPE html>
 <html>
+    <head>
+        <title>Administration Login</title>
+    </head>
     <body>
         <h1>Lights of Hope: Administration</h1>
         <form method="post" name="login">
@@ -25,9 +28,6 @@ if (isset($_POST['admin']) && $_POST['passwd']) {
     if ($_POST['admin'] == "lhope" && $_POST['passwd'] == "pumpkinpie99") {
         $_SESSION['login'] = true;   
     }
-    //echo $_POST['admin'];
-    //echo "\n";
-    //echo $_POST['passwd'];
 }
     
 if (isset($_SESSION['login'])) {

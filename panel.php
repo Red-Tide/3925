@@ -12,9 +12,9 @@ extract($_POST);
 <html>
     <body>
         <head>
-            <title>Admin</title>
+            <title>Admin Control Panel</title>
         </head>
-        <h1>Administration</h1>
+        <h1>Control Panel</h1>
         <form method="post" name="adminpanel">
             <button type="submit" name="restart" onclick="restart">Restart Queue</button>
             <button type="submit" name="get_data" onclick="get_data">Get Spreadsheet</button>

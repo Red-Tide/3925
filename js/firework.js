@@ -1,4 +1,5 @@
 // controls for the CueServer output
+window.requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimation;
 var timeUntilPlay = 0;
 var count = 5;
 var timer;
@@ -33,7 +34,9 @@ function countDown() {
         count = 5;
         document.getElementById("bigstar").click();
         return null;
-   }
+   } //else {
+       //requestAnimationFrame(countDown);
+   //}
 }
 
 function getCookie(c_name) {
@@ -70,9 +73,9 @@ function controlLight(star, msg_id) {
         drawCanvas(star);
 
         timer = setInterval("countDown()", 1000);
+        //requestAnimationFrame(countDown);
     }
 }
-
 
 // firework canvas
 function drawCanvas(star_img) {
@@ -85,24 +88,12 @@ function drawCanvas(star_img) {
     //context2.clearRect(0, 0, canvas.width, canvas.height);
     star.src = "images/" + star_img + ".png";
 
-    timer2 = setInterval(launch, 2000);
+    //timer2 = setInterval(launch, 2000);
+    launch();
+    //requestAnimationFrame(launch);
     timer3 = setInterval(loop, 1000 / 100);
+    //requestAnimationFrame(loop);
 };
-
-/*
-// text / countdown
-function drawCanvas2(){
-    //document.body.appendChild(canvas2);
-    //context2.globalCompositeOperation='destination-over';
-    canvas2.width = SCREEN_WIDTH;
-    canvas2.height = SCREEN_HEIGHT;
-    context2.font = 'bold 40pt Calibri';
-    context2.fillStyle = 'white';
-    context2.fillText(count.toString(), SCREEN_WIDTH/2, SCREEN_HEIGHT/2.5); 
-    context2.clearRect(0,0,canvas.width,canvas.height);
-    
-}
-*/
 
 // update mouse position
 $(document).mousemove(function(e) {
@@ -173,7 +164,7 @@ function loop() {
 			context.fillText(count.toString() + " seconds until the red rope lights flicker! ", x_pos, y_pos);
 		}
 	} 
-    /*
+    
     // draw rockets
     var existingRockets = [];
 
@@ -187,14 +178,14 @@ function loop() {
 
         // random chance of 1% if rockets is above the middle
         var randomChance = rockets[i].pos.y < (SCREEN_HEIGHT * 2 / 3) ? (Math.random() * 100 <= 1) : false;
-*/
+
 /* Explosion rules
 - 80% of screen
 - going down
 - close to the mouse
 - 1% chance of random explosion
 */
-        /*
+        
         if (rockets[i].pos.y < SCREEN_HEIGHT / 5 || rockets[i].vel.y >= 0 || distance < 50 || randomChance) {
             rockets[i].explode();
         } else {
@@ -203,7 +194,7 @@ function loop() {
     }
 
     rockets = existingRockets;
-    */
+    
     var existingParticles = [];
 
     for (var i = 0; i < particles.length; i++) {

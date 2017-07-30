@@ -22,7 +22,7 @@ $cookie_insValue = "instructionValue";
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Lights of Hope</title>
+        <title>Lights of Hope!</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <!-- Latest compiled and minified CSS -->
@@ -182,7 +182,7 @@ $cookie_insValue = "instructionValue";
 
                                 <!-- add 'disabled' to enable captcha -->
                                 <div class="col-xs-6">
-                                    <button name="submit" id="submit" type="submit" class="btn btnSubmit" disabled>Play!</button>
+                                    <button name="submit" id="submit" type="submit" class="btn btnSubmit">Play!</button>
                                 </div>
                             </div>
                         </form>

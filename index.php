@@ -4,7 +4,7 @@ error_reporting(0);
 //include ('connect.php');
 
 // Add database password when switching between localhost & digital ocean
-$con = mysqli_connect("localhost", "root", "", "lights");
+$con = mysqli_connect("localhost", "root", "pumpkinpie99", "lights");
 
 date_default_timezone_set('America/Los_Angeles');
 
@@ -88,11 +88,11 @@ $cookie_insValue = "instructionValue";
 
 
         <!-- List of sounds for star wheel -->
-        <audio src="sounds/bigStar.wav" type="audio/wav" id="bigStar"></audio>
-        <audio src="sounds/smallstar1.wav" type="audio/wav" id="smallStar1"></audio>
-        <audio src="sounds/smallstar2.wav" type="audio/wav" id="smallStar2"></audio>
-        <audio src="sounds/smallstar3.wav" type="audio/wav" id="smallStar3"></audio>
-        <audio src="sounds/smallstar4.wav" type="audio/wav" id="smallStar4"></audio>
+        <audio src="sounds/bigStar.wav" id="bigStar"></audio>
+        <audio src="sounds/smallstar1.wav" id="smallStar1"></audio>
+        <audio src="sounds/smallstar2.wav" id="smallStar2"></audio>
+        <audio src="sounds/smallstar3.wav" id="smallStar3"></audio>
+        <audio src="sounds/smallstar4.wav" id="smallStar4"></audio>
 
         <!-- Big star animation -->
         <div class="container">
@@ -182,7 +182,7 @@ $cookie_insValue = "instructionValue";
 
                                 <!-- add 'disabled' to enable captcha -->
                                 <div class="col-xs-6">
-                                    <button name="submit" id="submit" type="submit" class="btn btnSubmit">Play!</button>
+                                    <button name="submit" id="submit" type="submit" class="btn btnSubmit" disabled>Play!</button>
                                 </div>
                             </div>
                         </form>

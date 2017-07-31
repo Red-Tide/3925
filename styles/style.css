@@ -18,8 +18,8 @@ body {
 	background-attachment: fixed;
     background-position: center;
 	position: absolute;
-    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='bg-login.png',sizingMethod='scale');
-	font-family: Calibri, Scene;
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='bg-login.png', sizingMethod='scale');
+	font-family: Calibri, Scene, Arial, sans-serif;
 }
 
 .sidenav {
@@ -267,7 +267,7 @@ form *{
 
 .hospital {
 	margin: auto;
-    padding: none;
+    padding: 0;
     bottom: 0px;
     left: 0px;
 	z-index: -1;
@@ -277,7 +277,7 @@ form *{
 
 .donate {
 	margin: auto;
-    padding: none;
+    padding: 0;
 	width: 24%;
 	float: right;
 }

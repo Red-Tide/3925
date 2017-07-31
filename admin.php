@@ -1,5 +1,7 @@
 <?php
 session_start();
+//error_reporting(0);
+extract($_POST);
 ?>
 
 <!DOCTYPE html>
@@ -31,6 +33,6 @@ if (isset($_POST['admin']) && $_POST['passwd']) {
 }
     
 if (isset($_SESSION['login'])) {
-    header("location: panel.php");
+    header("Location: panel.php");
 }
 ?>

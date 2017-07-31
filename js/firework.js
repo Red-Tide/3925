@@ -141,7 +141,9 @@ function loop() {
     context.fillStyle = "white";
     
     // Responsive countdown text
-    context.font = ((canvas.width * 0.07) | 0) + 'px Calibri';
+    var fontSize = (canvas.width * 0.07) | 0;
+    context.font = 'bold' + fontSize + 'px Calibri';
+    //context.font = ((canvas.width * 0.07) | 0) + 'px Calibri';
     context.textAlign = "center";
 
     if (count > 0) {

@@ -4,8 +4,7 @@ NOTE: Don't forget to change database password to pumpkinpie99 and login to add 
 
 <?php
 
-error_reporting(0);
-//include ('connect.php');
+//error_reporting(0);
 
 // Add database password when switching between localhost & digital ocean
 $con = mysqli_connect("localhost", "root", "root", "lights");
@@ -21,6 +20,8 @@ $cookie_insValue = "instructionValue";
 
 //setcookie($cookie_insName,$cookie_insValue,time() - 3600);
 //setcookie($cookie_name,$cookie_value,time());
+
+//extract($_POST);
 
 ?>
 

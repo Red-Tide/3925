@@ -49,7 +49,6 @@ if (isset($_POST['kill_server'])) {
 if (isset($_POST['restart'])) {
     echo "The Queue has been Restarted";
     $output = shell_exec ("forever stop 0;forever start server.js 2>&1");
-    //echo $output;
 }
 
 // Downloads the database as spreadsheet

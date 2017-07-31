@@ -23,16 +23,13 @@ var context = canvas.getContext('2d'),
     colorCode = 0;
 
 function countDown() {
-    //$('.modal-dialog').fadeIn();
     setTimeout( function(){
         count--;
         if (count < 0) {  
             context.clearRect(0, 0, window.innerWidth, window.innerHeight);    
-            //clearInterval(timer);
             clearInterval(timer2);
             cancelAnimationFrame(timer);
             cancelAnimationFrame(timer3);
-            //clearInterval(timer3);
             $('.modal4-bg').fadeOut();
             count = 5;
             document.getElementById("bigstar").click();
@@ -77,7 +74,6 @@ function controlLight(star, msg_id) {
         $('.modal4-bg').fadeIn();
         drawCanvas(star);
 
-        //timer = setInterval("countDown()", 1000);
         timer3 = requestAnimationFrame(loop);
         timer = requestAnimationFrame(countDown);
     }
@@ -85,20 +81,14 @@ function controlLight(star, msg_id) {
 
 // firework canvas
 function drawCanvas(star_img) {
-    //document.body.appendChild(canvas);
     canvas.width = SCREEN_WIDTH;
     canvas.height = SCREEN_HEIGHT;
 
     star = new Image();
 
-    //context2.clearRect(0, 0, canvas.width, canvas.height);
     star.src = "images/" + star_img + ".png";
 
     timer2 = setInterval(launch, 2500);
-    //launch();
-    //requestAnimationFrame(launch);
-    //timer3 = setInterval(loop, 1000 / 100);
-
 };
 
 // update mouse position
@@ -118,10 +108,7 @@ $(document).mousedown(function(e) {
 });
 
 function launch() {
-    //setTimeout( function(){
     launchFrom(mousePos.x);
-    //requestAnimationFrame(launch);
-    //},30);
 }
 
 function launchFrom(x) {
@@ -138,7 +125,6 @@ function launchFrom(x) {
 }
 
 function loop() {
-    //setTimeout( function(){
     // update screen size
     if (SCREEN_WIDTH != window.innerWidth) {
         canvas.width = SCREEN_WIDTH = window.innerWidth;
@@ -149,8 +135,6 @@ function loop() {
 
     // clear canvas
     context.clearRect(0, 0, window.innerWidth, window.innerHeight);
-    //context.fillStyle = "rgba(0, 0, 0, 0.01)";
-    //context.fillRect(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
     context.drawImage(star, SCREEN_WIDTH/ 2 - 50, SCREEN_HEIGHT/2 - 50, 100, 100);
 
     // draw the count down text
@@ -189,12 +173,12 @@ function loop() {
         // random chance of 1% if rockets is above the middle
         var randomChance = rockets[i].pos.y < (SCREEN_HEIGHT * 2 / 3) ? (Math.random() * 100 <= 1) : false;
 
-/* Explosion rules
-- 80% of screen
-- going down
-- close to the mouse
-- 1% chance of random explosion
-*/
+        /* Explosion rules
+        - 80% of screen
+        - going down
+        - close to the mouse
+        - 1% chance of random explosion
+        */
         
         if (rockets[i].pos.y < SCREEN_HEIGHT / 5 || rockets[i].vel.y >= 0 || distance < 50 || randomChance) {
             rockets[i].explode();
@@ -224,7 +208,6 @@ function loop() {
         particles.shift();
     }
     timer3 = requestAnimationFrame(loop);
-   // },1000);
 }
 
 function Particle(pos) {

@@ -19,7 +19,7 @@ body {
     background-position: center;
 	position: absolute;
     filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='bg-login.png', sizingMethod='scale');
-	font-family: Calibri, Arial, sans-serif;
+	font-family: Calibri, Scene, Arial, sans-serif;
 }
 
 .sidenav {

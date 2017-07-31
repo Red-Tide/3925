@@ -30,13 +30,15 @@ function countDown() {
             context.clearRect(0, 0, window.innerWidth, window.innerHeight);    
             //clearInterval(timer);
             clearInterval(timer2);
+            cancelAnimationFrame(timer);
+            cancelAnimationFrame(timer3);
             //clearInterval(timer3);
             $('.modal4-bg').fadeOut();
             count = 5;
             document.getElementById("bigstar").click();
             return null;
         } else {
-            requestAnimationFrame(countDown);
+            timer = requestAnimationFrame(countDown);
         }
     },1000);
 }
@@ -76,8 +78,8 @@ function controlLight(star, msg_id) {
         drawCanvas(star);
 
         //timer = setInterval("countDown()", 1000);
-        requestAnimationFrame(loop);
-        requestAnimationFrame(countDown);
+        timer3 = requestAnimationFrame(loop);
+        timer = requestAnimationFrame(countDown);
     }
 }
 
@@ -221,7 +223,7 @@ function loop() {
     while (particles.length > MAX_PARTICLES) {
         particles.shift();
     }
-    requestAnimationFrame(loop);
+    timer3 = requestAnimationFrame(loop);
    // },1000);
 }
 

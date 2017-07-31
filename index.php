@@ -8,8 +8,8 @@ error_reporting(0);
 //include ('connect.php');
 
 // Add database password when switching between localhost & digital ocean
-//$con = mysqli_connect("localhost", "root", "", "lights");
-$con = mysqli_connect("localhost", "root", "pumpkinpie99", "lights");
+$con = mysqli_connect("localhost", "root", "", "lights");
+//$con = mysqli_connect("localhost", "root", "pumpkinpie99", "lights");
 
 date_default_timezone_set('America/Los_Angeles');
 
@@ -188,12 +188,12 @@ $cookie_insValue = "instructionValue";
 
                                 <!-- add 'disabled' to enable captcha -->
                                 <div class="col-xs-6">
-                                    <!--
-                                    <button name="submit" id="submit" type="submit" class="btn btnSubmit">Play!</button>
-                                    -->
                                     
+                                    <button name="submit" id="submit" type="submit" class="btn btnSubmit">Play!</button>
+                                    
+                                    <!--
                                     <button name="submit" id="submit" type="submit" class="btn btnSubmit" disabled>Play!</button>
-                                
+                                    -->
                                 </div>
                             </div>
                         </form>

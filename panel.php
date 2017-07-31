@@ -61,7 +61,7 @@ if (isset($_POST['get_data'])) {
 // Logs out of the admin panel
 if (isset($_POST['logout'])) {
     session_destroy();
-    header("location: admin.php");
+    header("Location: admin.php");
     die();
 }
 ?>

@@ -37,7 +37,7 @@ function countDown() {
         } else {
             timer = requestAnimationFrame(countDown);
         }
-    },1000);
+    }, 1000);
 }
                
 
@@ -112,7 +112,7 @@ function launch() {
 }
 
 function launchFrom(x) {
-    if (rockets.length < 2) {
+    if (rockets.length < 20) {
         var rocket = new Rocket(x);
         rocket.explosionColor = Math.floor(Math.random() * 360 / 10) * 10;
         rocket.vel.y = Math.random() * - 3 - 4;

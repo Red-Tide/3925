@@ -61,7 +61,7 @@ function submitCheck(){
 
     } else {
 
-        setCookie("user", "default", 200); // need to change to 30 min for actual use
+        setCookie("user", "default", 1 / 12); // need to change to 30 min for actual use
         return true;
 
     }

@@ -146,7 +146,7 @@ function loop() {
 
     if (count > 0) {
 		var x_pos = SCREEN_WIDTH * 0.5;
-		var y_pos = SCREEN_HEIGHT * 0.3;
+		var y_pos = SCREEN_HEIGHT * 0.67;
 		if (msg_num === 1) {
 			context.fillText(count.toString() + " seconds until the 20th Anniversary", x_pos, y_pos);
 			context.fillText("letters twinkle!", x_pos, y_pos + (10 * (SCREEN_WIDTH * 0.005)));

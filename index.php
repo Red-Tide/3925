@@ -68,7 +68,7 @@ extract($_POST);
                 </a>
 
                 <div data-href="http://104.236.138.127" data-layout="button_count" data-size="large" data-mobile-iframe="false">
-                    <a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2F104.236.138.127%2F&amp;src=sdkpreparse">
+                    <a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flightsofhope.com/display%2F&amp;src=sdkpreparse">
                         <img src="images/fb.png" id="fb" alt="Share to FaceBook" />
                     </a>
                 </div>
@@ -138,7 +138,7 @@ extract($_POST);
             </a>
 
             <!-- smaller social media icons -->
-            <div data-href="http://104.236.138.127" data-layout="button_count" data-size="large" data-mobile-iframe="false" ><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flightsofhope.helpstpauls.com%2F&amp;src=sdkpreparse">
+            <div data-href="http://104.236.138.127" data-layout="button_count" data-size="large" data-mobile-iframe="false" ><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flightsofhope.com/display%2F&amp;src=sdkpreparse">
                 <img src="images/fb_small.png" class="fb-btn" alt="FaceBook Share" />
             </a></div>
 

@@ -104,21 +104,21 @@ $cookie_insValue = "instructionValue";
         <div class="container">
 
             <a href="#wheel" class="wheel-button">
-                <span><img src="images/big_star.png" width="800%" id="bigstar" onClick="bigStarClick()" alt="Big Star" /></span>
+                <span><img src="images/big_star.png" width="100" id="bigstar" onClick="bigStarClick()" alt="Big Star" /></span>
             </a>
 
             <ul id="wheel" data-angle="all">
                 <li class="item">
-                    <a href="#home"><img src="images/star3.png" width="100%" height="100%" onclick="smallStarSound1(); controlLight('star3', 3);" alt="Yellow star" /></a>
+                    <a href="#home"><img src="images/star3.png" width="52" height="52" onclick="smallStarSound1(); controlLight('star3', 3);" alt="Yellow star" /></a>
                 </li>
                 <li class="item">
-                    <a href="#home"><img src="images/star2.png" width="100%" height="100%" onclick="smallStarSound2(); controlLight('star2', 2);" alt="Green star" /></a>
+                    <a href="#home"><img src="images/star2.png" width="52" height="52" onclick="smallStarSound2(); controlLight('star2', 2);" alt="Green star" /></a>
                 </li>
                 <li class="item">
-                    <a href="#home"><img src="images/star1.png" width="100%" height="100%" onclick="smallStarSound3(); controlLight('star1', 1);" alt="Blue star" /></a>
+                    <a href="#home"><img src="images/star1.png" width="52" height="52" onclick="smallStarSound3(); controlLight('star1', 1);" alt="Blue star" /></a>
                 </li>
                 <li class="item">
-                    <a href="#home"><img src="images/star4.png" width="100%" height="100%" onclick="smallStarSound4(); controlLight('star4', 4);" alt="Pink star" /></a>
+                    <a href="#home"><img src="images/star4.png" width="52" height="52" onclick="smallStarSound4(); controlLight('star4', 4);" alt="Pink star" /></a>
                 </li>
             </ul>
         </div>
@@ -233,7 +233,7 @@ $cookie_insValue = "instructionValue";
                 <!-- Modal for about content-->
                 <div class="modal-content"> 
                     <div class="modal-header">
-                        <img src="images/spf_logo_colour.png" class="aboutUsLogo" />
+                        <img src="images/spf_logo_colour.png" class="aboutUsLogo" alt="St Pauls Foundation Logo" />
                         <h2 class="modal-title aboutTitle">About</h2>
                     </div>
                     <div class="modal-body bodyAbout">

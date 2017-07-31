@@ -66,16 +66,24 @@ function controlLight(star, msg_id) {
             xhttp.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 200) {
                     count = this.responseText - 1;
+                    
+                    $('.modal4-bg').fadeIn();
+                    drawCanvas(star);
+
+                    timer3 = requestAnimationFrame(loop);
+                    timer = requestAnimationFrame(countDown);
+                }
+                
+                if (this.readyState == 0) {
+                    alert("Please try again later.");
                 }
             };
+        
         xhttp.open("POST", "http://192.168.43.130:8888", true);
         xhttp.send(star);
         
-        $('.modal4-bg').fadeIn();
-        drawCanvas(star);
-
-        timer3 = requestAnimationFrame(loop);
-        timer = requestAnimationFrame(countDown);
+        
+        
     }
 }
 
@@ -112,7 +120,7 @@ function launch() {
 }
 
 function launchFrom(x) {
-    if (rockets.length < 20) {
+    if (rockets.length < 5) {
         var rocket = new Rocket(x);
         rocket.explosionColor = Math.floor(Math.random() * 360 / 10) * 10;
         rocket.vel.y = Math.random() * - 3 - 4;

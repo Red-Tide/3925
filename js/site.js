@@ -24,7 +24,7 @@ function setCookie(c_name, value, expiredays) {
     var exdate = new Date()
     exdate.setDate(exdate.getDate() + expiredays)
     document.cookie = c_name+ "=" + escape(value) +
-    ((expiredays==null) ? "" : ";expires=" + exdate.toGMTString())
+    ((expiredays==null) ? "" : ";expires=" + exdate.toUTCString())
 }
 
 // Function to get the cookie
@@ -51,6 +51,8 @@ function submitCheck(){
 
     var name = document.forms["login_form"]["name"].value;
     var email = document.forms["login_form"]["email"].value;
+    
+    var expiryTime = 1; // 1 day for now, if there is time, make work with 30 min
 
     if (!(nameRegExp.test(name) && emailRegExp.test(email))) {
 
@@ -61,7 +63,7 @@ function submitCheck(){
 
     } else {
 
-        setCookie("user", "default", 1 / 48); // need to change to 30 min for actual use
+        setCookie("user", "default", expiryTime); // want 30 min
         return true;
         
     }

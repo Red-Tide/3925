@@ -148,14 +148,17 @@ function loop() {
 		var x_pos = SCREEN_WIDTH * 0.5;
 		var y_pos = SCREEN_HEIGHT * 0.67;
 		if (msg_num === 1) {
-			context.fillText(count.toString() + " seconds until the 20th Anniversary", x_pos, y_pos);
-			context.fillText("letters twinkle!", x_pos, y_pos + (10 * (SCREEN_WIDTH * 0.008)));
+			context.fillText(count.toString() + " seconds until the 20th", x_pos, y_pos);
+			context.fillText("Anniversary letters twinkle!", x_pos, y_pos + (10 * (SCREEN_WIDTH * 0.008)));
 		} else if (msg_num === 2) {
-			context.fillText(count.toString() + " seconds until the strobe lights go off! ", x_pos, y_pos);
+			context.fillText(count.toString() + " seconds until the", x_pos, y_pos);
+            context.fillText("strobe lights go off!", x_pos, y_pos + (10 * (SCREEN_WIDTH * 0.008)));
 		} else if (msg_num === 3) {
-			context.fillText(count.toString() + " seconds until the mini archway stars flash! ", x_pos, y_pos);
+			context.fillText(count.toString() + " seconds until the", x_pos, y_pos);
+            context.fillText("mini archway stars flash!", x_pos, y_pos + (10 * (SCREEN_WIDTH * 0.008)));
 		} else { // msg_num === 4
-			context.fillText(count.toString() + " seconds until the red rope lights flicker! ", x_pos, y_pos);
+			context.fillText(count.toString() + " seconds until the", x_pos, y_pos);
+            context.fillText("red rope lights flicker!", x_pos, y_pos + (10 * (SCREEN_WIDTH * 0.008)));
 		}
 	} 
     

@@ -1,7 +1,7 @@
 // controls for the CueServer output
 window.requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimation;
 var timeUntilPlay = 0;
-var count = 5;
+var count = 0;
 var timer;
 var timer2, timer3;
 var star;
@@ -31,7 +31,7 @@ function countDown() {
             cancelAnimationFrame(timer);
             cancelAnimationFrame(timer3);
             $('.modal4-bg').fadeOut();
-            count = 5;
+            count = 0;
             document.getElementById("bigstar").click();
             return null;
         } else {
@@ -72,14 +72,11 @@ function controlLight(star, msg_id) {
 
                     timer3 = requestAnimationFrame(loop);
                     timer = requestAnimationFrame(countDown);
-                }
-                
-                if (this.readyState == 0) {
-                    alert("Please try again later.");
-                }
+                } 
+		
             };
         
-        xhttp.open("POST", "http://192.168.43.130:8888", true);
+        xhttp.open("POST", "http://104.236.138.127:8888", true);
         xhttp.send(star);
         
         

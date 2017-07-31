@@ -7,8 +7,8 @@ NOTE: Don't forget to change database password to pumpkinpie99 and login to add 
 error_reporting(0);
 
 // Add database password when switching between localhost & digital ocean
-$con = mysqli_connect("localhost", "root", "root", "lights");
-//$con = mysqli_connect("localhost", "root", "pumpkinpie99", "lights");
+//$con = mysqli_connect("localhost", "root", "root", "lights");
+$con = mysqli_connect("localhost", "root", "pumpkinpie99", "lights");
 
 date_default_timezone_set('America/Los_Angeles');
 
@@ -55,7 +55,7 @@ extract($_POST);
             
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
             
-            <a href="#" data-toggle="modal" data-target="#myLoginModal" class="btnLogin" id="btnLogin">Login</a>
+            <a href="#" style="display: none" data-toggle="modal" data-target="#myLoginModal" class="btnLogin" id="btnLogin">Login</a>
             <!-- Add this in for server: style="display: none" -->
             
             <a href="#" data-toggle="modal" data-target="#myModal">About Us</a>
@@ -190,11 +190,8 @@ extract($_POST);
                                 <!-- add 'disabled' to enable captcha -->
                                 <div class="col-xs-6">
                                     
-                                    <button name="submit" id="submit" type="submit" class="btn btnSubmit">Play!</button>
-                                    
-                                    <!--
                                     <button name="submit" id="submit" type="submit" class="btn btnSubmit" disabled>Play!</button>
-                                    -->
+                                    
                                 </div>
                             </div>
                         </form>

@@ -143,7 +143,6 @@ function loop() {
     // Responsive countdown text
     var fontSize = (SCREEN_WIDTH * 0.08) | 0;
     context.font = '900 ' + fontSize + 'px Calibri';
-    //context.font = ((canvas.width * 0.07) | 0) + 'px Calibri';
     context.textAlign = "center";
 
     if (count > 0) {
@@ -151,16 +150,16 @@ function loop() {
 		var y_pos = SCREEN_HEIGHT * 0.67;
 		if (msg_num === 1) {
 			context.fillText(count.toString() + " seconds until the 20th", x_pos, y_pos);
-			context.fillText("Anniversary letters twinkle!", x_pos, y_pos + (10 * (SCREEN_WIDTH * 0.008)));
+			context.fillText("Anniversary letters twinkle!", x_pos, y_pos + (10 * (SCREEN_WIDTH * 0.01)));
 		} else if (msg_num === 2) {
 			context.fillText(count.toString() + " seconds until the", x_pos, y_pos);
-            context.fillText("strobe lights go off!", x_pos, y_pos + (10 * (SCREEN_WIDTH * 0.008)));
+            context.fillText("strobe lights go off!", x_pos, y_pos + (10 * (SCREEN_WIDTH * 0.01)));
 		} else if (msg_num === 3) {
 			context.fillText(count.toString() + " seconds until the", x_pos, y_pos);
-            context.fillText("mini archway stars flash!", x_pos, y_pos + (10 * (SCREEN_WIDTH * 0.008)));
+            context.fillText("mini archway stars flash!", x_pos, y_pos + (10 * (SCREEN_WIDTH * 0.01)));
 		} else { // msg_num === 4
 			context.fillText(count.toString() + " seconds until the", x_pos, y_pos);
-            context.fillText("red rope lights flicker!", x_pos, y_pos + (10 * (SCREEN_WIDTH * 0.008)));
+            context.fillText("red rope lights flicker!", x_pos, y_pos + (10 * (SCREEN_WIDTH * 0.01)));
 		}
 	} 
     

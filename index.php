@@ -191,7 +191,7 @@ extract($_POST);
                                 <!-- add 'disabled' to enable captcha -->
                                 <div class="col-xs-6">
                                     
-                                    <button name="submit" id="submit" type="submit" class="btn btnSubmit" disabled>Play!</button>
+                                    <button name="submit" id="submit" type="submit" class="btn btnSubmit">Play!</button>
                                     
                                 </div>
                             </div>

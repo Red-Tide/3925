@@ -1,7 +1,7 @@
 const http = require('http');
 ///Raspberry Pi for Testing and presentation
-//const cmd = require('node-cmd');
-const req = require('request-promise');
+const cmd = require('node-cmd');
+//const req = require('request-promise');
 
 //Interval of time between lights signals
 const time = 10;
@@ -52,23 +52,23 @@ function snd_command() {
 	
 		switch (send) {
 			case "star1":
-			req(star1);
-			//cmd.run('./pattern1.sh');
+			//req(star1);
+			cmd.run('./pattern1.sh');
 			break;
 
 			case "star2":
-			//cmd.run('./pattern2.sh');
-			req(star2);
+			cmd.run('./pattern2.sh');
+			//req(star2);
 			break;
 
 			case "star3":
-			//cmd.run('./pattern3.sh');
-			req(star3);
+			cmd.run('./pattern3.sh');
+			//req(star3);
 			break;
 
 			case "star4":
-			//cmd.run('./pattern4.sh');
-			req(star4);
+			cmd.run('./pattern4.sh');
+			//req(star4);
 			break;
 
 			default:
@@ -91,7 +91,7 @@ function onRequest (request, response) {
 		response.writeHead(200);
 		if (!ready || queue > 0) {
 			//response.write(queue.toString() + " " + (queue.length * time + (time - count)).toString() + " seconds\n");
-			response.write((queue.length * time + (time - count)).toString() +" " );
+			response.write((queue.length * time + (time - count)).toString() + " " );
 		} else {
 			//response.write(queue.toString() + " " + "0" + " seconds\n");
 			response.write("0");

@@ -29,7 +29,7 @@ function countDown() {
         if (count < 0) {  
             context.clearRect(0, 0, window.innerWidth, window.innerHeight);    
             //clearInterval(timer);
-            //clearInterval(timer2);
+            clearInterval(timer2);
             //clearInterval(timer3);
             $('.modal4-bg').fadeOut();
             count = 5;
@@ -91,9 +91,9 @@ function drawCanvas(star_img) {
     //context2.clearRect(0, 0, canvas.width, canvas.height);
     star.src = "images/" + star_img + ".png";
 
-    //timer2 = setInterval(launch, 2500);
+    timer2 = setInterval(launch, 2500);
     //launch();
-    requestAnimationFrame(launch);
+    //requestAnimationFrame(launch);
     //timer3 = setInterval(loop, 1000 / 100);
     requestAnimationFrame(loop);
 };
@@ -115,12 +115,14 @@ $(document).mousedown(function(e) {
 });
 
 function launch() {
+    //setTimeout( function(){
     launchFrom(mousePos.x);
-    requestAnimationFrame(launch);
+    //requestAnimationFrame(launch);
+    //},30);
 }
 
 function launchFrom(x) {
-    if (rockets.length < 1) {
+    if (rockets.length < 5) {
         var rocket = new Rocket(x);
         rocket.explosionColor = Math.floor(Math.random() * 360 / 10) * 10;
         rocket.vel.y = Math.random() * - 3 - 4;
@@ -133,6 +135,7 @@ function launchFrom(x) {
 }
 
 function loop() {
+    setTimeout( function(){
     // update screen size
     if (SCREEN_WIDTH != window.innerWidth) {
         canvas.width = SCREEN_WIDTH = window.innerWidth;
@@ -218,6 +221,7 @@ function loop() {
         particles.shift();
     }
     requestAnimationFrame(loop);
+    },1);
 }
 
 function Particle(pos) {

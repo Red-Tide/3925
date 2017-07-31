@@ -4,7 +4,7 @@ NOTE: Don't forget to change database password to pumpkinpie99 and login to add 
 
 <?php
 
-//error_reporting(0);
+error_reporting(0);
 
 // Add database password when switching between localhost & digital ocean
 $con = mysqli_connect("localhost", "root", "root", "lights");

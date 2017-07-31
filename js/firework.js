@@ -76,6 +76,7 @@ function controlLight(star, msg_id) {
         drawCanvas(star);
 
         //timer = setInterval("countDown()", 1000);
+        requestAnimationFrame(loop);
         requestAnimationFrame(countDown);
     }
 }
@@ -95,7 +96,7 @@ function drawCanvas(star_img) {
     //launch();
     //requestAnimationFrame(launch);
     //timer3 = setInterval(loop, 1000 / 100);
-    requestAnimationFrame(loop);
+
 };
 
 // update mouse position
@@ -122,7 +123,7 @@ function launch() {
 }
 
 function launchFrom(x) {
-    if (rockets.length < 5) {
+    if (rockets.length < 2) {
         var rocket = new Rocket(x);
         rocket.explosionColor = Math.floor(Math.random() * 360 / 10) * 10;
         rocket.vel.y = Math.random() * - 3 - 4;
@@ -135,7 +136,7 @@ function launchFrom(x) {
 }
 
 function loop() {
-    setTimeout( function(){
+    //setTimeout( function(){
     // update screen size
     if (SCREEN_WIDTH != window.innerWidth) {
         canvas.width = SCREEN_WIDTH = window.innerWidth;
@@ -221,7 +222,7 @@ function loop() {
         particles.shift();
     }
     requestAnimationFrame(loop);
-    },1);
+   // },1000);
 }
 
 function Particle(pos) {

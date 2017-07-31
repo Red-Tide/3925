@@ -1,4 +1,6 @@
-<!-- NOTE: Don't forget to change database password and login to add disabled for server. -->
+<!-- 
+NOTE: Don't forget to change database password to pumpkinpie99 and login to add disabled for server. 
+-->
 
 <?php
 
@@ -6,8 +8,8 @@ error_reporting(0);
 //include ('connect.php');
 
 // Add database password when switching between localhost & digital ocean
-$con = mysqli_connect("localhost", "root", "", "lights");
-//$con = mysqli_connect("localhost", "root", "pumpkinpie99", "lights");
+//$con = mysqli_connect("localhost", "root", "", "lights");
+$con = mysqli_connect("localhost", "root", "pumpkinpie99", "lights");
 
 date_default_timezone_set('America/Los_Angeles');
 
@@ -60,12 +62,12 @@ $cookie_insValue = "instructionValue";
             
             <div id="shareMenu">
                 <a href="http://twitter.com/intent/tweet?text=I+just+controlled+St.+Paul’s+Foundation’s+Lights+of+Hope+display+with+my+phone,+click+here+and+you+can+too!+http://lightsofhope.com/display+%23LOH2018" target="_blank">
-                    <img src="images/twitter.png" id="twitter" />
+                    <img src="images/twitter.png" id="twitter" alt="Share to Twitter"/>
                 </a>
 
                 <div data-href="http://104.236.138.127" data-layout="button_count" data-size="large" data-mobile-iframe="false">
                     <a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flightsofhope.helpstpauls.com%2F&amp;src=sdkpreparse">
-                        <img src="images/fb.png" id="fb" />
+                        <img src="images/fb.png" id="fb" alt="Share to FaceBook" />
                     </a>
                 </div>
 
@@ -130,16 +132,16 @@ $cookie_insValue = "instructionValue";
         <div class="bottom-right">
             <!-- donate button -->
             <a href="https://secure3.convio.net/sphf/site/Donation2;jsessionid=00000000.app340b?df_id=1480&mfc_pref=T&1480.donation=form1&NONCE_TOKEN=A4F10372DEF9F743AC3BC962CD7F5E4F&_ga=2.146544183.241198011.1497985408-1422913765.1496341390" target="_blank">
-                <img class="donate pull-right" src="images/donate.png" />
+                <img class="donate pull-right" src="images/donate.png" alt="Donate" />
             </a>
 
             <!-- smaller social media icons -->
             <div data-href="http://104.236.138.127" data-layout="button_count" data-size="large" data-mobile-iframe="false" ><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flightsofhope.helpstpauls.com%2F&amp;src=sdkpreparse">
-                <img src="images/fb_small.png" class="fb-btn" />
+                <img src="images/fb_small.png" class="fb-btn" alt="FaceBook Share" />
             </a></div>
 
             <a href="http://twitter.com/intent/tweet?text=I+just+controlled+St.+Paul’s+Foundation’s+Lights+of+Hope+display+with+my+phone,+click+here+and+you+can+too!+http://lightsofhope.com/display+%23LOH2018" target="_blank">
-                <img src="images/twitter_sm.png" class="twitter-btn" />
+                <img src="images/twitter_sm.png" class="twitter-btn" alt="Twitter Share" />
             </a>
         </div>
 
@@ -186,10 +188,12 @@ $cookie_insValue = "instructionValue";
 
                                 <!-- add 'disabled' to enable captcha -->
                                 <div class="col-xs-6">
-                                    <button name="submit" id="submit" type="submit" class="btn btnSubmit">Play!</button>
                                     <!--
-                                    <button name="submit" id="submit" type="submit" class="btn btnSubmit" disabled>Play!</button>
+                                    <button name="submit" id="submit" type="submit" class="btn btnSubmit">Play!</button>
                                     -->
+                                    
+                                    <button name="submit" id="submit" type="submit" class="btn btnSubmit" disabled>Play!</button>
+                                
                                 </div>
                             </div>
                         </form>

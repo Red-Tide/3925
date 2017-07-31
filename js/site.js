@@ -7,7 +7,6 @@ $(document).ready(function(){
     });
 });
 
-
 // Load facebook SDK for JS
 (function(d, s, id) {
     var js, fjs = d.getElementsByTagName(s)[0];
@@ -19,8 +18,6 @@ $(document).ready(function(){
 }
     (document, 'script', 'facebook-jssdk')
 );
-      
-
 
 // Function to set the cookie
 function setCookie(c_name, value, expiredays) {
@@ -105,13 +102,11 @@ function start(){
 
 function openNav() {
     document.getElementById("mySidenav").style.width = "250px";
-    //document.getElementById("main").style.marginLeft = "250px";
     document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
 }
 
 function closeNav() {
     document.getElementById("mySidenav").style.width = "0";
-    //document.getElementById("main").style.marginLeft= "0";
     document.body.style.backgroundColor = "white";
 }
 

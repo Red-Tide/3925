@@ -29,6 +29,7 @@ extract($_POST);
 <html>
     <head>
         <title>Lights of Hope!</title>
+        <meta property="og:image" content="http://helpstpauls.com/app/uploads/2015/08/lightsofhope-thumb.jpg" />
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <!-- Latest compiled and minified CSS -->
@@ -67,7 +68,7 @@ extract($_POST);
                 </a>
 
                 <div data-href="http://104.236.138.127" data-layout="button_count" data-size="large" data-mobile-iframe="false">
-                    <a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flightsofhope.helpstpauls.com%2F&amp;src=sdkpreparse">
+                    <a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2F104.236.138.127%2F&amp;src=sdkpreparse">
                         <img src="images/fb.png" id="fb" alt="Share to FaceBook" />
                     </a>
                 </div>

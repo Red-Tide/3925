@@ -23,7 +23,7 @@ var context = canvas.getContext('2d'),
     colorCode = 0;
 
 function countDown() {
-    setTimeout( function(){
+    setTimeout(function() {
         count--;
         if (count < 0) {  
             context.clearRect(0, 0, window.innerWidth, window.innerHeight);    

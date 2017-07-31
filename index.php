@@ -205,11 +205,11 @@ $cookie_insValue = "instructionValue";
 
         <!-- First load instructions -->
         <div class="modal2-bg">
-            <img src="images/click_me_instruc.png" class="instruction" />
+            <img src="images/click_me_instruc.png" class="instruction" alt="" />
         </div>
 
         <div class="modal3-bg">
-            <img src="images/click_me_instruc_2.png" class="instruction2" />
+            <img src="images/click_me_instruc_2.png" class="instruction2" alt="" />
         </div>
         
         

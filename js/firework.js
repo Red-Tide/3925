@@ -1,7 +1,7 @@
 // controls for the CueServer output
 window.requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimation;
 var timeUntilPlay = 0;
-var count = 20;
+var count = 5;
 var timer;
 var timer2, timer3;
 var star;
@@ -24,20 +24,23 @@ var context = canvas.getContext('2d'),
 
 function countDown() {
     //$('.modal-dialog').fadeIn();
-    count--;
-    if (count < 0) {  
-        context.clearRect(0, 0, window.innerWidth, window.innerHeight);    
-        clearInterval(timer);
-        clearInterval(timer2);
-        clearInterval(timer3);
-        $('.modal4-bg').fadeOut();
-        count = 5;
-        document.getElementById("bigstar").click();
-        return null;
-   } //else {
-       //requestAnimationFrame(countDown);
-   //}
+    setTimeout( function(){
+        count--;
+        if (count < 0) {  
+            context.clearRect(0, 0, window.innerWidth, window.innerHeight);    
+            //clearInterval(timer);
+            //clearInterval(timer2);
+            //clearInterval(timer3);
+            $('.modal4-bg').fadeOut();
+            count = 5;
+            document.getElementById("bigstar").click();
+            return null;
+        } else {
+            requestAnimationFrame(countDown);
+        }
+    },1000);
 }
+               
 
 function getCookie(c_name) {
     if (document.cookie.length > 0) {
@@ -72,8 +75,8 @@ function controlLight(star, msg_id) {
         $('.modal4-bg').fadeIn();
         drawCanvas(star);
 
-        timer = setInterval("countDown()", 1000);
-        //requestAnimationFrame(countDown);
+        //timer = setInterval("countDown()", 1000);
+        requestAnimationFrame(countDown);
     }
 }
 
@@ -88,11 +91,11 @@ function drawCanvas(star_img) {
     //context2.clearRect(0, 0, canvas.width, canvas.height);
     star.src = "images/" + star_img + ".png";
 
-    timer2 = setInterval(launch, 2500);
+    //timer2 = setInterval(launch, 2500);
     //launch();
-    //requestAnimationFrame(launch);
-    timer3 = setInterval(loop, 1000 / 100);
-    //requestAnimationFrame(loop);
+    requestAnimationFrame(launch);
+    //timer3 = setInterval(loop, 1000 / 100);
+    requestAnimationFrame(loop);
 };
 
 // update mouse position
@@ -113,6 +116,7 @@ $(document).mousedown(function(e) {
 
 function launch() {
     launchFrom(mousePos.x);
+    requestAnimationFrame(launch);
 }
 
 function launchFrom(x) {
@@ -213,6 +217,7 @@ function loop() {
     while (particles.length > MAX_PARTICLES) {
         particles.shift();
     }
+    requestAnimationFrame(loop);
 }
 
 function Particle(pos) {

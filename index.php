@@ -83,14 +83,14 @@ $cookie_insValue = "instructionValue";
 
 
         <span style="font-size:30px;cursor:pointer" onclick="openNav()"> 
-            <img src="images/hamburger.png" class="hamburger"/> 
+            <img src="images/hamburger.png" class="hamburger" alt="Open side menu" /> 
         </span>
 
         <!-- SPF Logo - top right corner -->
-        <img src="images/spf_logo.png" class="spfLogo" />
+        <img src="images/spf_logo.png" class="spfLogo" alt="Logo" />
 
         
-        <img src="images/big_title1.png" class="celebrate" />
+        <img src="images/big_title1.png" class="celebrate" alt="Lights of Hope - 20th Anniversary" />
 
 
         <!-- List of sounds for star wheel -->
@@ -104,28 +104,28 @@ $cookie_insValue = "instructionValue";
         <div class="container">
 
             <a href="#wheel" class="wheel-button">
-                <span><img src="images/big_star.png" width="800%" id="bigstar" onClick="bigStarClick()"/></span>
+                <span><img src="images/big_star.png" width="800%" id="bigstar" onClick="bigStarClick()" alt="Big Star" /></span>
             </a>
 
             <ul id="wheel" data-angle="all">
                 <li class="item">
-                    <a href="#home"><img src="images/star3.png" width="100%" height="100%" onclick="smallStarSound1(); controlLight('star3', 3);" /></a>
+                    <a href="#home"><img src="images/star3.png" width="100%" height="100%" onclick="smallStarSound1(); controlLight('star3', 3);" alt="Yellow star" /></a>
                 </li>
                 <li class="item">
-                    <a href="#home"><img src="images/star2.png" width="100%" height="100%" onclick="smallStarSound2(); controlLight('star2', 2);" /></a>
+                    <a href="#home"><img src="images/star2.png" width="100%" height="100%" onclick="smallStarSound2(); controlLight('star2', 2);" alt="Green star" /></a>
                 </li>
                 <li class="item">
-                    <a href="#home"><img src="images/star1.png" width="100%" height="100%" onclick="smallStarSound3(); controlLight('star1', 1);" /></a>
+                    <a href="#home"><img src="images/star1.png" width="100%" height="100%" onclick="smallStarSound3(); controlLight('star1', 1);" alt="Blue star" /></a>
                 </li>
                 <li class="item">
-                    <a href="#home"><img src="images/star4.png" width="100%" height="100%" onclick="smallStarSound4(); controlLight('star4', 4);" /></a>
+                    <a href="#home"><img src="images/star4.png" width="100%" height="100%" onclick="smallStarSound4(); controlLight('star4', 4);" alt="Pink star" /></a>
                 </li>
             </ul>
         </div>
 
 
         <!-- Hospital image -->
-        <img src="images/hospital.png" class="hospital" />
+        <img src="images/hospital.png" class="hospital" alt="Hospital Image" />
 
 
         <!-- All of the bottom right absolute position stuff together -->
@@ -151,7 +151,7 @@ $cookie_insValue = "instructionValue";
             <div class="empty">
             </div>
 
-            <img src="images/login_instruc.png" class="login-instruc" />
+            <img src="images/login_instruc.png" class="login-instruc" alt="Please enter your name and email to interact with the lights." />
 
             <div class="modal-dialog login-dialog">
 

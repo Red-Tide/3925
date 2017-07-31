@@ -35,21 +35,21 @@ extract($_POST);
 
 // Start server
 if (isset($_POST['start_server'])) {
-    $start = shell_exec ("node server.js");
+    $start = shell_exec ("forever start server.js");
     echo "Server started.";
 }
 
 // Kill server
 if (isset($_POST['kill_server'])) {
-    $kill = shell_exec ("killall nodejs");
+    $kill = shell_exec ("forever stop 0");
     echo "Server stopped.";
 }
 
 // Restarts server
 if (isset($_POST['restart'])) {
-    //echo "The Queue has been Restarted";
+    echo "The Queue has been Restarted";
     $output = shell_exec ("forever stop 0;forever start server.js 2>&1");
-    echo $output;
+    //echo $output;
 }
 
 // Downloads the database as spreadsheet

@@ -21,7 +21,7 @@ $cookie_insValue = "instructionValue";
 //setcookie($cookie_insName,$cookie_insValue,time() - 3600);
 //setcookie($cookie_name,$cookie_value,time());
 
-//extract($_POST);
+extract($_POST);
 
 ?>
 

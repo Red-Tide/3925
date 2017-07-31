@@ -141,7 +141,7 @@ function loop() {
     context.fillStyle = "white";
     
     // Responsive countdown text
-    context.font = ((canvas.width * 0.05) | 0) + 'px Calibri';
+    context.font = ((canvas.width * 0.07) | 0) + 'px Calibri';
     context.textAlign = "center";
 
     if (count > 0) {
@@ -149,7 +149,7 @@ function loop() {
 		var y_pos = SCREEN_HEIGHT * 0.67;
 		if (msg_num === 1) {
 			context.fillText(count.toString() + " seconds until the 20th Anniversary", x_pos, y_pos);
-			context.fillText("letters twinkle!", x_pos, y_pos + (10 * (SCREEN_WIDTH * 0.005)));
+			context.fillText("letters twinkle!", x_pos, y_pos + (10 * (SCREEN_WIDTH * 0.008)));
 		} else if (msg_num === 2) {
 			context.fillText(count.toString() + " seconds until the strobe lights go off! ", x_pos, y_pos);
 		} else if (msg_num === 3) {

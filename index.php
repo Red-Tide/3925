@@ -8,7 +8,7 @@ error_reporting(0);
 //include ('connect.php');
 
 // Add database password when switching between localhost & digital ocean
-$con = mysqli_connect("localhost", "root", "", "lights");
+$con = mysqli_connect("localhost", "root", "root", "lights");
 //$con = mysqli_connect("localhost", "root", "pumpkinpie99", "lights");
 
 date_default_timezone_set('America/Los_Angeles');

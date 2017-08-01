@@ -56,7 +56,7 @@ extract($_POST);
             
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
             
-            <a href="#" data-toggle="modal" data-target="#myLoginModal" class="btnLogin" id="btnLogin">Login</a>
+            <a href="#" style="display: none" data-toggle="modal" data-target="#myLoginModal" class="btnLogin" id="btnLogin">Login</a>
             <!-- Add this in for server: style="display: none" -->
             
             <a href="#" data-toggle="modal" data-target="#myModal">About Us</a>

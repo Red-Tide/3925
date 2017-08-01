@@ -10,15 +10,15 @@ extract($_POST);
 
 <!DOCTYPE html>
 <html>
+    <head>
+        <title>Admin Control Panel</title>
+    </head>
     <body>
-        <head>
-            <title>Admin Control Panel</title>
-        </head>
         <h1>Control Panel</h1>
         <form method="post" name="adminpanel">
             <button type="submit" name="restart" onclick="restart">Restart Queue</button>
             
-            <button type="submit" name="kill_server" onclick="kill_server">Kill Server</button>
+            <button type="submit" name="kill_server" onclick="kill_server">Stop Queue</button>
             
             <button type="submit" name="get_data" onclick="get_data">Get Spreadsheet</button>
             

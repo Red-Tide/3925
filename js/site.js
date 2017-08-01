@@ -52,7 +52,9 @@ function submitCheck(){
     var name = document.forms["login_form"]["name"].value;
     var email = document.forms["login_form"]["email"].value;
     
-    var expiryTime = 1; // 1 day for now, if there is time, make work with 30 min
+    // 1 day cookie expires, but want 30 min, didn't get chance to implement this
+    // 30 min works with chrome, but doesn't work with Safari
+    var expiryTime = 1;
 
     if (!(nameRegExp.test(name) && emailRegExp.test(email))) {
 
@@ -63,7 +65,7 @@ function submitCheck(){
 
     } else {
 
-        setCookie("user", "default", expiryTime); // want 30 min
+        setCookie("user", "default", expiryTime); // expiryTime = time cookie expires for login
         return true;
         
     }

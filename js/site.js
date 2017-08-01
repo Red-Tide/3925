@@ -44,7 +44,6 @@ function getCookie(c_name) {
 }
 
 // to check & validate the form
-// to check & validate the form
 function submitCheck(){
 
     var nameRegExp = /^[A-Za-z]([A-Za-z]|-| )+[A-Za-z]$/; 
@@ -52,10 +51,6 @@ function submitCheck(){
 
     var name = document.forms["login_form"]["name"].value;
     var email = document.forms["login_form"]["email"].value;
-    
-    // 1 day cookie expires, but want 30 min, didn't get chance to implement this
-    // 30 min works with chrome, but doesn't work with Safari
-    var expiryTime = 1;
 
     if (!(nameRegExp.test(name) && emailRegExp.test(email))) {
 
@@ -66,14 +61,13 @@ function submitCheck(){
 
     } else {
 		var date = new Date();
-		var minutes = 30; // number of minutes til expire
+		// user will need to login every 30 min, cookies will reset every 30 min
+        var minutes = 30; 
 		date.setTime(date.getTime() + (minutes * 60 * 1000));
 		var expires = "; expires=" + date.toGMTString();
 		document.cookie = "user=default" + expires + "; path=/";
 
-        // setCookie("user", "default", expiryTime); // expiryTime = time cookie expires for login
-        return true;
-        
+        return true;      
     }
 }
 

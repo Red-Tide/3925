@@ -64,8 +64,11 @@ function submitCheck(){
         return false;
 
     } else {
-
-        setCookie("user", "default", expiryTime); // expiryTime = time cookie expires for login
+        var date = new Date();
+        var minutes = 1;
+        date.setTime(date.getTime() + (minutes * 60 * 1000));
+        $.cookie("user", "default", { expires: date });
+        // setCookie("user", "default", expiryTime); // expiryTime = time cookie expires for login
         return true;
         
     }

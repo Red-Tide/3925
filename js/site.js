@@ -44,6 +44,7 @@ function getCookie(c_name) {
 }
 
 // to check & validate the form
+// to check & validate the form
 function submitCheck(){
 
     var nameRegExp = /^[A-Za-z]([A-Za-z]|-| )+[A-Za-z]$/; 
@@ -64,8 +65,13 @@ function submitCheck(){
         return false;
 
     } else {
+		var date = new Date();
+		var minutes = 30; // number of minutes til expire
+		date.setTime(date.getTime() + (minutes * 60 * 1000));
+		var expires = "; expires=" + date.toGMTString();
+		document.cookie = "user=default" + expires + "; path=/";
 
-        setCookie("user", "default", expiryTime); // expiryTime = time cookie expires for login
+        // setCookie("user", "default", expiryTime); // expiryTime = time cookie expires for login
         return true;
         
     }

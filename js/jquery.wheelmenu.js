@@ -116,7 +116,6 @@
             fields.flyOut(el, button)
             break; 
       }   
-
   }
 	
     $.fn.showIcon = function (button, settings) {
@@ -242,7 +241,7 @@
           case 'all':
             settings.angle = [0,360]
             break;
-        }
+          }
 	    } 
     }
     return settings;
@@ -250,21 +249,21 @@
 	
 	function predefineSpeed(settings) {
 	  if ($.type(settings.animationSpeed) == "string") { 
-      switch (settings.animationSpeed) { 
-        case 'slow':
-          settings.animationSpeed = [75,700]
-          break;
-        case 'medium':
-          settings.animationSpeed = [50,500]
-          break;
-        case 'fast':
-          settings.animationSpeed = [25,250]
-          break;
-        case 'instant':
-          settings.animationSpeed = [0,0]
-          break;
+          switch (settings.animationSpeed) { 
+            case 'slow':
+              settings.animationSpeed = [75,700]
+              break;
+            case 'medium':
+              settings.animationSpeed = [50,500]
+              break;
+            case 'fast':
+              settings.animationSpeed = [25,250]
+              break;
+            case 'instant':
+              settings.animationSpeed = [0,0]
+              break;
+          }
       }
-    }
     return settings;
 	}
   

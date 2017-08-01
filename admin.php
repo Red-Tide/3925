@@ -1,6 +1,5 @@
 <?php
 session_start();
-//error_reporting(0);
 extract($_POST);
 ?>
 

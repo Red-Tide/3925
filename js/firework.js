@@ -40,7 +40,6 @@ function countDown() {
     }, 1000);
 }
                
-
 function getCookie(c_name) {
     if (document.cookie.length > 0) {
         c_start=document.cookie.indexOf(c_name + "=")
@@ -75,12 +74,9 @@ function controlLight(star, msg_id) {
                 } 
 		
             };
-        
+
         xhttp.open("POST", "http://104.236.138.127:8888", true);
         xhttp.send(star);
-        
-        
-        
     }
 }
 

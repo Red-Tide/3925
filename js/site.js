@@ -52,7 +52,7 @@ function submitCheck(){
     var name = document.forms["login_form"]["name"].value;
     var email = document.forms["login_form"]["email"].value;
     
-    var expiryTime = 1; // 1 day for now, if there is time, make work with 30 min
+    var expiryTime = 1; 
 
     if (!(nameRegExp.test(name) && emailRegExp.test(email))) {
 
@@ -63,7 +63,7 @@ function submitCheck(){
 
     } else {
 
-        setCookie("user", "default", expiryTime); // want 30 min
+        setCookie("user", "default", expiryTime); 
         return true;
         
     }

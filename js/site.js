@@ -51,8 +51,6 @@ function submitCheck(){
 
     var name = document.forms["login_form"]["name"].value;
     var email = document.forms["login_form"]["email"].value;
-    
-    var expiryTime = 1; 
 
     if (!(nameRegExp.test(name) && emailRegExp.test(email))) {
 
@@ -62,13 +60,16 @@ function submitCheck(){
         return false;
 
     } else {
+		var date = new Date();
+		// user will need to login every 30 min, cookies will reset every 30 min
+        var minutes = 30; 
+		date.setTime(date.getTime() + (minutes * 60 * 1000));
+		var expires = "; expires=" + date.toGMTString();
+		document.cookie = "user=default" + expires + "; path=/";
 
-        setCookie("user", "default", expiryTime); 
-        return true;
-        
+        return true;      
     }
 }
-
 
 $('#close').click(function () {
     $('.modal-bg').fadeOut();

@@ -76,7 +76,7 @@ function controlLight(star, msg_id) {
 		
             };
         
-        xhttp.open("POST", "http://104.236.138.127:8888", true);
+        xhttp.open("POST", "http://192.168.43.130:8888", true);
         xhttp.send(star);
         
         

@@ -1,0 +1,725 @@
+* {
+	padding: 0px;
+	margin: 0px;
+}
+
+html, body {
+	height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+	background: url(../images/background2.png) no-repeat;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+	background-attachment: fixed;
+    background-position: center;
+	position: absolute;
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='bg-login.png', sizingMethod='scale');
+	font-family: Calibri, Scene, Arial, sans-serif;
+}
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 7;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover, .offcanvas a:focus{
+    color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+#main {
+    transition: margin-left .5s;
+    padding: 16px;
+}
+
+a {
+	outline: 0;
+	text-decoration: none;
+}
+
+.modal-bg {
+	position:fixed;
+	left:0;
+    right:0;
+	top:0;
+    bottom:0;
+	z-index:100;
+    display: none;
+	background-color:rgba(50,50,50,0.5);
+}
+
+.modal2-bg {
+	position:fixed;
+	left:0;
+    right:0;
+	top:0;
+    bottom:0;
+    display: none;
+	background-color:rgba(50,50,50,0.5);
+    z-index: 3;
+}
+
+.modal3-bg {
+	position:fixed;
+	left:0;
+    right:0;
+	top:0;
+    bottom:0;
+    display: none;
+	background-color:rgba(50,50,50,0.5);
+    z-index: 3;
+}
+
+/* about us */
+.modal4-bg {
+	position:fixed;
+	left:0;
+    right:0;
+	top:0;
+    bottom:0;
+	z-index:100;
+    display: none;
+    background-color:rgba(50,50,50,0.8);
+}
+
+.top {
+	width:100%;
+}
+
+/* Login stuff */
+form {
+	display:block;
+	margin:30px;
+}
+
+form *{
+	margin:10px 0;
+}
+
+.g-recaptcha div, .g-recaptcha iframe{
+    margin: 0;
+}
+
+.modal-header h4 {
+    font-weight: bold;
+}
+
+.input:focus{
+	border:2px solid #5DC3A7;
+    outline:0;
+}
+
+.input{
+	border:2px solid #ccc ;
+	border-radius:3px;
+    margin-top: 0;
+}
+
+.inputEnd{
+    max-height: 68px;
+}
+
+.btnSubmit{
+    background: #5DC3A7;
+    color: #fff;
+    float: right;
+    padding: 7% 15% 7% 15%;
+}
+
+.btnSubmit:hover{
+	background-color: #0FC491;
+}
+
+.empty{
+    height: 30%;
+}
+
+.login-instruc {
+    width: 30%;
+    position: absolute;
+    margin: auto;   
+    left: -5%;
+    right: 0;
+    bottom: 0;
+    top: -53%;
+}
+
+.login-dialog {
+    margin: auto;
+    padding: 0 2% 2% 2%;
+}
+
+.login-body {
+    background-color: #EFEFEF;
+}
+
+/* login title area */
+.register {
+    background-color: #5DC3A7;
+    color: white;
+    font-weight: bold;
+}
+
+.captcha{
+    transform:scale(0.70);
+    -webkit-transform:scale(0.70);
+    transform-origin:0 0;
+    -webkit-transform-origin:0 0;
+}
+
+/* about us stuff */
+.emptyAbout{
+    height: 25%;
+}
+
+.aboutDialog {
+    margin: auto;
+    padding: 0 2% 0 2%; 
+}
+
+#canvas{
+    z-index: -1;
+}
+
+#canvas2{
+    z-index: 3;
+}
+
+.bodyAbout {
+    background-color: #EFEFEF;
+}
+
+#aboutInfo {
+    background-color: #EF3340;
+    color: white;
+}
+
+.aboutTitle {
+    font-weight: bold;
+}
+
+.aboutUsLogo {
+    width: 45%;
+    float: right;
+}
+
+.emailCheck{
+    font-size: 80%;
+    display: inline;    
+}
+
+#close{
+	float: right;
+	color: #fff;
+	font-family: serif;
+	font-size: 15px;
+	
+}
+
+#close:hover{
+	color: #000;
+	
+}
+
+.spfLogo {
+    width: 15%;
+    float: right;
+    margin: 1% 1% 0 0;
+}
+
+.hamburger {
+    width: 100px;
+}
+
+.celebrate {
+	margin: 0 0 0 15%;
+	width: 65%;
+}
+
+.hospital {
+	margin: auto;
+    padding: 0;
+    bottom: 0px;
+    left: 0px;
+	z-index: -1;
+    position: absolute; 
+    
+}
+
+.donate {
+	margin: auto;
+    padding: 0;
+	width: 24%;
+	float: right;
+}
+
+/* Required Stylesheets */
+.wheel-button {
+    position: relative;
+}
+
+.wheel {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    width: 550px; /* this will determine the diameter of the circle  */
+    height: 550px; /* this will determine the diameter of the circle  */
+    visibility: hidden;
+    position: relative;
+    display: none;
+    z-index: 99;
+    
+}
+
+.wheel li {
+    overflow: hidden;
+    float:left;
+    z-index: 99;
+}
+
+.wheel li a {
+    display: block;
+    z-index: 99;
+}
+
+#shareMenu {
+    display: none;
+    padding: 8px 8px 8px 10px;
+}
+
+#shareMenu a {
+    padding: 0;
+}
+
+#twitter {
+    width: 70%;
+    padding-left: 12%;
+    padding-bottom: 5%;
+}
+
+#fb {
+    width: 70%;
+    padding-left: 12%;
+}
+
+/* The wheel stuff */
+.wheel-button, .wheel-button:visited {
+    line-height: 35px;
+    font-weight: bold;
+    font-size: 36px;
+    padding: 10px 11px;
+    border-radius: 50px;
+    width: 35px;
+    height: 35px;
+    color: white;
+    display: block;
+    margin: auto;
+    top: 80px;
+    bottom: 0;
+    right:4%;
+    left: 0;
+    z-index: 4;
+}
+
+.wheel-button:hover{ 
+    color: white;
+    z-index: 4;
+}
+
+.wheel-button span, .wheel span{
+    position: relative;
+    -moz-transition: all 1s ease;
+    -webkit-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    transition: all 1s ease;
+    display: block;
+    z-index: 4;
+}
+
+.wheel-button.active span{
+    transform: rotate(360deg);
+    -ms-transform: rotate(360deg); /* IE 9 */
+    -webkit-transform: rotate(360deg); /* Safari and Chrome */
+}
+
+.wheel li a, .wheel li a:visited{
+    border-radius: 50px;
+    font-weight: bold;
+    padding: 10px;
+    text-align: center;
+    width: 70px;
+    height: 70px;
+    color: white;
+    z-index:110;
+    -moz-transition: all 0.25s ease;
+    -webkit-transition: all 0.25s ease;
+    -o-transition: all 0.25s ease;
+    transition: all 0.25s ease;
+    
+}
+
+/* For black circle behind small star */
+.wheel li a:hover{
+    background: rgba(0,0,0,0.8);
+}
+
+/* bottom right absolute position */
+.bottom-right {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+}
+ 
+/* social icon stuff */
+.fb-btn{
+    padding-bottom: 10px;
+    position: absolute;
+    width: 5%;
+    bottom: 87%;
+    right: 1%;
+}
+
+.twitter-btn{
+    padding-bottom: 10px;
+    position: absolute;
+    width: 5%;
+    bottom: 87%;
+    right: 7%;
+}
+
+/* for instruction on first load */
+.instruction {
+    width: 10%;
+    position: absolute;
+    margin: auto;   
+    top: 25%;
+    bottom: 15%;
+    left: 17%;
+    right: 0;
+}
+
+.instruction2 {
+    width: 10%;
+    position: absolute;
+    margin: auto;   
+    top: 2%;
+    bottom: 18%;
+    left: 15%;
+    right: 0;
+}
+
+.item {
+    z-index: 111;
+}
+
+/* Mobile css */
+@media (max-width: 450px) {
+    .hospital{
+        width:50%;
+    }
+    
+    .donate{
+        width:45%;
+    }
+    
+    .fb-btn {
+        width: 10%;
+        right: 2%;
+        padding-bottom: 2%;
+    }
+    
+    .twitter-btn {
+        width: 10%;
+        right: 14%;
+        padding-bottom: 2%;
+    }
+    
+    .instruction {
+        width: 30%;
+        top: 30%;
+        bottom: 22%;
+        left: 52%;
+        right: 0;
+    }
+    
+    .instruction2 {
+        margin: 57% 0 0 7%;
+        width: 30%;
+        top: 0;
+        bottom: 35%;
+        left: 52%;
+        right: 0;
+    }
+    
+    .login-instruc {
+        width: 90%;
+    }
+    
+    .loginModal {
+        width: 90%;
+        height: 40%;
+        max-height: 300px;
+        top:100px;
+    }
+    
+    .input{
+        width:90%;
+        padding-top: 1%;
+        margin-top: 1%;
+        border:2px solid #ccc ;
+        border-radius:3px;
+    }
+    
+    .btnSubmit{
+        background: #5DC3A7;
+        color: #fff;
+        padding: 10% 15% 10% 15%;
+    }
+    
+    .wheel{
+        width: 450px;
+        height: 450px;
+    }
+    
+    .wheel-button {
+        margin: 20% 0 0 35%;
+    }
+
+    .spfLogo {
+        width: 25%;
+        float: right;
+        margin: 7% 7% 0 0;
+    }
+    
+    /* about us box */
+    .aboutUsLogo {
+        padding-top: 2.8%;
+    }
+    
+    .celebrate {
+	    width: 90%;
+        margin: 0 0 0 5%;
+    }
+}
+
+/* horizontal mobile phone */
+@media screen and (max-width: 760px) and (min-width: 451px) {
+    .wheel-button {
+        top: -70px;
+    }
+    
+    .wheel {
+        width: 350px;
+        height: 350px;
+    }
+    
+    .hospital {
+        width: 30%;
+    }
+    
+    .celebrate {
+        width: 50%;
+        margin: 0 0 10% 27%;
+    }
+    
+    .hamburger {
+        width: 70px;
+    }
+    
+    .instruction {
+        width: 13%;
+        top: 3%;
+        bottom: 15%;
+        left: 30%;
+        right: 0;
+    }
+
+    .instruction2 {
+        width: 13%;
+        top: 5%;
+        bottom: 0;
+        left: 50%;
+        right: 0;
+    }
+    
+    .login-instruc {
+        width: 40%;
+    }
+    
+    .login-dialog {
+        width: 75%;
+    }
+    
+}
+
+@media (max-height: 680px) and (max-width: 450px) {
+    
+    .captcha{
+        transform:scale(0.60);
+        -webkit-transform:scale(0.60);
+        transform-origin:0 0;
+        -webkit-transform-origin:0 0;
+    }
+    
+    .btnSubmit{
+        padding: 10% 15% 10% 15%;
+    }
+}
+
+/* iphone 5 */
+@media (max-height: 580px) and (max-width: 450px) {
+    .captcha {
+        transform:scale(0.50);
+        -webkit-transform:scale(0.50);
+        transform-origin:0 0;
+        -webkit-transform-origin:0 0;
+    }
+    
+    .btnSubmit {
+        padding: 10% 15% 10% 15%;
+    }
+    
+    .emptyAbout {
+        height: 10%;
+    }
+    
+    .wheel-button {
+        top: 58px;
+        margin: 0 0 0 30%;
+    }
+    
+    .instruction {
+        top: 25%;
+    }
+
+    .instruction2 {
+        top: -14%;
+        left: 47%;
+    }
+}
+
+/* iphone 5 landscape */
+@media only screen and (min-device-width : 320px) and (max-device-width : 568px) and (orientation : landscape) {
+    .wheel-button, .wheel-button:visited {
+        width: 32px;
+        height: 32px;
+    }
+    
+    .instruction2 {
+        top: 3%;
+        bottom: 5%;
+        left: 60%;
+        right: 0%;
+    }
+}
+
+/* ipad 9.7" landscape */
+@media only screen and (device-width: 768px) and (device-height: 1024px) and (orientation: landscape) {
+    .wheel-button {
+        top: 0;
+        margin: 10% 0 0 43%;
+    }
+    
+    .login-instruc {
+        width: 40%;
+    }
+    
+    .instruction {
+        width: 20%;
+        margin: 5% 0% 0% 35%;
+    }
+
+    .instruction2 {
+        width: 20%;
+        top: 0;
+        bottom: 0%;
+        left: 52%;
+        right: 0;
+    }
+    
+    .donate {
+        width: 45%;
+    }
+    
+    .fb-btn {
+        width: 8%;
+    }
+
+    .twitter-btn {
+        width: 8%;
+        right: 10%;
+    }
+}
+
+/* ipad 9.7" portrait */
+@media only screen and (device-width: 768px) and (device-height: 1024px) and (orientation: portrait) {
+    .wheel-button {
+        top: 100px;
+        margin: 20% 0 0 43%;
+    }
+    
+    .login-instruc {
+        width: 65%;
+    }
+    
+    .instruction {
+        width: 20%;
+        top: 3%;
+        bottom: 15%;
+        left: 30%;
+        right: 0;
+    }
+
+    .instruction2 {
+        width: 20%;
+        top: 0;
+        bottom: 3%;
+        left: 63%;
+        right: 0;
+    }
+    
+    .donate {
+        width: 45%;
+    }
+    
+    .fb-btn {
+        width: 10%;
+    }
+
+    .twitter-btn {
+        width: 10%;
+        right: 12%;
+    }
+}
+    
+	

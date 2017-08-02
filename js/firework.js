@@ -74,7 +74,7 @@ function controlLight(star, msg_id) {
                     timer = requestAnimationFrame(countDown);
                     
                 } else if (this.readyState == 4 && ((this.status > 399 && this.status < 600) || this.status === 0)) {
-                    alert("Servers are down, please try again later. :)");
+                    alert("Please try again later.");
                 }
             };
         

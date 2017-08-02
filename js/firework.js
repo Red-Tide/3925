@@ -76,7 +76,6 @@ function controlLight(star, msg_id) {
                 } else if (this.readyState == 4 && ((this.status > 399 && this.status < 600) || this.status === 0)) {
                     alert("Servers are down, please try again later. :)");
                 }
-                
             };
         
         xhttp.open("POST", "http://104.236.138.127:8888", true);

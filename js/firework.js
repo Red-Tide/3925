@@ -72,15 +72,14 @@ function controlLight(star, msg_id) {
 
                     timer3 = requestAnimationFrame(loop);
                     timer = requestAnimationFrame(countDown);
-                } 
-		
+                    
+                } else if (this.readyState == 4 && ((this.status > 399 && this.status < 600) || this.status === 0)) {
+                    alert("Please try again later.");
+                }
             };
         
         xhttp.open("POST", "http://104.236.138.127:8888", true);
         xhttp.send(star);
-        
-        
-        
     }
 }
 

@@ -30,6 +30,7 @@ extract($_POST);
     <head>
         <title>Lights of Hope!</title>
         <meta property="og:image" content="http://helpstpauls.com/app/uploads/2015/08/lightsofhope-thumb.jpg" />
+        <meta property="og:url" content="http://lightsofhope.com/display" />
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <!-- Latest compiled and minified CSS -->
@@ -67,7 +68,7 @@ extract($_POST);
                     <img src="images/twitter.png" id="twitter" alt="Share to Twitter"/>
                 </a>
 
-                <div data-href="http://104.236.138.127" data-layout="button_count" data-size="large" data-mobile-iframe="false">
+                <div data-href="http://lightsofhope.com/display" data-layout="button_count" data-size="large" data-mobile-iframe="false">
                     <a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flightsofhope.com/display%2F&amp;src=sdkpreparse">
                         <img src="images/fb.png" id="fb" alt="Share to FaceBook" />
                     </a>
@@ -138,7 +139,7 @@ extract($_POST);
             </a>
 
             <!-- smaller social media icons -->
-            <div data-href="http://104.236.138.127" data-layout="button_count" data-size="large" data-mobile-iframe="false" ><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flightsofhope.com/display%2F&amp;src=sdkpreparse">
+            <div data-href="http://lightsofhope.com/display" data-layout="button_count" data-size="large" data-mobile-iframe="false"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flightsofhope.com/display%2F&amp;src=sdkpreparse">
                 <img src="images/fb_small.png" class="fb-btn" alt="FaceBook Share" />
             </a></div>
 

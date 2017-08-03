@@ -6,6 +6,7 @@ var timer;
 var timer2, timer3;
 var star;
 var msg_num;
+var testState = -1, testStatus = -1, testCount = 1;
 
 var SCREEN_WIDTH = window.innerWidth,
     SCREEN_HEIGHT = window.innerHeight,
@@ -55,11 +56,12 @@ function getCookie(c_name) {
     }
     return "";
 }
-
+/*
 // Controls the light signals
 function controlLight(star, msg_id) {
-    if(!getCookie("user")) {
+    if (!getCookie("user")) {
         document.getElementById("btnLogin").click();
+    
     } else {
 		msg_num = msg_id;
         var xhttp = new XMLHttpRequest();
@@ -75,13 +77,91 @@ function controlLight(star, msg_id) {
                     
                 } else if (this.readyState == 4 && ((this.status > 399 && this.status < 600) || this.status === 0)) {
                     alert("The Lights are only active at night. Please come back and interact between 4pm - 8am. Thanks for playing.");
-                }
+                } 
             };
         
         xhttp.open("POST", "http://104.236.138.127:8888", true);
         xhttp.send(star);
     }
 }
+*/
+
+/* 
+ *  Entry function for the star buttons
+ *  @param star     the star string
+ *  @param msg_id   star id
+ */
+function controlLight(star, msg_id) {
+    console.log("controlLight()");
+    msg_num = msg_id;
+    star_str = star;
+	testConnection();
+    checkConnection();
+}
+
+/* 
+ *  Attempts to test connection
+ */
+function testConnection() {
+    console.log("testConnection()");
+    testState = -1;
+    testStatus = 0;
+    testCount = 1;
+    var xhttpTest = new XMLHttpRequest();
+	xhttpTest.open("GET", "http://104.236.138.127:8888", true);
+    xhttpTest.onreadystatechange = function() {
+        testState = this.readyState;
+        testStatus = this.status;
+    }
+	xhttpTest.send("test");
+}
+
+/* 
+ *  Checks the connection every 150ms 20 times
+ */
+function checkConnection() {
+    console.log("checkConnection()");
+    console.log("Attempt = " + testCount + " ; state = " + testState + " ; status = " + testStatus);
+    if (testState != 4 && testCount < 20) {     // checking connection
+        testCount++;
+        setTimeout(checkConnection, 150);
+    } else {                                    // timed out or success
+        if (testState === 4 && testStatus === 200) { // success
+            promptLogin();
+        } else {
+            alert("The Lights are only active at night. Please come back and interact between 4pm - 8am. Thanks for playing.");
+        }
+    }
+}
+
+/* 
+ *  Fire works and stuff
+ */
+function promptLogin(){
+    if (!getCookie("user")) {
+        document.getElementById("btnLogin").click();
+    } else {
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                count = this.responseText - 6;
+
+                $('.modal4-bg').fadeIn();
+                drawCanvas(star_str);
+
+                timer3 = requestAnimationFrame(loop);
+                timer = requestAnimationFrame(countDown);
+
+            } else if (this.readyState == 4 && ((this.status > 399 && this.status < 600) || this.status === 0)) {
+                alert("The Lights are only active at night. Please come back and interact between 4pm - 8am. Thanks for playing.");
+            }
+        };
+        
+        xhttp.open("POST", "http://104.236.138.127:8888", true);
+        xhttp.send(star_str);
+    }
+}
+
 // firework canvas
 function drawCanvas(star_img) {
     canvas.width = SCREEN_WIDTH;

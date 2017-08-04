@@ -99,10 +99,10 @@ function onRequest (request, response) {
 		}
 		
 		console.log("recieved: [" + body + "]");
-       		 if (body != "test") {
-           		 console.log("added [" + body + "] to queue")
-           		 queue.push(body);
-       		 }
+        if (body != "test") {
+            console.log("added [" + body + "] to queue")
+            queue.push(body);
+        }
 		response.end();
 	});
 }

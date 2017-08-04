@@ -97,7 +97,9 @@ function onRequest (request, response) {
 			response.write("0");
 
 		}
-		queue.push(body);
+        if (body != "test") {
+            queue.push(body);
+        }
 		response.end();
 	});
 }

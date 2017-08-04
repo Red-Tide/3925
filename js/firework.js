@@ -86,11 +86,7 @@ function controlLight(star, msg_id) {
 }
 */
 
-/* 
- *  Entry function for the star buttons
- *  @param star     the star string
- *  @param msg_id   star id
- */
+//Entry function for the star buttons
 function controlLight(star, msg_id) {
     console.log("controlLight()");
     msg_num = msg_id;
@@ -98,10 +94,8 @@ function controlLight(star, msg_id) {
 	testConnection();
     checkConnection();
 }
-
-/* 
- *  Attempts to test connection
- */
+ 
+//Attempts to test connection
 function testConnection() {
     console.log("testConnection()");
     testState = -1;
@@ -116,9 +110,7 @@ function testConnection() {
 	xhttpTest.send("test");
 }
 
-/* 
- *  Checks the connection every 150ms 20 times
- */
+//Checks the connection every 150ms 20 times
 function checkConnection() {
     console.log("checkConnection()");
     console.log("Attempt = " + testCount + " ; state = " + testState + " ; status = " + testStatus);
@@ -134,9 +126,7 @@ function checkConnection() {
     }
 }
 
-/* 
- *  Fire works and stuff
- */
+//Fire works and stuff
 function promptLogin(){
     if (!getCookie("user")) {
         document.getElementById("btnLogin").click();

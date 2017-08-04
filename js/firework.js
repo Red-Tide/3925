@@ -24,7 +24,8 @@ var context = canvas.getContext('2d'),
     colorCode = 0;
 
 function countDown() {
-    setTimeout(function() {
+    setTimeout(
+        function() {
         count--;
         if (count < 0) {  
             context.clearRect(0, 0, window.innerWidth, window.innerHeight);    
@@ -40,7 +41,6 @@ function countDown() {
         }
     }, 1000);
 }
-               
 
 function getCookie(c_name) {
     if (document.cookie.length > 0) {
@@ -102,7 +102,7 @@ function testConnection() {
     testStatus = 0;
     testCount = 1;
     var xhttpTest = new XMLHttpRequest();
-	xhttpTest.open("GET", "http://104.236.138.127:8888", true);
+	xhttpTest.open("POST", "http://104.236.138.127:8888", true);
     xhttpTest.onreadystatechange = function() {
         testState = this.readyState;
         testStatus = this.status;

@@ -91,14 +91,18 @@ function onRequest (request, response) {
 		response.writeHead(200);
 		if (!ready || queue > 0) {
 			//response.write(queue.toString() + " " + (queue.length * time + (time - count)).toString() + " seconds\n");
-			response.write((queue.length * time + (time - count)).toString() +" " );
+			response.write((queue.length * time + (time - count)).toString() + " " );
 		} else {
 			//response.write(queue.toString() + " " + "0" + " seconds\n");
 			response.write("0");
 
 		}
-
-        queue.push(body);
+		
+		console.log("recieved: [" + body + "]");
+       		 if (body != "test") {
+           		 console.log("added [" + body + "] to queue")
+           		 queue.push(body);
+       		 }
 		response.end();
 	});
 }

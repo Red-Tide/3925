@@ -73,7 +73,7 @@ function controlLight(star, msg_id) {
                     timer = requestAnimationFrame(countDown);
                     
                 } else if (this.readyState == 4 && ((this.status > 399 && this.status < 600) || this.status === 0)) {
-                    alert("Please try again later.");
+                    alert("The Lights are only active at night. Please come back and interact between 4pm - 8am. Thanks for playing.");
                 }
             };
         

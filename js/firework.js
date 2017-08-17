@@ -56,6 +56,7 @@ function getCookie(c_name) {
     }
     return "";
 }
+
 /*
 // Controls the light signals
 function controlLight(star, msg_id) {

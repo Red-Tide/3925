@@ -92,7 +92,7 @@ extract($_POST);
         <img src="images/spf_logo.png" class="spfLogo" alt="Logo" />
 
         <!-- Main Logo -->
-        <img src="images/big_title1.png" class="celebrate" alt="Lights of Hope - 20th Anniversary" />
+        <img src="images/big_title2.png" class="celebrate" alt="Lights of Hope - 20th Anniversary" />
 
 
         <!-- List of sounds for star wheel -->

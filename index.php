@@ -63,7 +63,7 @@ extract($_POST);
             <a href="#" onclick="openShare()">Share<span class="caret"></span></a>
             
             <div id="shareMenu">
-                <a href="http://twitter.com/intent/tweet?text=I+just+controlled+St.+Paul’s+Foundation’s+Lights+of+Hope+display+with+my+phone,+click+here+and+you+can+too!+http://lightsofhope.com/display+%23LOH2018" target="_blank">
+                <a href="http://twitter.com/intent/tweet?text=I+just+controlled+St.+Paul’s+Foundation’s+Lights+of+Hope+display+with+my+phone+and+you+can+too!+http://lightsofhope.com/display+%23LOH2017" target="_blank">
                     <img src="images/twitter.png" id="twitter" alt="Share to Twitter"/>
                 </a>
 
@@ -91,7 +91,7 @@ extract($_POST);
         <!-- SPF Logo - top right corner -->
         <img src="images/spf_logo.png" class="spfLogo" alt="Logo" />
 
-        
+        <!-- Main Logo -->
         <img src="images/big_title1.png" class="celebrate" alt="Lights of Hope - 20th Anniversary" />
 
 
@@ -142,7 +142,7 @@ extract($_POST);
                 <img src="images/fb_small.png" class="fb-btn" alt="FaceBook Share" />
             </a></div>
 
-            <a href="http://twitter.com/intent/tweet?text=I+just+controlled+St.+Paul’s+Foundation’s+Lights+of+Hope+display+with+my+phone,+click+here+and+you+can+too!+http://lightsofhope.com/display+%23LOH2018" target="_blank">
+            <a href="http://twitter.com/intent/tweet?text=I+just+controlled+St.+Paul’s+Foundation’s+Lights+of+Hope+display+with+my+phone+and+you+can+too!+http://lightsofhope.com/display+%23LOH2017" target="_blank">
                 <img src="images/twitter_sm.png" class="twitter-btn" alt="Twitter Share" />
             </a>
         </div>

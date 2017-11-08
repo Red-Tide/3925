@@ -528,7 +528,11 @@ form *{
     
     .celebrate {
 	    width: 90%;
-        margin: 10% 0 0 5%;
+        margin: 0 0 0 5%;
+    }
+
+    html, body {
+    	overflow: hidden;
     }
 }
 

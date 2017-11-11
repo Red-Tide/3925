@@ -63,12 +63,12 @@ extract($_POST);
             <a href="#" onclick="openShare()">Share<span class="caret"></span></a>
             
             <div id="shareMenu">
-                <a href="http://twitter.com/intent/tweet?text=I+just+controlled+St.+Paul’s+Foundation’s+Lights+of+Hope+display+with+my+phone+and+you+can+too!+http://lightsofhope.com/display+%23LOH2017" target="_blank">
+                <a href="http://twitter.com/intent/tweet?text=I+just+controlled+St.+Paul’s+Foundation’s+Lights+of+Hope+display+with+my+phone+and+you+can+too!+http://display.lightsofhope.com+%23LOH2017" target="_blank">
                     <img src="images/twitter.png" id="twitter" alt="Share to Twitter"/>
                 </a>
 
                 <div data-href="http://104.236.138.127" data-layout="button_count" data-size="large" data-mobile-iframe="false">
-                    <a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flightsofhope.com/display%2F&amp;src=sdkpreparse">
+                    <a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fdisplay.lightsofhope.com%2F&amp;src=sdkpreparse">
                         <img src="images/fb.png" id="fb" alt="Share to FaceBook" />
                     </a>
                 </div>
@@ -138,11 +138,11 @@ extract($_POST);
             </a>
 
             <!-- smaller social media icons -->
-            <div data-href="http://104.236.138.127" data-layout="button_count" data-size="large" data-mobile-iframe="false" ><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flightsofhope.com/display%2F&amp;src=sdkpreparse">
+            <div data-href="http://104.236.138.127" data-layout="button_count" data-size="large" data-mobile-iframe="false" ><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fdisplay.lightsofhope.com%2F&amp;src=sdkpreparse">
                 <img src="images/fb_small.png" class="fb-btn" alt="FaceBook Share" />
             </a></div>
 
-            <a href="http://twitter.com/intent/tweet?text=I+just+controlled+St.+Paul’s+Foundation’s+Lights+of+Hope+display+with+my+phone+and+you+can+too!+http://lightsofhope.com/display+%23LOH2017" target="_blank">
+            <a href="http://twitter.com/intent/tweet?text=I+just+controlled+St.+Paul’s+Foundation’s+Lights+of+Hope+display+with+my+phone+and+you+can+too!+http://display.lightsofhope.com+%23LOH2017" target="_blank">
                 <img src="images/twitter_sm.png" class="twitter-btn" alt="Twitter Share" />
             </a>
         </div>
@@ -184,7 +184,7 @@ extract($_POST);
 
                             <div class="row inputEnd">
                                 <div class="col-xs-6">
-                                    <div class="g-recaptcha captcha" data-sitekey="6LcaBykUAAAAAJPVSHmOPV6vGwBpszHhq5Z2_0j2" data-callback="recaptchaCallback">
+                                    <div class="g-recaptcha captcha" data-sitekey="6LeQNjgUAAAAACSg3vJoLU-aPfMoAYrv36eeVYi_" data-callback="recaptchaCallback">
                                     </div>
                                 </div>
 
